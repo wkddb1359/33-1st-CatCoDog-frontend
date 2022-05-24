@@ -14,7 +14,7 @@ const ProductList = () => {
   }, []);
 
   return (
-    <div className="productContainer">
+    <>
       {itemList.map(info => {
         return (
           <Product
@@ -25,7 +25,7 @@ const ProductList = () => {
           />
         );
       })}
-    </div>
+    </>
   );
 };
 

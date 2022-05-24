@@ -15,9 +15,9 @@ const Nav = () => {
           </div>
         </div>
         <div className="navMiddle">
-          <div className="middleLeft"></div>
-          <div className="middleCenter"></div>
-          <div className="middelRight"></div>
+          <div className="middleLeft" />
+          <div className="middleCenter" />
+          <div className="middelRight" />
         </div>
         <div className="navBottom" />
       </div>

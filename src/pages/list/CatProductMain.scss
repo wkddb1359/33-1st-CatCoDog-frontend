@@ -1,10 +1,9 @@
 .listContainer {
-  width: 100vw;
+  max-width: 1248px;
   height: 100%;
+  margin: 0 auto;
   .listNavContainer {
-    max-width: 1280px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
     .navList {
       display: flex;
       margin-right: 25px;
@@ -16,6 +15,12 @@
         cursor: pointer;
       }
     }
+  }
+  .productListContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
   }
   .listMainName {
     width: 100%;
