@@ -1,4 +1,12 @@
 .haimLogin {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  z-index: 99999;
+  padding-bottom: 10%;
   .wrapLogin {
     width: 45%;
     margin: 0 auto;
@@ -6,6 +14,14 @@
       .backBtn {
         margin-top: 5%;
         margin-bottom: 2%;
+        border: 1px solid #e1e1e1;
+        background-color: white;
+        height: 1.8rem;
+        width: 5.6rem;
+        border-radius: 30px;
+        font-size: 0.8rem;
+        cursor: pointer;
+        font-weight: normal;
       }
       .headerLogo {
         width: 8%;
@@ -20,9 +36,8 @@
     }
     .loginSection {
       width: 70%;
-      margin-left: 10%;
+      margin-left: 15%;
       .KaKLogin {
-        margin-left: 5%;
         .kakTitle {
           padding: 7% 0;
           font-size: 1.5rem;
@@ -35,7 +50,7 @@
         .yellowBtn {
           background-color: #fee500;
           border: 1px solid #fee500;
-          height: 4rem;
+          height: 3.5rem;
           width: 100%;
           font-weight: bolder;
           font-size: 1rem;
@@ -74,13 +89,67 @@
       }
       .tabMenu {
         margin-top: 5%;
+        margin-bottom: 10%;
         .memberLogin {
           height: 3rem;
           width: 50%;
+          background-color: white;
+          border-radius: 5px 0 0 5px;
+          border: 1px solid silver;
         }
         .nonmemberLogin {
           height: 3rem;
           width: 50%;
+          border-radius: 0 5px 5px 0;
+          border: 1px solid silver;
+        }
+      }
+      .normalLogin {
+        .inputBox {
+          overflow: hidden;
+          margin-bottom: 5%;
+          .emailInputBox {
+            width: 100%;
+            border: 1px solid #e1e1e1;
+            height: 2.8rem;
+          }
+          .pwInputBox {
+            width: 100%;
+            border: 1px solid #e1e1e1;
+            height: 2.8rem;
+          }
+        }
+        .checkAndTitle {
+          .checkbox {
+          }
+          .checkboxTitle {
+            font-size: 0.75rem;
+          }
+        }
+        .blackBtn {
+          background-color: black;
+          border: 1px solid black;
+          color: white;
+          text-align: center;
+          height: 3.5rem;
+          width: 100%;
+          font-weight: bolder;
+          font-size: 1rem;
+          border-radius: 10px;
+          margin-top: 5%;
+        }
+        .bottomMenu {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 5%;
+          .findIdPw {
+            font-size: 0.75rem;
+            color: grey;
+            margin-top: 2%;
+          }
+          .signUp {
+            font-size: 0.75rem;
+          }
         }
       }
     }

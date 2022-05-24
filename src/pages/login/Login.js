@@ -30,15 +30,34 @@ const Login = () => {
               <span className="blackCircle">⚫</span>
               <span className="buttonText">캐캐오 1초 로그인/회원가입</span>
             </button>
-            <div className="middleHr">
-              <hr className="leftHr" />
-              <span className="textInMiddleHr">또는</span>
-              <hr className="righttHr" />
+          </div>
+          <div className="middleHr">
+            <hr className="leftHr" />
+            <span className="textInMiddleHr">또는</span>
+            <hr className="righttHr" />
+          </div>
+          <div className="tabMenu">
+            <button className="memberLogin">기존 회원이세요?</button>
+            <button className="nonmemberLogin">비회원 배송조회</button>
+          </div>
+          <div className="normalLogin">
+            <div className="inputBox">
+              <input
+                className="emailInputBox"
+                type="text"
+                placeholder="이메일"
+              />
+              <input
+                className="pwInputBox"
+                type="text"
+                placeholder="비밀번호"
+              />
             </div>
-            <div className="tabMenu">
-              <button className="memberLogin">기존 회원이세요?</button>
-              <button className="nonmemberLogin">비회원 배송조회</button>
+            <div className="checkAndTitle">
+              <input type="checkbox" className="checkbox" />
+              <span className="checkboxTitle">자동로그인</span>
             </div>
+            <button className="blackBtn">기존 회원 로그인</button>
           </div>
         </div>
       </div>
