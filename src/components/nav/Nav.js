@@ -18,7 +18,7 @@ const Nav = () => {
         <div className="navMiddle">
           <div className="middleLeft">
             <Link to="/">
-              <i class="fa-solid fa-magnifying-glass" />
+              <i className="fa-solid fa-magnifying-glass" />
             </Link>
             <Link to="/">
               <span className="loginText">로그인</span>
@@ -36,7 +36,7 @@ const Nav = () => {
               />
             </Link>
           </div>
-          <div className="middelRight">
+          <div className="middleRight">
             <Link to="/" className="searchLink">
               <i className="searchIcon" />
             </Link>

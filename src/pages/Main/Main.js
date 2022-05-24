@@ -1,10 +1,12 @@
 import React from 'react';
-import Nav from '../../components/nav/Nav';
+import Footer from '../../components/Footer/Footer';
+import Nav from '../../components/Nav/Nav';
 
 const Main = () => {
   return (
     <div className="main">
       <Nav />
+      <Footer />
     </div>
   );
 };

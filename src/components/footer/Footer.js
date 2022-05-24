@@ -1,8 +1,8 @@
 import React from 'react';
 import './Footer.scss';
 
-function Footer() {
+const Footer = () => {
   return <div className="footerWrap">Footer</div>;
-}
+};
 
 export default Footer;
