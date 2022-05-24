@@ -1,0 +1,29 @@
+.listContainer {
+  width: 100vw;
+  height: 100%;
+  .listNavContainer {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    .navList {
+      display: flex;
+      margin-right: 25px;
+      text-decoration: none;
+      .listName {
+        font-size: 1rem;
+        color: rgba(54, 54, 54, 0.7);
+        text-decoration: none;
+        cursor: pointer;
+      }
+    }
+  }
+  .listMainName {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    line-height: 1.2;
+    font-size: 24px;
+    color: #000;
+    text-align: center;
+  }
+}

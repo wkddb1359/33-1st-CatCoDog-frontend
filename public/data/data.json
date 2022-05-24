@@ -1,5 +1,8 @@
 [
   {
-    "key": 1
+    "id": 1,
+    "name": "바른트릿 9종 골라담기",
+    "img": "https://source.unsplash.com/random",
+    "price": "6,900"
   }
 ]
