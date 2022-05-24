@@ -1,0 +1,49 @@
+import React from 'react';
+import './Login.scss';
+
+const Login = () => {
+  return (
+    <div className="haimLogin">
+      <div className="wrapLogin">
+        <div className="loginHeader">
+          <button className="backBtn">
+            <span>&#60;</span>뒤로가기
+          </button>
+          <h1>
+            <img
+              className="headerLogo"
+              src="/images/logo.jpg"
+              alt="캣코독 로고"
+            />
+          </h1>
+          <hr className="fistHr" />
+        </div>
+        <div className="loginSection">
+          <div className="KaKLogin">
+            <h2 className="kakTitle">로그인</h2>
+            <p className="kakText">
+              아이디와 비밀번호 입력하기 귀찮으시죠?
+              <br />
+              카카오로 1초 만에 로그인 하세요.
+            </p>
+            <button className="yellowBtn">
+              <span className="blackCircle">⚫</span>
+              <span className="buttonText">캐캐오 1초 로그인/회원가입</span>
+            </button>
+            <div className="middleHr">
+              <hr className="leftHr" />
+              <span className="textInMiddleHr">또는</span>
+              <hr className="righttHr" />
+            </div>
+            <div className="tabMenu">
+              <button className="memberLogin">기존 회원이세요?</button>
+              <button className="nonmemberLogin">비회원 배송조회</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Login;

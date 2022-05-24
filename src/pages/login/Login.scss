@@ -1,0 +1,88 @@
+.haimLogin {
+  .wrapLogin {
+    width: 45%;
+    margin: 0 auto;
+    .loginHeader {
+      .backBtn {
+        margin-top: 5%;
+        margin-bottom: 2%;
+      }
+      .headerLogo {
+        width: 8%;
+        margin-left: 43%;
+        padding-bottom: 2%;
+      }
+    }
+    .fistHr {
+      border-style: none;
+      background-color: silver;
+      height: 0.02rem;
+    }
+    .loginSection {
+      width: 70%;
+      margin-left: 10%;
+      .KaKLogin {
+        margin-left: 5%;
+        .kakTitle {
+          padding: 7% 0;
+          font-size: 1.5rem;
+        }
+        .kakText {
+          line-height: 1.8rem;
+          margin-bottom: 7%;
+        }
+
+        .yellowBtn {
+          background-color: #fee500;
+          border: 1px solid #fee500;
+          height: 4rem;
+          width: 100%;
+          font-weight: bolder;
+          font-size: 1rem;
+          border-radius: 10px;
+          display: flex;
+          flex-direction: row;
+          padding-top: 4%;
+          .blackCircle {
+            margin-left: 5%;
+            margin-right: 20%;
+          }
+          .buttonText {
+          }
+        }
+      }
+      .middleHr {
+        padding-top: 7%;
+        display: flex;
+        flex-direction: row;
+        .leftHr {
+          border-style: none;
+          background-color: silver;
+          height: 0.02rem;
+          width: 45%;
+        }
+        .textInMiddleHr {
+          color: silver;
+          font-size: small;
+        }
+        .righttHr {
+          border-style: none;
+          background-color: silver;
+          height: 0.02rem;
+          width: 45%;
+        }
+      }
+      .tabMenu {
+        margin-top: 5%;
+        .memberLogin {
+          height: 3rem;
+          width: 50%;
+        }
+        .nonmemberLogin {
+          height: 3rem;
+          width: 50%;
+        }
+      }
+    }
+  }
+}
