@@ -1,0 +1,51 @@
+@mixin bannerImg {
+  position: relative;
+}
+
+@mixin bannerImgLink {
+  position: absolute;
+  top: 90%;
+  left: 20%;
+}
+
+.rollingBanner {
+  display: flex;
+  justify-content: center;
+}
+.rollingBannerContainer {
+  width: 100%;
+  max-width: 1777px;
+}
+
+li {
+  list-style: none;
+}
+
+.bannerImg {
+  @include bannerImg;
+}
+
+.bannerImgLink {
+  @include bannerImgLink;
+}
+
+.slideDot {
+  display: center;
+  justify-content: space-between;
+  width: 116px;
+  height: 24px;
+}
+
+.owlDotActive span {
+  width: 8px;
+  height: 24px;
+  border-radius: 8px;
+  color: rgb(54, 54, 54);
+}
+
+.owlDot span {
+  width: 8px;
+  height: 8px;
+  border-radius: 8px;
+  color: rgb(54, 54, 54);
+}
