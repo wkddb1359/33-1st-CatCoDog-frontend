@@ -56,29 +56,20 @@ const SignUp = () => {
               <p className="inputTitle">
                 반려동물의 종류<span className="redDot">•</span>
               </p>
-              <input
-                type="radio"
-                name="pets"
-                id="petType"
-                className="radioText"
-              />
-              <label for="petType">빈려견</label>
+              <input type="radio" name="pets" id="petType" />
+              <label for="petType" className="radioText">
+                반려견
+              </label>
               <br />
-              <input
-                type="radio"
-                name="pets"
-                id="petType"
-                className="radioText"
-              />
-              <label for="petType">반려묘</label>
+              <input type="radio" name="pets" id="petType" />
+              <label for="petType" className="radioText">
+                반려묘
+              </label>
               <br />
-              <input
-                type="radio"
-                name="pets"
-                id="petType"
-                className="radioText"
-              />
-              <label for="petType">반려동물 없음</label>
+              <input type="radio" name="pets" id="petType" />
+              <label for="petType" className="radioText">
+                반려동물 없음
+              </label>
               <br />
             </div>
             <div className="inputForm">
@@ -86,21 +77,15 @@ const SignUp = () => {
                 광고성 정보 수신동의(동의 시 1,000원 적릭금 지급)
                 <span className="redDot">•</span>
               </p>
-              <input
-                type="radio"
-                name="pets"
-                id="agreement"
-                className="radioText"
-              />
-              <label for="agreement">예,동의합니다.</label>
+              <input type="radio" name="pets" id="agreement" />
+              <label for="agreement" className="radioText">
+                예,동의합니다.
+              </label>
               <br />
-              <input
-                type="radio"
-                name="pets"
-                id="petType"
-                className="radioText"
-              />
-              <label for="agreement">아니오,동의하지 않습니다.</label>
+              <input type="radio" name="pets" id="petType" />
+              <label for="agreement" className="radioText">
+                아니오,동의하지 않습니다.
+              </label>
               <br />
             </div>
             <div className="finalSignUp">

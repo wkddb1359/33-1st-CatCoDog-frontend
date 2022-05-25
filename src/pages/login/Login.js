@@ -63,7 +63,7 @@ const Login = () => {
           </div>
           <div className="lastStage">
             <span className="findPwId">아이디/비밀번호 찾기</span>
-            <a href="#" className="firstSignUpBtn">
+            <a href="#top" className="firstSignUpBtn">
               가입하기
             </a>
           </div>
