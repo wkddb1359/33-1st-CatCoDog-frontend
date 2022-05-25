@@ -48,7 +48,21 @@ const SignUp = () => {
               <input
                 type="tel"
                 id="phoneNum"
+                pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"
                 placeholder="연락처"
+                className="inputs"
+                required
+              />
+              <span className="phoneFormat">[형식] : 123-4567-8910</span>
+            </div>
+            <div className="inputForm">
+              <label className="inputTitle" for="phoneNum">
+                주소<span className="redDot">•</span>
+              </label>
+              <input
+                type="tel"
+                id="phoneNum"
+                placeholder="주소"
                 className="inputs"
               />
             </div>

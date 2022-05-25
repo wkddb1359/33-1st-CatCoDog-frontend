@@ -37,8 +37,7 @@ const Login = () => {
             <hr className="righttHr" />
           </div>
           <div className="tabMenu">
-            <button className="memberLogin">기존 회원이세요?</button>
-            <button className="nonmemberLogin">비회원 배송조회</button>
+            <button className="memberLogin">일반 로그인</button>
           </div>
           <div className="normalLogin">
             <div className="inputBox">

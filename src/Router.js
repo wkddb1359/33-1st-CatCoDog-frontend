@@ -11,8 +11,8 @@ const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/haimSignUp" element={<SignUp />} />
-        <Route path="/haimLogin" element={<Login />} />
+        <Route path="/haimsignup" element={<SignUp />} />
+        <Route path="/haimlogin" element={<Login />} />
         <Route path="/" element={<Main />} />
         <Route path="/list" element={<List />} />
         <Route path="/detail" element={<Detail />} />
