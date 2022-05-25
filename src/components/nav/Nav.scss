@@ -17,36 +17,121 @@
         padding-right: 16px;
         display: block;
       }
+      .navtopLink {
+        text-decoration: none;
+      }
       .navText {
         color: rgb(0, 26, 129);
         font-weight: 700;
-        font-size: 17px;
-        cursor: pointer;
+        font-size: 16px;
       }
     }
     .navMiddle {
       background-color: white;
       height: 186px;
       display: flex;
-
       align-items: center;
 
       .middleLeft {
         width: 416px;
         height: 186px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        display: flex;
+        align-items: center;
+        flex: 2;
+        justify-content: center;
+
+        .userIcon {
+          text-decoration: none;
+          color: grey;
+          padding-right: 10px;
+        }
+        .loginLink {
+          text-decoration: none;
+          color: grey;
+          .loginText {
+            font-size: 14px;
+          }
+        }
+        .signupLink {
+          text-decoration: none;
+          color: grey;
+          padding-left: 10px;
+          .signupText {
+            font-size: 14px;
+          }
+        }
       }
       .middleCenter {
         width: 283px;
         height: 186px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+
+        .logoImage {
+          width: 283px;
+          height: 85px;
+        }
       }
       .middleRight {
         width: 416px;
         height: 186px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: right;
+        flex: 2;
+        .searchLink {
+          color: grey;
+          text-decoration: none;
+          padding-right: 40px;
+        }
+        .cartLink {
+          color: grey;
+          text-decoration: none;
+          .cartText {
+            color: grey;
+            text-decoration: none;
+            padding-left: 10px;
+            font-size: 14px;
+          }
+        }
       }
     }
     .navBottom {
-      background-color: green;
+      background-color: white;
       height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-bottom: 1px solid rgb(182, 177, 177);
+      position: sticky;
+      .menuList {
+        color: grey;
+        text-decoration: none;
+        padding-left: 20px;
+        display: flex;
+        justify-content: space-around;
+        .menuLink {
+          color: grey;
+          text-decoration: none;
+
+          .list {
+            list-style: none;
+            padding-left: 40px;
+            color: #212121;
+            font-size: 16px;
+            letter-spacing: 1px;
+            font-weight: inherit;
+            font-style: normal;
+          }
+        }
+      }
     }
   }
 }

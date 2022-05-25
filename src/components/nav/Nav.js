@@ -1,6 +1,8 @@
 import React from 'react';
 import './Nav.scss';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import Navmenu from './Navmenu';
 
 const Nav = () => {
   return (
@@ -8,7 +10,7 @@ const Nav = () => {
       <div className="nav">
         <div className="navTop">
           <div className="navTopBox">
-            <Link to="/">
+            <Link to="/" className="navtopLink">
               <strong>
                 <span className="navText">간식 1팩 100원부터!</span>
               </strong>
@@ -17,13 +19,13 @@ const Nav = () => {
         </div>
         <div className="navMiddle">
           <div className="middleLeft">
-            <Link to="/">
-              <i className="fa-solid fa-magnifying-glass" />
+            <Link to="/" className="userIcon">
+              <i class="fa-solid fa-user" />
             </Link>
-            <Link to="/">
+            <Link to="/" className="loginLink">
               <span className="loginText">로그인</span>
             </Link>
-            <Link to="/">
+            <Link to="/" className="signupLink">
               <span className="signupText">회원가입</span>
             </Link>
           </div>
@@ -38,15 +40,17 @@ const Nav = () => {
           </div>
           <div className="middleRight">
             <Link to="/" className="searchLink">
-              <i className="searchIcon" />
+              <i className="fa-solid fa-magnifying-glass" />
             </Link>
             <Link to="/" className="cartLink">
-              <i className="cartIcon" />
+              <i class="fa-solid fa-cart-shopping" />
               <span className="cartText">장바구니</span>
             </Link>
           </div>
         </div>
-        <div className="navBottom" />
+        <div className="navBottom">
+          <Navmenu />
+        </div>
       </div>
     </div>
   );

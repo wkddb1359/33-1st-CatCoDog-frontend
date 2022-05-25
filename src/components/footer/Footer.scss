@@ -1,4 +1,80 @@
 .footerWrap {
-  background-color: black;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
   height: 402px;
+  width: 1471px;
+  .footerTop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 250px;
+    width: 1000px;
+    padding-left: 90px;
+    .numberBox {
+      // width: 426px;
+      height: 190px;
+      margin-top: 20px;
+      line-height: 20px;
+
+      .number {
+        font-weight: 500;
+        font-size: 17px;
+      }
+      span {
+        font-size: 14px;
+        color: gray;
+      }
+    }
+    .InfoBox {
+      // width: 426px;
+      height: 179px;
+      margin-top: 10px;
+      line-height: 20px;
+      span {
+        font-size: 14px;
+        color: gray;
+      }
+    }
+    .InstaBox {
+      // width: 399px;
+      height: 139px;
+      line-height: 20px;
+
+      i {
+        font-size: 30px;
+        padding-top: -20px;
+      }
+    }
+    strong {
+      font-weight: 700;
+      font-size: 17px;
+    }
+  }
+  .footerBottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1470px;
+    bottom: 83px;
+    .left {
+      text-align: left;
+      width: 640px;
+      height: 55px;
+      padding-left: 70px;
+      span {
+        font-size: 14px;
+        color: gray;
+      }
+    }
+    .right {
+      display: flex;
+      flex-direction: column;
+      line-height: 20px;
+      span {
+        font-size: 14px;
+        color: gray;
+      }
+    }
+  }
 }
