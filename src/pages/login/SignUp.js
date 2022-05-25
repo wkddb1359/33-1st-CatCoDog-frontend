@@ -89,10 +89,10 @@ const SignUp = () => {
               <input
                 type="radio"
                 name="pets"
-                id="petType"
+                id="agreement"
                 className="radioText"
               />
-              <label for="petType">예,동의합니다.</label>
+              <label for="agreement">예,동의합니다.</label>
               <br />
               <input
                 type="radio"
@@ -100,7 +100,7 @@ const SignUp = () => {
                 id="petType"
                 className="radioText"
               />
-              <label for="petType">아니오,동의하지 않습니다.</label>
+              <label for="agreement">아니오,동의하지 않습니다.</label>
               <br />
             </div>
             <div className="finalSignUp">

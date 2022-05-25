@@ -152,6 +152,19 @@
           }
         }
       }
+      .lastStage {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1rem;
+        .findPwId {
+          font-size: 0.75rem;
+        }
+        .firstSignUpBtn {
+          font-size: 0.75rem;
+          text-decoration: none;
+        }
+      }
     }
   }
 }

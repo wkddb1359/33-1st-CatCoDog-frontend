@@ -61,6 +61,12 @@ const Login = () => {
             </div>
             <button className="blackBtn">기존 회원 로그인</button>
           </div>
+          <div className="lastStage">
+            <span className="findPwId">아이디/비밀번호 찾기</span>
+            <a href="#" className="firstSignUpBtn">
+              가입하기
+            </a>
+          </div>
         </div>
       </div>
     </div>
