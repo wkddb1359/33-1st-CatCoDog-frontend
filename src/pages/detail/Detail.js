@@ -12,10 +12,11 @@ function Detail() {
           <div className="goodsWrapper">
             <div className="goodsImgContainer">
               <img
-                src="./images/123.png"
+                src="./images/logo.jpg"
                 className="goodsImg"
                 width={610}
                 height={610}
+                alt="제품사진"
               />
               <div className="goodsSmallImg">
                 <ul>
