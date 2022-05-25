@@ -1,51 +1,67 @@
-@mixin bannerImg {
-  position: relative;
-}
-
-@mixin bannerImgLink {
-  position: absolute;
-  top: 90%;
-  left: 20%;
-}
-
-.rollingBanner {
-  display: flex;
+//css 슬라이드
+/* .rollingBanner {
+  display: grid;
   justify-content: center;
+  place-items: center;
 }
 .rollingBannerContainer {
   width: 100%;
   max-width: 1777px;
+  position: relative;
+  overflow-x: hidden;
+  place-items: center;
+  display: grid;
 }
 
-li {
+.rollingBannerBox {
+  display: flex;
+  width: calc(1777px * 5);
+  animation: scroll 10s steps(1, start) infinite;
+}
+
+.rollingBannerList {
   list-style: none;
+  float: left;
+  display: flex;
+  align-items: center;
+} */
+.rollingBanner {
+  display: flex;
 }
 
-.bannerImg {
-  @include bannerImg;
+.rollingBannerContainer {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  .slideImg {
+    position: absolute;
+    opacity: 0;
+    transition: 0.3s all ease-in;
+  }
+  .active {
+    opacity: 1;
+  }
 }
 
-.bannerImgLink {
-  @include bannerImgLink;
+.dotContainer {
+  position: absolute;
+  display: flex;
+  bottom: -40%;
+  transform: translateX(-50%);
+  left: 50%;
 }
 
-.slideDot {
-  display: center;
-  justify-content: space-between;
-  width: 116px;
-  height: 24px;
-}
-
-.owlDotActive span {
-  width: 8px;
-  height: 24px;
-  border-radius: 8px;
-  color: rgb(54, 54, 54);
-}
-
-.owlDot span {
+.dots {
   width: 8px;
   height: 8px;
   border-radius: 8px;
-  color: rgb(54, 54, 54);
+  margin: 0 10px;
+  background-color: rgba(255, 255, 255, 0.3);
+  transition: 0.3s all ease-in;
+}
+
+.active {
+  width: 24px;
+  height: 8px;
+  background-color: rgba(20, 20, 20, 0.8);
 }

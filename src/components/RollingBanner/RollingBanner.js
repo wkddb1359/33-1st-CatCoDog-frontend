@@ -1,25 +1,31 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './RollingBanner.scss';
 import slideBanner from '../../slideBanner.json';
 
 const RollingBanner = () => {
   const [bannerData] = useState(slideBanner);
+  const [slideIndex, setSlideIndex] = useState(1);
 
-  const bannerImgList = bannerData.map(bannerimg => (
-    <a href={bannerimg.url}>
-      <li key={bannerimg.id} src={bannerimg.src} url={bannerimg.url}>
-        <img src={bannerimg.src} />
-      </li>
-    </a>
-  ));
+  const moveSlide = index => {
+    setSlideIndex(index);
+  };
 
   return (
     <div className="rollingBanner">
-      <div className="rollingBannerContainer">
-        <ul className="bannerBackgroundImg">
-          <li>{bannerImgList}</li>
-
-          {/*  <li className="banner1">
+      <section className="rollingBannerContainer">
+        {bannerData.map((img, index) => {
+          return (
+            <div
+              className={
+                slideIndex === index + 1 ? 'slideImg active' : 'slideImg'
+              }
+              key={img.id}
+            >
+              <img src={img.src} alt="피드 이미지" />
+            </div>
+          );
+        })}
+        {/*  <li className="banner1">
             <img
               className="bannerImg"
               src="https://velog.velcdn.com/images/cadyky95/post/814f05a3-d3b6-4d67-9b17-147d19f0c5f2/image.png"
@@ -89,24 +95,31 @@ const RollingBanner = () => {
               />
             </a>
           </li> */}
-        </ul>
-        <div className="slideDot">
-          <div className="owlDotActive">
-            <span />
-          </div>
-          <div className="owlDot">
-            <span />
-          </div>
-          <div className="owlDot">
-            <span />
-          </div>
-          <div className="owlDot">
-            <span />
-          </div>
-          <div className="owlDot">
-            <span />
-          </div>
+      </section>
+      {/* <div className="slideDot">
+        <div className="owlDotActive">
+          <span />
         </div>
+        <div className="owlDot">
+          <span />
+        </div>
+        <div className="owlDot">
+          <span />
+        </div>
+        <div className="owlDot">
+          <span />
+        </div>
+        <div className="owlDot">
+          <span />
+        </div>
+      </div> */}
+      <div className="dotContainer">
+        {Array.from({ length: 5 }).map((item, index) => (
+          <div
+            onClick={() => moveSlide(index + 1)}
+            className={slideIndex === index + 1 ? 'dots active' : 'dots'}
+          />
+        ))}
       </div>
     </div>
   );
