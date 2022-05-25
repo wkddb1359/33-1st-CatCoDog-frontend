@@ -43,7 +43,7 @@ function Detail() {
                   <div className="goodsFormHeaderPrice">
                     <div className="originalPrice">7,900원</div>
                     <span className="saleRate">13%</span>
-                    <span className="salePrice">6,900원</span>
+                    <span className="salePrice">6,90원</span>
                   </div>
                 </header>
                 <div className="goodsFormItemSummary"></div>
