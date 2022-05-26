@@ -1,7 +1,46 @@
 import React from 'react';
 import './Login.scss';
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 const Login = () => {
+  const [inputValue, setInputValue] = useState({
+    email: '',
+    pw: '',
+  });
+
+  const { email, pw } = inputValue;
+
+  const handleInput = e => {
+    const { name, value } = e.target;
+    setInputValue({ ...inputValue, [name]: value });
+  };
+
+  const specialLetter = pw.search(/[`s~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
+  const num = pw.search(/[0-9]/g);
+  const engLetter = pw.search(/[A-z a-z]/gi);
+
+  const isValidLogin = () => {
+    const isValidEmail = email.includes('@') && email.includes('.');
+    const isValidPassword = pw.length >= 8 && pw.length <= 16;
+    /*       pw.length >= 8 &&
+      pw.length <= 16 &&
+      specialLetter >= 1 &&
+      num >= 1 &&
+      engLetter >= 1; */
+    console.log(isValidPassword);
+    return !(isValidEmail && isValidPassword);
+  };
+
+  const navigate = useNavigate();
+
+  const goToMain = () => {
+    navigate('/');
+  };
+
+  const goToSignUp = () => {
+    navigate('/haimsignup');
+  };
   return (
     <div className="haimLogin">
       <div className="wrapLogin">
@@ -45,11 +84,17 @@ const Login = () => {
                 className="emailInputBox"
                 type="text"
                 placeholder="이메일"
+                value={email}
+                name="email"
+                onChange={handleInput}
               />
               <input
                 className="pwInputBox"
                 type="text"
                 placeholder="비밀번호"
+                value={pw}
+                name="pw"
+                onChange={handleInput}
               />
             </div>
             <div className="checkAndTitle">
@@ -58,13 +103,19 @@ const Login = () => {
                 자동로그인
               </span>
             </div>
-            <button className="blackBtn">기존 회원 로그인</button>
+            <button
+              className="blackBtn"
+              onClick={goToMain}
+              disabled={isValidLogin()}
+            >
+              기존 회원 로그인
+            </button>
           </div>
           <div className="lastStage">
             <span className="findPwId">아이디/비밀번호 찾기</span>
-            <a href="#top" className="firstSignUpBtn">
+            <button className="firstSignUpBtn" onClick={goToSignUp}>
               가입하기
-            </a>
+            </button>
           </div>
         </div>
       </div>
