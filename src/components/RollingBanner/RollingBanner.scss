@@ -1,30 +1,3 @@
-//css 슬라이드
-/* .rollingBanner {
-  display: grid;
-  justify-content: center;
-  place-items: center;
-}
-.rollingBannerContainer {
-  width: 100%;
-  max-width: 1777px;
-  position: relative;
-  overflow-x: hidden;
-  place-items: center;
-  display: grid;
-}
-
-.rollingBannerBox {
-  display: flex;
-  width: calc(1777px * 5);
-  animation: scroll 10s steps(1, start) infinite;
-}
-
-.rollingBannerList {
-  list-style: none;
-  float: left;
-  display: flex;
-  align-items: center;
-} */
 .rollingBanner {
   display: flex;
 }
@@ -33,6 +6,8 @@
   width: 100vw;
   height: 100vh;
   position: relative;
+  background-color: #fafafa;
+
   .slideImg {
     position: absolute;
     opacity: 0;
@@ -46,7 +21,7 @@
 .dotContainer {
   position: absolute;
   display: flex;
-  bottom: -40%;
+  bottom: -30%;
   transform: translateX(-50%);
   left: 50%;
 }

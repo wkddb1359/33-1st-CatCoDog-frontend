@@ -1,0 +1,85 @@
+.rollingBanner {
+  display: flex;
+}
+
+.rollingWindowContainer {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  background-color: #fafafa;
+  animation-name: rollingWindow;
+  animation-duration: 2s;
+  animation-duration: leaner;
+  /*   animation-iteration-count: 5; */
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+
+  .slideImg {
+    opacity: 0;
+    transition: 0.3s all ease-in;
+  }
+  .active {
+    opacity: 1;
+  }
+}
+
+#test {
+  padding: 2%;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #fafafa;
+
+  .textSet {
+    padding-top: 10%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    .content {
+      font-size: 30px;
+      color: #004880;
+    }
+    .sub {
+      padding-top: 3%;
+      color: #6d8fb1;
+    }
+  }
+}
+
+#imgScss {
+  height: 45%;
+}
+
+.dotContainer {
+  position: absolute;
+  display: flex;
+  bottom: -30%;
+  transform: translateX(-50%);
+  left: 50%;
+}
+
+.dots {
+  width: 8px;
+  height: 8px;
+  border-radius: 8px;
+  margin: 0 10px;
+  background-color: rgba(255, 255, 255, 0.3);
+  transition: 0.3s all ease-in;
+}
+
+.active {
+  width: 24px;
+  height: 8px;
+  background-color: rgba(20, 20, 20, 0.8);
+}
+
+@keyframes rollingWindow {
+  0% {
+    left: 100px;
+  }
+  100% {
+    left: 300px;
+  }
+}
