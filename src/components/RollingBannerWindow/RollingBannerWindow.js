@@ -9,9 +9,9 @@ const RollingBannerWindow = () => {
     setSlideIndex(index);
   };
   const slideTime = () => {
-    if (slideIndex !== bannerData.length) {
+    if (slideIndex !== windowData.length) {
       setSlideIndex(slideIndex + 1);
-    } else if (slideIndex === bannerData.length) {
+    } else if (slideIndex === windowData.length) {
       setSlideIndex(1);
     }
   };
@@ -26,13 +26,13 @@ const RollingBannerWindow = () => {
         {windowData.map((img, index) => {
           return (
             <div
-              id="test"
-              /*  className={
-              slideIndex === index + 1 ? 'slideImg active' : 'slideImg'
-            } */
+              id="windowCard"
+              /*               className={
+                slideIndex === index + 1 ? 'slideImg active' : 'slideImg'
+              } */
               key={img.id}
             >
-              <img src={img.src} alt="피드 이미지" id="imgScss" />
+              <img src={img.src} alt="피드 이미지" className="imgScss" />
               <ul className="textSet">
                 <li className="content">{img.content}</li>
                 <li className="sub">{img.sub}</li>

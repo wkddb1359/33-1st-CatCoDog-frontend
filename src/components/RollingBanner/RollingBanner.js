@@ -21,23 +21,21 @@ const RollingBanner = () => {
   useEffect(() => {
     const timer = setInterval(slideTime, 2000);
     return () => clearInterval(timer);
-  }, []);
+  }, [slideIndex]);
 
   return (
     <div className="rollingBanner">
       <section className="rollingBannerContainer">
         {bannerData.map((img, index) => {
           return (
-            <a href={`${img.url}`} target="blank">
-              <div
-                className={
-                  slideIndex === index + 1 ? 'slideImg active' : 'slideImg'
-                }
-                key={img.id}
-              >
-                <img src={img.src} alt="피드 이미지" />
-              </div>
-            </a>
+            <div
+              className={
+                slideIndex === index + 1 ? 'slideImg active' : 'slideImg'
+              }
+              key={img.id}
+            >
+              <img src={img.src} alt="피드 이미지" />
+            </div>
           );
         })}
       </section>
