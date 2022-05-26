@@ -3,12 +3,10 @@ import './DetailGoodsNav.scss';
 
 function DetailGoodsNav() {
   return (
-    <>
-      <div className="goodsNavWrapper">
-        <div className="navBuy">구매하기</div>
-        <div className="navComment">구매평</div>
-      </div>
-    </>
+    <div className="goodsNavWrapper">
+      <div className="navBuy">구매하기</div>
+      <div className="navComment">구매평</div>
+    </div>
   );
 }
 
