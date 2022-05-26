@@ -1,8 +1,8 @@
 import React from 'react';
-import './SignUp.scss';
+import { useState } from 'react';
 import Nav from '../../components/nav/Nav';
 import Footer from '../../components/footer/Footer';
-import { useState } from 'react';
+import './SignUp.scss';
 
 const SignUp = () => {
   const [inputValue, setInputValue] = useState({
@@ -14,11 +14,10 @@ const SignUp = () => {
     address: '',
   });
 
-  const { email, pw, pwConfirm, name, phoneNum, address } = inputValue;
   return (
     <div>
       <Nav />
-      <div className="haimSignUp">
+      <div className="SignUp">
         <div className="wrapSignUp">
           <div className="boxOfProfileImg">
             <img

@@ -1,48 +1,58 @@
-.haimSignUp {
+.SignUp {
   .wrapSignUp {
     width: 32rem;
     padding-left: 0.938rem;
     padding-right: 0.938rem;
     margin: 0 auto;
+
     .boxOfProfileImg {
       text-align: center;
       margin-top: 3rem;
       margin-bottom: 1rem;
+
       .ProfileImg {
         height: 6rem;
       }
     }
+
     .signUpSection {
       .inputForm {
         margin-bottom: 2rem;
+
         .inputs {
           border: 1px solid #e1e1e1;
           box-shadow: none;
           width: 100%;
           padding: 0.75rem 1rem;
         }
+
         .phoneFormat {
           display: block;
           font-size: 0.8rem;
           padding-top: 0.5rem;
           color: gray;
         }
+
         .inputTitle {
           display: block;
           margin-bottom: 0.3rem;
           font-size: 0.8rem;
+
           .redDot {
             padding-left: 0.2rem;
             color: red;
           }
         }
+
         .radioText {
           padding-bottom: 0.5rem;
           font-size: 0.8rem;
         }
       }
+
       .finalSignUp {
         padding-bottom: 2rem;
+
         .SignUpBtn {
           width: 100%;
           background-color: black;
@@ -50,10 +60,12 @@
           border-radius: 30px;
           padding: 0.63rem 1.5rem;
         }
+
         .agreeSignUp {
           text-align: center;
           font-size: 0.8rem;
           padding-top: 1rem;
+
           .blueLetter {
             color: blue;
           }

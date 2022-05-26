@@ -1,4 +1,4 @@
-.haimLogin {
+.Login {
   position: fixed;
   top: 0;
   left: 0;
@@ -7,79 +7,92 @@
   overflow-y: scroll;
   z-index: 99999;
   padding-bottom: 10%;
+
   .wrapLogin {
     width: 45%;
     margin: 0 auto;
+
     .loginHeader {
       .backBtn {
         margin-top: 5%;
         margin-bottom: 2%;
-        border: 1px solid #e1e1e1;
-        background-color: white;
         height: 1.8rem;
         width: 5.6rem;
+        border: 1px solid #e1e1e1;
+        background-color: white;
         border-radius: 30px;
         font-size: 0.8rem;
-        cursor: pointer;
         font-weight: normal;
+        cursor: pointer;
       }
+
       .headerLogo {
         width: 10%;
         margin-left: 43%;
         padding-bottom: 2%;
       }
     }
+
     .fistHr {
       border-style: none;
       background-color: silver;
       height: 0.02rem;
     }
+
     .loginSection {
       width: 70%;
       margin-left: 15%;
+
       .KaKLogin {
         .kakTitle {
           padding: 7% 0;
           font-size: 1.5rem;
         }
+
         .kakText {
-          line-height: 1.8rem;
           margin-bottom: 7%;
+          line-height: 1.8rem;
         }
 
         .yellowBtn {
-          background-color: #fee500;
-          border: 1px solid #fee500;
-          height: 3.5rem;
-          width: 100%;
-          font-weight: bolder;
-          font-size: 1rem;
-          border-radius: 10px;
           display: flex;
           flex-direction: row;
+          height: 3.5rem;
+          width: 100%;
+          background-color: #fee500;
+          border: 1px solid #fee500;
+          border-radius: 10px;
+          font-weight: bolder;
+          font-size: 1rem;
           padding-top: 4%;
+
           .blackCircle {
             margin-left: 5%;
             margin-right: 20%;
           }
+
           .buttonText {
           }
         }
       }
+
       .middleHr {
         padding-top: 7%;
         display: flex;
         flex-direction: row;
+
         .leftHr {
           border-style: none;
           background-color: silver;
           height: 0.02rem;
           width: 45%;
         }
+
         .textInMiddleHr {
           color: silver;
           font-size: small;
         }
+
         .righttHr {
           border-style: none;
           background-color: silver;
@@ -87,9 +100,11 @@
           width: 45%;
         }
       }
+
       .tabMenu {
         margin-top: 5%;
         margin-bottom: 10%;
+
         .memberLogin {
           height: 3rem;
           width: 100%;
@@ -98,21 +113,25 @@
           border: 1px solid silver;
         }
       }
+
       .normalLogin {
         .inputBox {
           overflow: hidden;
           margin-bottom: 5%;
+
           .emailInputBox {
             width: 100%;
             border: 1px solid #e1e1e1;
             height: 2.8rem;
           }
+
           .pwInputBox {
             width: 100%;
             border: 1px solid #e1e1e1;
             height: 2.8rem;
           }
         }
+
         .checkAndTitle {
           .checkbox {
           }
@@ -120,6 +139,7 @@
             font-size: 0.75rem;
           }
         }
+
         .blackBtn {
           background-color: black;
           border: 1px solid black;
@@ -132,28 +152,34 @@
           border-radius: 10px;
           margin-top: 5%;
         }
+
         .bottomMenu {
           display: flex;
           justify-content: space-between;
           margin-top: 5%;
+
           .findIdPw {
             font-size: 0.75rem;
             color: grey;
             margin-top: 2%;
           }
+
           .signUp {
             font-size: 0.75rem;
           }
         }
       }
+
       .lastStage {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         padding: 1rem;
+
         .findPwId {
           font-size: 0.75rem;
         }
+
         .firstSignUpBtn {
           font-size: 0.75rem;
           text-decoration: none;

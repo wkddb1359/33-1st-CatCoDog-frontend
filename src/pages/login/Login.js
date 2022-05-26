@@ -1,7 +1,7 @@
 import React from 'react';
-import './Login.scss';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import './Login.scss';
 
 const Login = () => {
   const [inputValue, setInputValue] = useState({
@@ -19,7 +19,7 @@ const Login = () => {
   const passwordCodition =
     /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,16}$/;
 
-  const valid = passwordCodition.test(inputValue.pw);
+  // const valid = passwordCodition.test(inputValue.pw);
 
   // const specialLetter = pw.search(/[`s~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
   // const num = pw.search(/[0-9]/g);
@@ -40,7 +40,7 @@ const Login = () => {
   };
 
   return (
-    <div className="haimLogin">
+    <div className="Login">
       <div className="wrapLogin">
         <div className="loginHeader">
           <button className="backBtn">
@@ -88,7 +88,7 @@ const Login = () => {
               />
               <input
                 className="pwInputBox"
-                type="text"
+                type="password"
                 placeholder="비밀번호"
                 value={pw}
                 name="pw"
