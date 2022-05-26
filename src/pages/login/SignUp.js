@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Nav from '../../components/nav/Nav';
 import Footer from '../../components/footer/Footer';
 import './SignUp.scss';
+import SignUpInput from './component/SignUpInput';
 
 const SignUp = () => {
   const [inputValue, setInputValue] = useState({
@@ -40,7 +41,16 @@ const SignUp = () => {
                 className="inputs"
               />
             </div>
-            <div className="inputForm">
+            {SIGNUP_DATA.map(({ id, title, type, name, placeholder }) => (
+              <SignUpInput
+                key={id}
+                title={title}
+                type={type}
+                name={name}
+                placeholder={placeholder}
+              />
+            ))}
+            {/* <div className="inputForm">
               <label className="inputTitle" for="name">
                 이름(실명)<span className="redDot">•</span>
               </label>
@@ -66,16 +76,16 @@ const SignUp = () => {
               <span className="phoneFormat">[형식] : 123-4567-8910</span>
             </div>
             <div className="inputForm">
-              <label className="inputTitle" for="phoneNum">
+              <label className="inputTitle" for="address">
                 주소<span className="redDot">•</span>
               </label>
               <input
-                type="tel"
-                id="phoneNum"
+                type="text"
+                id="address"
                 placeholder="주소"
                 className="inputs"
               />
-            </div>
+            </div> */}
             <div className="inputForm">
               <p className="inputTitle">
                 반려동물의 종류<span className="redDot">•</span>
@@ -101,12 +111,12 @@ const SignUp = () => {
                 광고성 정보 수신동의(동의 시 1,000원 적릭금 지급)
                 <span className="redDot">•</span>
               </p>
-              <input type="radio" name="pets" id="agreement" />
+              <input type="radio" name="agree" id="agreement" />
               <label for="agreement" className="radioText">
                 예,동의합니다.
               </label>
               <br />
-              <input type="radio" name="pets" id="petType" />
+              <input type="radio" name="agree" id="petType" />
               <label for="agreement" className="radioText">
                 아니오,동의하지 않습니다.
               </label>
@@ -127,4 +137,27 @@ const SignUp = () => {
   );
 };
 
+const SIGNUP_DATA = [
+  {
+    id: 1,
+    title: '이름(실명)',
+    type: 'text',
+    name: 'name',
+    placeholder: '이름(실명)을(를) 입력하세요',
+  },
+  {
+    id: 2,
+    title: '연락처',
+    type: 'tel',
+    name: 'phoneNum',
+    placeholder: '연락처 [형식] : 123-4567-8910',
+  },
+  {
+    id: 3,
+    title: '주소',
+    type: 'text',
+    name: 'address',
+    placeholder: '주소',
+  },
+];
 export default SignUp;
