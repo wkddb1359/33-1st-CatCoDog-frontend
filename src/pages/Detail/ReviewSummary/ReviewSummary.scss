@@ -1,0 +1,102 @@
+.reviewSummaryWrapper {
+  background-color: #36363617;
+  padding: 2.88rem;
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+
+  .ratingPointContainer {
+    padding-top: 1.88rem;
+    .ratingStar {
+      .fa-star {
+        color: red;
+      }
+    }
+
+    .ratingNumber {
+      text-align: center;
+      font-size: 2.25rem;
+      padding-top: 0.63rem;
+    }
+  }
+
+  .ratingBarWrapper {
+    margin-right: 40%;
+
+    .ratingBarContainer {
+      padding: 0.63rem;
+
+      // 그래프 css
+      .ratingBar {
+        width: 25rem;
+        display: flex;
+        padding-bottom: 0.31rem;
+
+        // 점수 padding 값
+        .ratingBarPoint {
+          width: 3.13rem;
+        }
+
+        //  그래프 bar
+        .progressBar {
+          width: 100%;
+          height: 0.44rem;
+          background-color: white;
+          border-radius: 1.88rem;
+          margin-top: 0.25rem;
+
+          .progress {
+            height: 0.44rem;
+            text-align: center;
+            background-color: gray;
+            border-radius: 1.88rem;
+          }
+        }
+      }
+
+      #progressFive {
+        width: 70%;
+        background-color: red;
+      }
+
+      #progressFour {
+        width: 20%;
+      }
+
+      #progressThree {
+        width: 10%;
+      }
+
+      #progressTwo {
+        width: 6%;
+      }
+
+      #progressOne {
+        width: 5%;
+      }
+    }
+  }
+
+  .bestComment {
+    position: absolute;
+    right: 18%;
+
+    .bestCommentTitle {
+      padding-bottom: 0.63rem;
+      margin-top: 0.31rem;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    .bestCommentUserContainer {
+      padding-bottom: 0.31rem;
+      font-size: 0.94rem;
+
+      .bestCommetUserId {
+        padding-right: 3.9rem;
+        font-weight: bold;
+        font-size: 1.06rem;
+      }
+    }
+  }
+}

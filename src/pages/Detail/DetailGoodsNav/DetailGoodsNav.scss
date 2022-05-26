@@ -1,0 +1,18 @@
+.goodsNavWrapper {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 3.13rem;
+  padding: 0.94rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid #ddd;
+  font-size: 1.06rem;
+
+  .navBuy {
+    cursor: pointer;
+    color: #363636;
+  }
+  .navComment {
+    cursor: pointer;
+    color: #363636;
+  }
+}

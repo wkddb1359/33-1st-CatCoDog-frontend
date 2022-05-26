@@ -1,0 +1,145 @@
+.goodsWrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+
+  .goodsImgContainer {
+    padding-right: 0.94rem;
+    width: 50%;
+
+    .goodsSmallImg {
+      list-style: none;
+      padding-top: 0.63rem;
+
+      .smallImgList {
+        display: inline;
+      }
+    }
+  }
+
+  .goodsFormWrapper {
+    .goodsFormContainer {
+      width: 36.3rem;
+      padding-left: 15%;
+      margin-bottom: 0.3rem;
+
+      .goodsFormHeader {
+        font-size: 1.38rem;
+        line-height: normal;
+        border-bottom: 1px solid #3636361a;
+        padding-bottom: 1.5rem;
+        margin: 0 0 1.5rem;
+
+        .goodsFormHeaderTop {
+          margin-bottom: 0.3rem;
+
+          .goodsFormHeaderTitle {
+            margin-right: 0.31rem;
+            font-size: 1.38rem;
+          }
+
+          .goodsFormHeaderSale {
+            background-color: #4c6ef5;
+            border: #4c6ef5;
+            font-size: 0.81rem;
+            margin-right: 0.5rem;
+            padding: 0.06rem 0.31rem;
+            font-weight: bold;
+            color: white;
+          }
+
+          .goodsFormHeaderBest {
+            border: 1px solid #fd7e14;
+            font-size: 0.81rem;
+            padding: 0.06rem 0.31rem;
+            color: #fd7e14;
+            font-weight: bold;
+          }
+        }
+
+        .goodsFormHeaderPrice {
+          line-height: 1.5;
+          .originalPrice {
+            opacity: 0.7;
+            font-size: 0.94rem;
+            text-decoration: line-through;
+          }
+
+          .saleRate {
+            margin-right: 0.31rem;
+            color: #fe5356;
+            font-size: 1.5rem;
+          }
+
+          .salePrice {
+            font-size: 1.5rem;
+          }
+
+          .fa-solid {
+            margin-left: 18.75rem;
+          }
+        }
+      }
+
+      .goodsSummaryText {
+        color: #363636b3;
+        line-height: 1.6;
+        margin-bottom: 1.25rem;
+        font-size: 0.88rem;
+      }
+
+      .goodsFormItemDetail {
+        font-size: 0.94rem;
+        color: #363636cc;
+
+        .itemDetailInfo {
+          margin-right: 0.31rem;
+          font-weight: bold;
+          color: black;
+        }
+
+        p {
+          margin-bottom: 0.31rem;
+        }
+      }
+
+      .goodsFormItemQuantity {
+        margin-top: 0.75rem;
+        padding-top: 0.75rem;
+
+        .goodsQuantity {
+          padding-bottom: 0.5rem;
+          font-weight: bold;
+        }
+
+        .goodsQuantitySelect {
+          width: 40%;
+          padding: 0.5rem 1.5rem 0.5rem 0.75rem;
+          font-size: 0.88rem;
+          border: 1px solid #ddd;
+          cursor: pointer;
+        }
+      }
+
+      .goodsFormButton {
+        margin-top: 1.88rem;
+
+        button {
+          padding: 0.75rem 0;
+          margin-right: 0.5rem;
+          width: 30%;
+          border-radius: 1.88rem;
+          border: 1px solid #ddd;
+          cursor: pointer;
+          background-color: #ffffff;
+        }
+
+        #buyButton {
+          background-color: #363636;
+          color: white;
+          border-color: #363636;
+        }
+      }
+    }
+  }
+}
