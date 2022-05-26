@@ -4,7 +4,10 @@ import './Product.scss';
 const Product = ({ name, img, price }) => {
   return (
     <div className="productContainer">
-      <img className="productImg" src={img} alt="" />
+      <div className="productImgContainer">
+        <img className="productImg" src={img} alt="" />
+        <div className="productImgOverlay" />
+      </div>
       <div className="productDetail">
         <h2 className="productInfo name">{name}</h2>
         <div className="productInfo price">

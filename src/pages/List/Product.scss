@@ -1,9 +1,28 @@
 .productContainer {
-  width: 30%;
+  width: 100%;
   margin: 0 auto;
-  .productImg {
+  .productImgContainer {
+    position: relative;
     width: 100%;
-    height: 40vh;
+    height: 70%;
+    .productImg {
+      width: 100%;
+      height: 100%;
+    }
+    .productImgOverlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: #363636;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: 0.5s;
+    }
+  }
+  .productImgOverlay:hover {
+    opacity: 0.5;
+    cursor: pointer;
   }
   .productDetail {
     width: 100%;
@@ -12,8 +31,8 @@
       margin-bottom: 0.3rem;
     }
     .name {
-      font-size: 1rem;
-      color: #363636;
+      font-size: 0.9rem;
+      color: rgba(54, 54, 54, 0.7);
     }
     .price {
       .productPrice {

@@ -1,0 +1,24 @@
+.listNavContainer {
+  max-width: 1248px;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  .navBar {
+    padding-top: 20px;
+    .navList {
+      display: flex;
+      text-decoration: none;
+      .listName {
+        margin-right: 2rem;
+        font-size: 0.8rem;
+        color: rgba(54, 54, 54, 0.7);
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .activate {
+        color: #000;
+        border-bottom: 1px solid #000;
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+.productListContainer {
+  max-width: 1248px;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+.listMainName {
+  width: 100%;
+  margin-bottom: 30px;
+  line-height: 1.2;
+  font-size: 24px;
+  color: #000;
+  text-align: center;
+}
+.filterContainer {
+  max-width: 1248px;
+  margin: 0 auto;
+  .filterOption {
+    border: 1px solid;
+    border-style: none;
+    color: rgba(54, 54, 54, 0.7);
+  }
+}
