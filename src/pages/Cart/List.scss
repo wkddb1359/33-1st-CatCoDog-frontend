@@ -1,0 +1,49 @@
+.listTr {
+  width: 100%;
+  .checkBox {
+    width: 40px;
+  }
+  .listInfo {
+    // display: flex;
+
+    .infoImage {
+      display: flex;
+      align-items: center;
+      width: 600px;
+      text-align: left;
+
+      .admitDiv {
+        margin-top: 10px;
+        .productImage {
+          width: 80px;
+          height: 80px;
+        }
+      }
+      .itemInfo {
+        margin-left: 2rem;
+        width: 100%;
+      }
+    }
+  }
+  .listTh {
+    width: 600px;
+    height: 100px;
+    vertical-align: middle;
+    position: relative;
+
+    .buyNow {
+      position: absolute;
+      right: 3%;
+      bottom: 40%;
+      color: white;
+      background-color: #00498f;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+  }
+
+  #admitCss {
+    padding-left: 62px;
+  }
+}
