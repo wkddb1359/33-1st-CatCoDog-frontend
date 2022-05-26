@@ -16,21 +16,18 @@ const Login = () => {
     setInputValue({ ...inputValue, [name]: value });
   };
 
-  const specialLetter = pw.search(/[`s~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
-  const num = pw.search(/[0-9]/g);
-  const engLetter = pw.search(/[A-z a-z]/gi);
+  const passwordCodition =
+    /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,16}$/;
 
-  const isValidLogin = () => {
-    const isValidEmail = email.includes('@') && email.includes('.');
-    const isValidPassword = pw.length >= 8 && pw.length <= 16;
-    /*       pw.length >= 8 &&
-      pw.length <= 16 &&
-      specialLetter >= 1 &&
-      num >= 1 &&
-      engLetter >= 1; */
-    console.log(isValidPassword);
-    return !(isValidEmail && isValidPassword);
-  };
+  const valid = passwordCodition.test(inputValue.pw);
+
+  // const specialLetter = pw.search(/[`s~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
+  // const num = pw.search(/[0-9]/g);
+  // const engLetter = pw.search(/[A-z a-z]/gi);
+  const isValidLogin =
+    email.includes('@') &&
+    email.includes('.') &&
+    passwordCodition.test(inputValue.pw);
 
   const navigate = useNavigate();
 
@@ -41,6 +38,7 @@ const Login = () => {
   const goToSignUp = () => {
     navigate('/haimsignup');
   };
+
   return (
     <div className="haimLogin">
       <div className="wrapLogin">
@@ -106,7 +104,7 @@ const Login = () => {
             <button
               className="blackBtn"
               onClick={goToMain}
-              disabled={isValidLogin()}
+              disabled={!isValidLogin}
             >
               기존 회원 로그인
             </button>

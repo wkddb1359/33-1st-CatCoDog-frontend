@@ -2,8 +2,19 @@ import React from 'react';
 import './SignUp.scss';
 import Nav from '../../components/nav/Nav';
 import Footer from '../../components/footer/Footer';
+import { useState } from 'react';
 
 const SignUp = () => {
+  const [inputValue, setInputValue] = useState({
+    email: '',
+    pw: '',
+    pwConfirm: '',
+    name: '',
+    phoneNum: '',
+    address: '',
+  });
+
+  const { email, pw, pwConfirm, name, phoneNum, address } = inputValue;
   return (
     <div>
       <Nav />
