@@ -32,7 +32,7 @@ const Nav = () => {
             <Link to="/">
               <img
                 className="logoImage"
-                src="/images/logo.jpg"
+                src="/images/logo.png"
                 alt="맛있다! 캣코독"
               />
             </Link>
