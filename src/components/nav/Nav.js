@@ -20,7 +20,7 @@ const Nav = () => {
         <div className="navMiddle">
           <div className="middleLeft">
             <Link to="/" className="userIcon">
-              <i class="fa-solid fa-user" />
+              <i className="fa-solid fa-user" />
             </Link>
             <Link to="/" className="loginLink">
               <span className="loginText">로그인</span>
@@ -43,7 +43,7 @@ const Nav = () => {
               <i className="fa-solid fa-magnifying-glass" />
             </Link>
             <Link to="/" className="cartLink">
-              <i class="fa-solid fa-cart-shopping" />
+              <i className="fa-solid fa-cart-shopping" />
               <span className="cartText">장바구니</span>
             </Link>
           </div>

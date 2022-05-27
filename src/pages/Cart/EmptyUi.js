@@ -1,27 +1,22 @@
 import React from 'react';
 import './ListOn.scss';
-
-function EmptyUi({ Empty }) {
+import { Link } from 'react-router-dom';
+import './EmptyUi.scss';
+function EmptyUi() {
   return (
-    <>
-      {Empty ? (
-        <div>수량이 없습니다</div>
-      ) : (
-        <div className="cartFooter">
-          <div className="buttonBox">
-            <button className="selectBtn">
-              <span className="deleteBtn">선택상품삭제</span>
-            </button>
-          </div>
-
-          <div className="totalOrder">
-            <p>
-              <span className="">총 주문 상품몇개</span>
-            </p>
+    <div className="noItem">
+      <div className="noItemBox">
+        <div className="cartImageBox">
+          <i className="fa-solid fa-cart-shopping" id="cartImage" />
+          <div className="cartText">
+            <span className="emptyText">장바구니가 비었습니다.</span>
           </div>
         </div>
-      )}
-    </>
+        <Link to="/main">
+          <button>계속 쇼핑하기</button>
+        </Link>
+      </div>
+    </div>
   );
 }
 

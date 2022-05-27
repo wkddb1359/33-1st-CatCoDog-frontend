@@ -3,6 +3,7 @@ import './Cart.scss';
 import { useState, useEffect } from 'react';
 import ListOn from './ListOn';
 import EmptyUi from './EmptyUi';
+// import EmptyUi from './EmptyUi';
 
 const Cart = () => {
   const [cartList, setCartList] = useState([]);
@@ -27,18 +28,20 @@ const Cart = () => {
           <div className="tableWrapper">
             <table>
               <thead>
-                <tr>
-                  <th className="checkBox1">
-                    <input type="checkbox" />
-                  </th>
-                  <th className="InfoTh">상품정보</th>
-                  <th className="thcartinfo">수량</th>
-                  <th className="thcartinfo">주문금액</th>
-                </tr>
+                <th className="checkBox1">
+                  <input type="checkbox" />
+                </th>
+                <th className="InfoTh">상품정보</th>
+                <th className="thcartinfo">수량</th>
+                <th className="thcartinfo">주문금액</th>
               </thead>
             </table>
             <div>
-              {!Empty ? <ListOn cartList={cartList} total={toTal} /> : null}
+              {!Empty ? (
+                <ListOn cartList={cartList} total={toTal} />
+              ) : (
+                <EmptyUi Empty={Empty} />
+              )}
               {/* {!Empty ? <EmptyUi Empty={Empty} /> : null} */}
             </div>
           </div>
