@@ -1,67 +1,63 @@
-.rollingWindowContainer {
-  padding: 5% 0;
-  width: 100vw;
-  overflow: hidden;
-  display: flex;
+.rollingBannerWindow {
+  padding: 3% 0;
+  position: relative;
   background-color: #fafafa;
-  justify-content: space-between;
-  .slideImg {
-    opacity: 0;
+
+  .rollingWindowContainer {
     transition: 0.3s all ease-in;
-  }
-  .active {
-    opacity: 1;
-  }
-}
-
-#windowCard {
-  padding: 3%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  background-color: #fafafa;
-  transform: translateX(-100vw);
-  transition: 0.3s all ease-in;
-
-  .imgScss {
-    height: 350px;
-  }
-
-  .textSet {
-    padding-top: 10%;
     display: flex;
-    flex-direction: column;
-    text-align: center;
-    .content {
-      font-size: 30px;
-      color: #004880;
+    background-color: #fafafa;
+    justify-content: space-between;
+
+    #windowCard {
+      padding: 3%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      background-color: #fafafa;
+
+      .imgScss {
+        height: 350px;
+      }
+
+      .textSet {
+        padding-top: 10%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        .content {
+          font-size: 30px;
+          color: #004880;
+        }
+        .sub {
+          padding-top: 3%;
+          color: #6d8fb1;
+        }
+      }
     }
-    .sub {
-      padding-top: 3%;
-      color: #6d8fb1;
+  }
+
+  .refDotContainer {
+    position: absolute;
+    bottom: 3%;
+    display: flex;
+    transform: translateX(-50%);
+    left: 50%;
+    z-index: 5;
+
+    .dots {
+      width: 8px;
+      height: 8px;
+      border-radius: 8px;
+      margin: 0 10px;
+      background-color: rgba(10, 10, 10, 0.5);
+      transition: 0.3s all ease-in;
+    }
+
+    .active {
+      width: 24px;
+      height: 8px;
+      background-color: rgba(20, 20, 20, 0.8);
     }
   }
 }
-/* 
-.dotContainer {
-  position: absolute;
-  display: flex;
-  bottom: -30%;
-  transform: translateX(-50%);
-  left: 50%;
-}
-
-.dots {
-  width: 8px;
-  height: 8px;
-  border-radius: 8px;
-  margin: 0 10px;
-  background-color: rgba(255, 255, 255, 0.3);
-  transition: 0.3s all ease-in;
-}
-
-.active {
-  width: 24px;
-  height: 8px;
-  background-color: rgba(20, 20, 20, 0.8);
-} */

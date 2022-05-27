@@ -1,37 +1,36 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './RollingBannerWindow.scss';
 import windowBanner from '../../windowBanner.json';
 
 const RollingBannerWindow = () => {
+  const [refSlide, setRefSlide] = useState(0);
   const [windowData] = useState(windowBanner);
-  /*   const [slideIndex, setSlideIndex] = useState(1);
-  const moveSlide = index => {
-    setSlideIndex(index);
-  };
-  const slideTime = () => {
-    if (slideIndex !== windowData.length) {
-      setSlideIndex(slideIndex + 1);
-    } else if (slideIndex === windowData.length) {
-      setSlideIndex(1);
-    }
-  };
+  const slideRef = useRef(null);
+
   useEffect(() => {
-    const timer = setInterval(slideTime, 2000);
+    slideRef.current.style.transform = `translateX(-${refSlide}00%)`;
+  }, [refSlide]);
+
+  const moveDotSlide = index => {
+    setRefSlide(index);
+  };
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setRefSlide(prev => prev + 1);
+      if (refSlide === 1) {
+        setRefSlide(0);
+      }
+    }, 4000);
     return () => clearInterval(timer);
-  }, [slideIndex]); */
+  });
 
   return (
     <div className="rollingBannerWindow">
-      <section className="rollingWindowContainer">
-        {windowData.map((img, index) => {
+      <section className="rollingWindowContainer" ref={slideRef}>
+        {windowData.map(img => {
           return (
-            <div
-              id="windowCard"
-              /*               className={
-                slideIndex === index + 1 ? 'slideImg active' : 'slideImg'
-              } */
-              key={img.id}
-            >
+            <div id="windowCard" key={img.id}>
               <img src={img.src} alt="피드 이미지" className="imgScss" />
               <ul className="textSet">
                 <li className="content">{img.content}</li>
@@ -41,14 +40,15 @@ const RollingBannerWindow = () => {
           );
         })}
       </section>
-      {/*       <div className="dotContainer">
-        {Array.from({ length: 5 }).map((item, index) => (
+      <div className="refDotContainer">
+        {Array.from({ length: 2 }).map((item, index) => (
           <div
-            onClick={() => moveSlide(index + 1)}
-            className={slideIndex === index + 1 ? 'dots active' : 'dots'}
+            key={index}
+            onClick={() => moveDotSlide(index)}
+            className={refSlide === index ? 'dots active' : 'dots'}
           />
         ))}
-      </div> */}
+      </div>
     </div>
   );
 };
