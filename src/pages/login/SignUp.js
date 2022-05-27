@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Nav from '../../components/nav/Nav';
 import Footer from '../../components/footer/Footer';
 import SignUpInput from './component/SignUpInput';
@@ -7,6 +8,8 @@ import SignUpRadioInput from './component/SignUpRadioInput';
 import './SignUp.scss';
 
 const SignUp = () => {
+  const [checkBoxActive, setCheckBoxActive] = useState(false);
+  console.log(checkBoxActive);
   const [inputValue, setInputValue] = useState({
     email: '',
     password: '',
@@ -15,11 +18,35 @@ const SignUp = () => {
     address: '',
   });
 
-  const { email, password, name, phone_number, address } = inputValue;
+  console.log(inputValue);
+  const { email, password, name, phone_mobile, address } = inputValue;
 
   const handleInput = e => {
     const { name, value } = e.target;
     setInputValue({ ...inputValue, [name]: value });
+  };
+
+  const passwordCondition =
+    /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,16}$/;
+
+  const isValidEmail = email.includes('@') && email.includes('.');
+
+  // const isValidInput =
+  //   phone_number.length === 11 && name.length >=0 && address.length >= 0;
+
+  const isValidPW = passwordCondition.test(inputValue.password);
+
+  const isCheckBoxClicked = () => {
+    setCheckBoxActive(!checkBoxActive);
+  };
+
+  const getIsActive = isValidEmail && isValidPW && checkBoxActive === true;
+
+  const navigate = useNavigate();
+
+  const goToMain = e => {
+    e.preventDefault();
+    navigate('/');
   };
 
   return (
@@ -35,29 +62,7 @@ const SignUp = () => {
             />
           </div>
           <div className="signUpSection">
-            <div className="inputForm">
-              <input
-                type="email"
-                placeholder="이메일"
-                className="inputs"
-                value={email}
-                name="email"
-                onChange={handleInput}
-              />
-              <input
-                type="password"
-                placeholder="비밀번호"
-                className="inputs"
-                value={password}
-                name="password"
-                onChange={handleInput}
-              />
-              {/* <input
-                type="password"
-                placeholder="비밀번호 확인"
-                className="inputs"
-              /> */}
-            </div>
+            <div className="inputForm" />
             {SIGNUP_DATA.map(({ id, title, type, name, placeholder }) => (
               <SignUpInput
                 key={id}
@@ -65,6 +70,7 @@ const SignUp = () => {
                 type={type}
                 name={name}
                 placeholder={placeholder}
+                handleInput={handleInput}
               />
             ))}
             <div className="inputForm">
@@ -83,10 +89,15 @@ const SignUp = () => {
             </div>
             <div className="inputForm">
               <p className="inputTitle">
-                광고성 정보 수신동의(동의 시 1,000원 적릭금 지급)
+                광고성 정보 수신동의(동의 시 1,000원 적립금 지급)
                 <span className="redDot">•</span>
               </p>
-              <input type="radio" name="agree" id="agreement" />
+              <input
+                type="radio"
+                name="agree"
+                id="agreement"
+                onChange={isCheckBoxClicked}
+              />
               <label for="agreement" className="radioText">
                 예,동의합니다.
               </label>
@@ -98,7 +109,13 @@ const SignUp = () => {
               <br />
             </div>
             <div className="finalSignUp">
-              <button className="SignUpBtn">가입하기</button>
+              <button
+                className="SignUpBtn"
+                onClick={goToMain}
+                disabled={!getIsActive}
+              >
+                가입하기
+              </button>
               <p className="agreeSignUp">
                 가입하시면 <span className="blueLetter">이용약관</span>에
                 동의하게됩니다.
@@ -115,20 +132,32 @@ const SignUp = () => {
 const SIGNUP_DATA = [
   {
     id: 1,
+    type: 'text',
+    name: 'email',
+    placeholder: '이메일',
+  },
+  {
+    id: 2,
+    type: 'password',
+    name: 'password',
+    placeholder: '비밀번호',
+  },
+  {
+    id: 3,
     title: '이름(실명)',
     type: 'text',
     name: 'name',
     placeholder: '이름(실명)을(를) 입력하세요',
   },
   {
-    id: 2,
+    id: 4,
     title: '연락처',
     type: 'tel',
-    name: 'phoneNum',
+    name: 'phone_mobile',
     placeholder: '연락처',
   },
   {
-    id: 3,
+    id: 5,
     title: '주소',
     type: 'text',
     name: 'address',
@@ -168,7 +197,3 @@ const SIGNUPRADIO_DATA = [
 ];
 
 export default SignUp;
-
-// value={email}
-// name="email"
-// onChange={handleInput}
