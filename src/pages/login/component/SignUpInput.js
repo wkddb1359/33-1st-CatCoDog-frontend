@@ -21,3 +21,7 @@ const SignUpInput = ({ id, title, type, name, placeholder }) => {
 };
 
 export default SignUpInput;
+
+// value={email}
+// name="email"
+// onChange={handleInput}

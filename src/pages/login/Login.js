@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import './Login.scss';
@@ -19,7 +19,7 @@ const Login = () => {
   const passwordCondition =
     /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,16}$/;
 
-  const valid = passwordCondition.test(inputValue.password);
+  // const valid = passwordCondition.test(inputValue.password);
 
   const isValidLogin =
     email.includes('@') &&
@@ -43,7 +43,7 @@ const Login = () => {
       .then(res => res.json())
       .then(result => {
         if (result.ACCESS_TOKEN) {
-          console.log(result.ACCESS_TOKEN);
+          // console.log(result.ACCESS_TOKEN);
           localStorage.setItem('ACCESS_TOKEN', result.ACCESS_TOKEN);
         } else {
           alert('잘못된 아이디 또는 비밀번호 입니다.');

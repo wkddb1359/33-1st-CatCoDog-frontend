@@ -9,12 +9,18 @@ import './SignUp.scss';
 const SignUp = () => {
   const [inputValue, setInputValue] = useState({
     email: '',
-    pw: '',
-    pwConfirm: '',
+    password: '',
     name: '',
-    phoneNum: '',
+    phone_mobile: '',
     address: '',
   });
+
+  const { email, password, name, phone_number, address } = inputValue;
+
+  const handleInput = e => {
+    const { name, value } = e.target;
+    setInputValue({ ...inputValue, [name]: value });
+  };
 
   return (
     <div>
@@ -30,17 +36,27 @@ const SignUp = () => {
           </div>
           <div className="signUpSection">
             <div className="inputForm">
-              <input type="email" placeholder="이메일" className="inputs" />
+              <input
+                type="email"
+                placeholder="이메일"
+                className="inputs"
+                value={email}
+                name="email"
+                onChange={handleInput}
+              />
               <input
                 type="password"
                 placeholder="비밀번호"
                 className="inputs"
+                value={password}
+                name="password"
+                onChange={handleInput}
               />
-              <input
+              {/* <input
                 type="password"
                 placeholder="비밀번호 확인"
                 className="inputs"
-              />
+              /> */}
             </div>
             {SIGNUP_DATA.map(({ id, title, type, name, placeholder }) => (
               <SignUpInput
@@ -51,17 +67,6 @@ const SignUp = () => {
                 placeholder={placeholder}
               />
             ))}
-            <div className="inputForm">
-              <label className="inputTitle" for="address">
-                주소<span className="redDot">•</span>
-              </label>
-              <input
-                type="text"
-                id="address"
-                placeholder="주소"
-                className="inputs"
-              />
-            </div>
             <div className="inputForm">
               <p className="inputTitle">
                 반려동물의 종류<span className="redDot">•</span>
@@ -120,7 +125,7 @@ const SIGNUP_DATA = [
     title: '연락처',
     type: 'tel',
     name: 'phoneNum',
-    placeholder: '연락처 [형식] : 123-4567-8910',
+    placeholder: '연락처',
   },
   {
     id: 3,
@@ -148,6 +153,13 @@ const SIGNUPRADIO_DATA = [
   },
   {
     id: 3,
+    title: '반려견, 반려묘 둘 다 ',
+    name: 'pets',
+    object: 'petType',
+    identity: 'petType',
+  },
+  {
+    id: 4,
     title: '반려동물 없음',
     name: 'pets',
     object: 'petType',
@@ -156,3 +168,7 @@ const SIGNUPRADIO_DATA = [
 ];
 
 export default SignUp;
+
+// value={email}
+// name="email"
+// onChange={handleInput}
