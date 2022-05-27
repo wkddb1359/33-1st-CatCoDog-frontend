@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import './ListOn.scss';
 import List from './List';
+import './ListOn.scss';
 
 function ListOn({ cartList, total }) {
   const [totalPrice, setTotalPrice] = useState(0);

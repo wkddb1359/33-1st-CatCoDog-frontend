@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import './List.scss';
 
-function List({ item, setTotalPrice, totalPrice }) {
+function List({ item, setTotalPrice }) {
   useEffect(() => {
     setTotalPrice(prev => prev + item.price);
   }, []);

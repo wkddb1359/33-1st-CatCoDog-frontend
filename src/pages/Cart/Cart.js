@@ -1,13 +1,13 @@
 import React from 'react';
-import './Cart.scss';
 import { useState, useEffect } from 'react';
 import ListOn from './ListOn';
 import EmptyUi from './EmptyUi';
+import './Cart.scss';
 // import EmptyUi from './EmptyUi';
 
 const Cart = () => {
   const [cartList, setCartList] = useState([]);
-  const toTal = cartList.length;
+  const total = cartList.length;
   const Empty = cartList.length === 0;
 
   useEffect(() => {
@@ -19,10 +19,10 @@ const Cart = () => {
   }, []);
 
   return (
-    <section className="jaesungCart">
+    <section className="thisisCart">
       <div className="inside">
         <div className="basket">
-          장바구니 <span className="blue">{toTal}</span>
+          장바구니 <span className="blue">{total}</span>
         </div>
         <div className="cart">
           <div className="tableWrapper">
@@ -38,7 +38,7 @@ const Cart = () => {
             </table>
             <div>
               {!Empty ? (
-                <ListOn cartList={cartList} total={toTal} />
+                <ListOn cartList={cartList} total={total} />
               ) : (
                 <EmptyUi Empty={Empty} />
               )}

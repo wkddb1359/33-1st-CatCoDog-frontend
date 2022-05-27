@@ -1,9 +1,10 @@
-.footerWrap {
+.Footer {
   display: flex;
   flex-direction: column;
-  background-color: white;
   height: 402px;
   width: 1471px;
+  background-color: white;
+
   .footerTop {
     display: flex;
     justify-content: space-between;
@@ -11,6 +12,7 @@
     height: 250px;
     width: 1000px;
     padding-left: 90px;
+
     .numberBox {
       // width: 426px;
       height: 190px;
@@ -22,8 +24,8 @@
         font-size: 17px;
       }
       span {
-        font-size: 14px;
         color: gray;
+        font-size: 14px;
       }
     }
     .InfoBox {
@@ -42,8 +44,8 @@
       line-height: 20px;
 
       i {
-        font-size: 30px;
         padding-top: -20px;
+        font-size: 30px;
       }
     }
     strong {
@@ -57,23 +59,27 @@
     align-items: center;
     width: 1470px;
     bottom: 83px;
+
     .left {
       text-align: left;
       width: 640px;
       height: 55px;
       padding-left: 70px;
+
       span {
-        font-size: 14px;
         color: gray;
+        font-size: 14px;
       }
     }
     .right {
       display: flex;
       flex-direction: column;
+      margin-right: 30px;
       line-height: 20px;
+
       span {
-        font-size: 14px;
         color: gray;
+        font-size: 14px;
       }
     }
   }

@@ -1,13 +1,15 @@
-.jaesungCart {
+.thisisCart {
   height: 100%;
   width: 100%;
   margin: 0 auto;
+
   .inside {
     padding-left: 1rem;
     padding-right: 1rem;
 
     max-width: 1280px;
     margin: 0 auto;
+
     .basket {
       padding-top: 2rem;
       font-size: 24px;
@@ -15,6 +17,7 @@
       display: block;
       margin-left: 1rem;
       color: black;
+
       .blue {
         background-color: #00498f;
         border-radius: 50%;
@@ -22,20 +25,24 @@
         color: white;
       }
     }
+
     .cart {
       display: flex;
       flex-direction: column;
       padding: 2rem 0;
       font-size: 14px;
+
       .tableWrapper {
         display: flex;
         flex-direction: column;
         margin: auto;
+
         table {
           width: 76rem;
           border-bottom: 1px solid #ddd;
           border-top: 1px solid #ddd;
           border-collapse: collapse;
+
           .checkBox1 {
             text-align: left;
           }
@@ -52,6 +59,7 @@
             padding-top: 10px;
             padding-left: 150px;
           }
+
           .thcartinfo {
             vertical-align: middle;
             padding: 0.6rem 0;

@@ -3,7 +3,7 @@ import './Footer.scss';
 
 const Footer = () => {
   return (
-    <div className="footerWrap">
+    <div className="Footer">
       <div className="footerTop">
         <div className="numberBox">
           <strong>대표번호</strong>
