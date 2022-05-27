@@ -2,8 +2,9 @@ import React from 'react';
 import { useState } from 'react';
 import Nav from '../../components/nav/Nav';
 import Footer from '../../components/footer/Footer';
-import './SignUp.scss';
 import SignUpInput from './component/SignUpInput';
+import SignUpRadioInput from './component/SignUpRadioInput';
+import './SignUp.scss';
 
 const SignUp = () => {
   const [inputValue, setInputValue] = useState({
@@ -50,31 +51,6 @@ const SignUp = () => {
                 placeholder={placeholder}
               />
             ))}
-            {/* <div className="inputForm">
-              <label className="inputTitle" for="name">
-                이름(실명)<span className="redDot">•</span>
-              </label>
-              <input
-                type="text"
-                id="name"
-                placeholder="이름(실명)을(를) 입력하세요"
-                className="inputs"
-              />
-            </div>
-            <div className="inputForm">
-              <label className="inputTitle" for="phoneNum">
-                연락처<span className="redDot">•</span>
-              </label>
-              <input
-                type="tel"
-                id="phoneNum"
-                pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"
-                placeholder="연락처"
-                className="inputs"
-                required
-              />
-              <span className="phoneFormat">[형식] : 123-4567-8910</span>
-            </div>
             <div className="inputForm">
               <label className="inputTitle" for="address">
                 주소<span className="redDot">•</span>
@@ -85,26 +61,20 @@ const SignUp = () => {
                 placeholder="주소"
                 className="inputs"
               />
-            </div> */}
+            </div>
             <div className="inputForm">
               <p className="inputTitle">
                 반려동물의 종류<span className="redDot">•</span>
               </p>
-              <input type="radio" name="pets" id="petType" />
-              <label for="petType" className="radioText">
-                반려견
-              </label>
-              <br />
-              <input type="radio" name="pets" id="petType" />
-              <label for="petType" className="radioText">
-                반려묘
-              </label>
-              <br />
-              <input type="radio" name="pets" id="petType" />
-              <label for="petType" className="radioText">
-                반려동물 없음
-              </label>
-              <br />
+              {SIGNUPRADIO_DATA.map(({ id, title, name, object, identity }) => (
+                <SignUpRadioInput
+                  key={id}
+                  title={title}
+                  name={name}
+                  id={identity}
+                  for={object}
+                />
+              ))}
             </div>
             <div className="inputForm">
               <p className="inputTitle">
@@ -160,4 +130,29 @@ const SIGNUP_DATA = [
     placeholder: '주소',
   },
 ];
+
+const SIGNUPRADIO_DATA = [
+  {
+    id: 1,
+    title: '반려견',
+    name: 'pets',
+    object: 'petType',
+    identity: 'petType',
+  },
+  {
+    id: 2,
+    title: '반려묘',
+    name: 'pets',
+    object: 'petType',
+    identity: 'petType',
+  },
+  {
+    id: 3,
+    title: '반려동물 없음',
+    name: 'pets',
+    object: 'petType',
+    identity: 'petType',
+  },
+];
+
 export default SignUp;

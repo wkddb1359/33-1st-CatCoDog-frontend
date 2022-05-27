@@ -21,35 +21,10 @@ const Login = () => {
 
   const valid = passwordCondition.test(inputValue.password);
 
-  // const specialLetter = pw.search(/[`s~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
-  // const num = pw.search(/[0-9]/g);
-  // const engLetter = pw.search(/[A-z a-z]/gi);
-
   const isValidLogin =
     email.includes('@') &&
     email.includes('.') &&
     passwordCondition.test(inputValue.password);
-
-  // const navigate = useNavigate();
-
-  // const goToMain = e => {
-  //   e.preventDefault();
-  //   navigate('/');
-  // };
-
-  // useEffect(() => {
-  //   fetch('http://10.58.2.1:8000/users/signin', {
-  //     method: 'POST',
-  //     body: JSON.stringify({
-  //       email: 'inputValue.email',
-  //       password: 'inputValue.password',
-  //     }),
-  //   }) //덩어리 제이슨을 받아옴
-  //     .then(res => res.json()) //덩어리 제이슨을 객체 현태로 변환
-  //     .then(data => {
-  //       goToMain(data);
-  //     }); //변환된 제이슨 덩어리를 setCommentList에 저장해서 관리
-  // }, []);
 
   const goToSignUp = () => {
     navigate('/signup');
@@ -70,13 +45,15 @@ const Login = () => {
         if (result.ACCESS_TOKEN) {
           console.log(result.ACCESS_TOKEN);
           localStorage.setItem('ACCESS_TOKEN', result.ACCESS_TOKEN);
+        } else {
+          alert('잘못된 아이디 또는 비밀번호 입니다.');
         }
       });
     navigate('/');
   };
 
   return (
-    <div className="Login">
+    <div className="loginPage">
       <div className="wrapLogin">
         <div className="loginHeader">
           <button className="backBtn">
