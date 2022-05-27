@@ -3,7 +3,6 @@
     .navTop {
       background-color: #f2ede7;
       height: 62px;
-      position: absolute;
       left: 0;
       top: 0;
       right: 0;
@@ -12,12 +11,14 @@
       justify-content: center;
       align-items: center;
       .navTopBox {
-        max-width: 1280px;
+        max-width: 1777x;
         margin: 0 auto;
         padding-left: 16px;
         padding-right: 16px;
-        position: relative;
         display: block;
+      }
+      .navtopLink {
+        text-decoration: none;
       }
       .navText {
         color: rgb(0, 26, 129);
@@ -28,10 +29,79 @@
     }
     .navMiddle {
       background-color: white;
+      max-width: 1248px;
       height: 186px;
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      align-items: center;
+      .middleLeft {
+        height: 186px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .userIcon {
+          text-decoration: none;
+          color: grey;
+          padding-right: 10px;
+        }
+        .loginLink {
+          text-decoration: none;
+          color: grey;
+          .loginText {
+            font-size: 14px;
+          }
+        }
+        .signupLink {
+          text-decoration: none;
+          color: grey;
+          padding-left: 10px;
+          .signupText {
+            font-size: 14px;
+          }
+        }
+      }
+      .middleCenter {
+        width: 283px;
+        height: 186px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+        .logoImage {
+          width: 283px;
+          height: 85px;
+        }
+      }
+      .middleRight {
+        height: 186px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: right;
+
+        .searchLink {
+          color: grey;
+          text-decoration: none;
+        }
+        .cartLink {
+          color: grey;
+          text-decoration: none;
+          margin-left: 2rem;
+          .cartText {
+            color: grey;
+            text-decoration: none;
+            font-size: 14px;
+            padding-left: 10px;
+          }
+        }
+      }
     }
     .navBottom {
-      background-color: green;
       height: 60px;
     }
   }
