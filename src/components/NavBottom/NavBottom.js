@@ -1,17 +1,39 @@
-import React from 'react';
+import { Fragment, useState } from 'react';
 import './NavBottom.scss';
+import GLOBAL_NAV from './globalNav';
 
 const NavBottom = () => {
+  const [currentId, setCurrentId] = useState();
+
   return (
     <div className="navBottom">
-      <ul className="navContainer">
-        <button className="best">베스트</button>
-        <button className="event">이벤트</button>
-        <button className="cat">고양이</button>
-        <button className="dog">강아지</button>
-        <button className="product">용품</button>
-        <button className="burk">대용량존</button>
-      </ul>
+      {
+        <ul className="navContainer">
+          {GLOBAL_NAV.map(({ id, name, list }) => {
+            return (
+              <Fragment key={id}>
+                <li
+                  onMouseEnter={() => setCurrentId(id)} //내장함수
+                  /*                   onMouseLeave={() => setCurrentId()} */
+                >
+                  {name}
+                </li>
+                {currentId === id && (
+                  <div className={`dropDownBoxContainer${id}`}>
+                    {list.map(({ id, listname }) => {
+                      return (
+                        <div className="dropDownBox" key={id}>
+                          {listname}
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
+              </Fragment>
+            );
+          })}
+        </ul>
+      }
     </div>
   );
 };

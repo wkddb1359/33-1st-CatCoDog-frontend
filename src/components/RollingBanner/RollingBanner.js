@@ -3,8 +3,10 @@ import './RollingBanner.scss';
 import slideBanner from '../../slideBanner.json';
 
 const RollingBanner = () => {
-  const [bannerData] = useState(slideBanner);
+  // const [bannerData] = useState(slideBanner);
   const [slideIndex, setSlideIndex] = useState(1);
+
+  const bannerData = slideBanner;
 
   const moveSlide = index => {
     setSlideIndex(index);
