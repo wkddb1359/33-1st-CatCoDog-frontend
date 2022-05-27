@@ -1,0 +1,15 @@
+.navBottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .navContainer {
+    list-style: none;
+    width: 600px;
+    max-width: 1280px;
+    display: flex;
+    justify-content: space-between;
+    li {
+      list-style: none;
+    }
+  }
+}

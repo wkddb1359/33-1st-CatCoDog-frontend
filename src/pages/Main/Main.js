@@ -13,7 +13,11 @@ const Main = () => {
         <RollingBanner />
         <RollingBannerWindow />
         <div className="eventBannerDiv">
-          <img src="/images/eventBanner.png" className="eventBanner" />
+          <img
+            src="/images/eventBanner.png"
+            className="eventBanner"
+            alt="eventBanner"
+          />
         </div>
         <Footer />
       </div>

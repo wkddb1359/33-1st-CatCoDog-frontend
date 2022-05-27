@@ -1,4 +1,5 @@
 import React from 'react';
+import NavBottom from '../NavBottom/NavBottom';
 import './Nav.scss';
 
 const Nav = () => {
@@ -19,7 +20,9 @@ const Nav = () => {
           <div className="middleCenter"></div>
           <div className="middelRight"></div>
         </div>
-        <div className="navBottom" />
+        <div className="navBottom">
+          <NavBottom />
+        </div>
       </div>
     </div>
   );
