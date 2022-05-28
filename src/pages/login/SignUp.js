@@ -31,16 +31,24 @@ const SignUp = () => {
 
   const isValidEmail = email.includes('@') && email.includes('.');
 
-  // const isValidInput =
-  //   phone_number.length === 11 && name.length >=0 && address.length >= 0;
+  const isValidInput =
+    phone_mobile.length === 11 && name.length >= 0 && address.length >= 0;
+  console.log(isValidInput);
 
-  const isValidPW = passwordCondition.test(inputValue.password);
+  const isValidPw = passwordCondition.test(inputValue.password);
 
   const isCheckBoxClicked = () => {
     setCheckBoxActive(!checkBoxActive);
   };
 
-  const getIsActive = isValidEmail && isValidPW && checkBoxActive === true;
+  const getIsActive =
+    isValidInput && isValidEmail && isValidPw && checkBoxActive === true;
+
+  // const handleButtonValid = () ={
+  //   if ( !isValidEmail || !isValidPw || !isCheckBoxClicked()){
+  //     return alert('Please fill in the blanks')
+  //   };
+  // };
 
   const navigate = useNavigate();
 
