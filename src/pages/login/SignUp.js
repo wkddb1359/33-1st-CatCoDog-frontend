@@ -9,51 +9,72 @@ import './SignUp.scss';
 
 const SignUp = () => {
   const [checkBoxActive, setCheckBoxActive] = useState(false);
-  console.log(checkBoxActive);
+
   const [inputValue, setInputValue] = useState({
     email: '',
     password: '',
     name: '',
-    phone_mobile: '',
+    mobile_number: '',
     address: '',
   });
+  const [inputPetType, setInputPetType] = useState(); // 펫타입의 상태값 관리.
 
   console.log(inputValue);
-  const { email, password, name, phone_mobile, address } = inputValue;
+  const { email, password, name, mobile_number, address } = inputValue;
 
   const handleInput = e => {
     const { name, value } = e.target;
     setInputValue({ ...inputValue, [name]: value });
   };
+  const isValidEmail = email.includes('@') && email.includes('.');
+
+  const isValidInput =
+    mobile_number.length === 11 && name.length >= 0 && address.length >= 0;
 
   const passwordCondition =
     /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,16}$/;
 
-  const isValidEmail = email.includes('@') && email.includes('.');
-
-  const isValidInput =
-    phone_mobile.length === 11 && name.length >= 0 && address.length >= 0;
-  console.log(isValidInput);
-
   const isValidPw = passwordCondition.test(inputValue.password);
 
   const isCheckBoxClicked = () => {
-    setCheckBoxActive(!checkBoxActive);
+    checkBoxActive === true
+      ? setCheckBoxActive(false)
+      : setCheckBoxActive(true);
+    console.log('checkBoxActive123', checkBoxActive);
   };
 
   const getIsActive =
     isValidInput && isValidEmail && isValidPw && checkBoxActive === true;
 
-  // const handleButtonValid = () ={
-  //   if ( !isValidEmail || !isValidPw || !isCheckBoxClicked()){
-  //     return alert('Please fill in the blanks')
-  //   };
+  // const handleButtonValid = () => {
+  //   if (!isValidInput && !isValidEmail && !isValidPw && !isCheckBoxClicked()) {
+  //     alert('Please fill in the blanks');
+  //   }
   // };
 
   const navigate = useNavigate();
 
   const goToMain = e => {
     e.preventDefault();
+    fetch('http://10.58.5.114:8000/users/signup', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: inputValue.email,
+        password: inputValue.password,
+        name: inputValue.name,
+        mobile_number: inputValue.mobile_number,
+        address: inputValue.address,
+        pet_type: inputPetType,
+        email_subscription: checkBoxActive,
+      }),
+    })
+      .then(res => res.json())
+      .then(result => {
+        if (result.ACCESS_TOKEN) {
+          // console.log(result.ACCESS_TOKEN);
+          localStorage.setItem('ACCESS_TOKEN', result.ACCESS_TOKEN);
+        }
+      });
     navigate('/');
   };
 
@@ -92,12 +113,14 @@ const SignUp = () => {
                   name={name}
                   id={identity}
                   for={object}
+                  setPetTypeId={setInputPetType}
+                  petNumber={id}
                 />
               ))}
             </div>
             <div className="inputForm">
               <p className="inputTitle">
-                광고성 정보 수신동의(동의 시 1,000원 적립금 지급)
+                광고성 정보 수신동의
                 <span className="redDot">•</span>
               </p>
               <input
@@ -110,7 +133,12 @@ const SignUp = () => {
                 예,동의합니다.
               </label>
               <br />
-              <input type="radio" name="agree" id="petType" />
+              <input
+                type="radio"
+                name="agree"
+                id="petType"
+                onChange={isCheckBoxClicked}
+              />
               <label for="agreement" className="radioText">
                 아니오,동의하지 않습니다.
               </label>
@@ -161,7 +189,7 @@ const SIGNUP_DATA = [
     id: 4,
     title: '연락처',
     type: 'tel',
-    name: 'phone_mobile',
+    name: 'mobile_number',
     placeholder: '연락처',
   },
   {
