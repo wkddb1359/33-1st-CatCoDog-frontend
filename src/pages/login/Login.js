@@ -43,7 +43,6 @@ const Login = () => {
       .then(res => res.json())
       .then(result => {
         if (result.ACCESS_TOKEN) {
-          // console.log(result.ACCESS_TOKEN);
           localStorage.setItem('ACCESS_TOKEN', result.ACCESS_TOKEN);
         } else {
           alert('잘못된 아이디 또는 비밀번호 입니다.');

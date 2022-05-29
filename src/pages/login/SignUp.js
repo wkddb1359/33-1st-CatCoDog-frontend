@@ -19,7 +19,6 @@ const SignUp = () => {
   });
   const [inputPetType, setInputPetType] = useState(); // 펫타입의 상태값 관리.
 
-  console.log(inputValue);
   const { email, password, name, mobile_number, address } = inputValue;
 
   const handleInput = e => {
@@ -40,7 +39,6 @@ const SignUp = () => {
     checkBoxActive === true
       ? setCheckBoxActive(false)
       : setCheckBoxActive(true);
-    console.log('checkBoxActive123', checkBoxActive);
   };
 
   const getIsActive =
@@ -71,7 +69,6 @@ const SignUp = () => {
       .then(res => res.json())
       .then(result => {
         if (result.ACCESS_TOKEN) {
-          // console.log(result.ACCESS_TOKEN);
           localStorage.setItem('ACCESS_TOKEN', result.ACCESS_TOKEN);
         }
       });
