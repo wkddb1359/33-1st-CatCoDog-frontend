@@ -1,24 +1,12 @@
-.seongjuMain {
+.detailMain {
   height: 100%;
   width: 100%;
   margin: 0 auto;
 
   .inside {
-    padding-left: 1rem;
-    padding-right: 1rem;
     max-width: 80rem;
     margin: 0 auto;
-
-    .goodsReviewTitle {
-      padding: 1.25rem 0;
-      font-weight: bold;
-
-      .goodsReviewCount {
-        background-color: #36363633;
-        font-size: 0.69rem;
-        border-radius: 0.63rem;
-        margin-left: 0.31rem;
-      }
-    }
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }

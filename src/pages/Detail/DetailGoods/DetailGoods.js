@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './DetailGoods.scss';
 
 function DetailGoods() {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:3000/data/goodsdata.json')
+      .then(res => res.json())
+      .then(data => setProducts(data));
+  }, []);
+
   return (
-    <div className="goodsWrapper">
+    <div className="detailGoods">
       <div className="goodsImgContainer">
-        {/* map돌리기 (mock data 사용예정)*/}
         <img
           src="https://velog.velcdn.com/images/cadyky95/post/26f6e5de-884d-456c-8320-17308c161728/image.png"
           className="goodsImg"
@@ -13,64 +20,23 @@ function DetailGoods() {
           height={610}
           alt="제품사진"
         />
+
         <div className="goodsSmallImg">
           <ul>
-            <li className="smallImgList">
-              <img
-                src="https://velog.velcdn.com/images/cadyky95/post/26f6e5de-884d-456c-8320-17308c161728/image.png"
-                width={60}
-                height={60}
-                alt="제품미니사진"
-              />
-            </li>
-            <li className="smallImgList">
-              <img
-                src="https://velog.velcdn.com/images/cadyky95/post/26f6e5de-884d-456c-8320-17308c161728/image.png"
-                width={60}
-                height={60}
-                alt="제품미니사진"
-              />
-            </li>
-            <li className="smallImgList">
-              <img
-                src="https://velog.velcdn.com/images/cadyky95/post/26f6e5de-884d-456c-8320-17308c161728/image.png"
-                width={60}
-                height={60}
-                alt="제품미니사진"
-              />
-            </li>
-            <li className="smallImgList">
-              <img
-                src="https://velog.velcdn.com/images/cadyky95/post/26f6e5de-884d-456c-8320-17308c161728/image.png"
-                width={60}
-                height={60}
-                alt="제품미니사진"
-              />
-            </li>
-            <li className="smallImgList">
-              <img
-                src="https://velog.velcdn.com/images/cadyky95/post/26f6e5de-884d-456c-8320-17308c161728/image.png"
-                width={60}
-                height={60}
-                alt="제품미니사진"
-              />
-            </li>
-            <li className="smallImgList">
-              <img
-                src="https://velog.velcdn.com/images/cadyky95/post/26f6e5de-884d-456c-8320-17308c161728/image.png"
-                width={60}
-                height={60}
-                alt="제품미니사진"
-              />
-            </li>
-            <li className="smallImgList">
-              <img
-                src="https://velog.velcdn.com/images/cadyky95/post/26f6e5de-884d-456c-8320-17308c161728/image.png"
-                width={60}
-                height={60}
-                alt="제품미니사진"
-              />
-            </li>
+            {products.map(productsArry => {
+              return (
+                <li className="smallImgList" key={productsArry.id}>
+                  <a href="#top">
+                    <img
+                      src={productsArry.goodsImg}
+                      width={60}
+                      height={60}
+                      alt="제품미니사진"
+                    />
+                  </a>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>

@@ -11,15 +11,11 @@ function Detail() {
   return (
     <>
       <Nav />
-      <main className="seongjuMain">
+      <main className="detailMain">
         <div className="inside">
           <DetailGoods />
           <DetailGoodsNav />
           <ReviewSummary />
-
-          <div className="goodsReviewTitle">
-            구매평<span className="goodsReviewCount">1018</span>
-          </div>
           <ReviewComment />
         </div>
       </main>

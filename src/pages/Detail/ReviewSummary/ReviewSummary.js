@@ -1,19 +1,14 @@
 import React from 'react';
 import './ReviewSummary.scss';
+import Star from '../Star/Star';
 
 function ReviewSummary() {
   return (
     <div className="reviewSummaryWrapper">
       <div className="ratingPointContainer">
-        {/* map함수 돌리기 & 컴포넌트화 */}
         <div className="ratingStar">
-          <i className="fa-solid fa-star" />
-          <i className="fa-solid fa-star" />
-          <i className="fa-solid fa-star" />
-          <i className="fa-solid fa-star" />
-          <i className="fa-solid fa-star" />
+          <Star />
         </div>
-
         <p className="ratingNumber">4.7</p>
       </div>
       <div className="ratingBarWrapper">
@@ -52,18 +47,14 @@ function ReviewSummary() {
         </div>
       </div>
       <div className="bestComment">
-        <div className="bestCommentTitle">인기 댓글 모아 보기</div>
-        <ul>
-          <li className="bestCommentUserContainer">
-            <span className="bestCommetUserId">wkddb1359</span>화이팅!
-          </li>
-          <li className="bestCommentUserContainer">
-            <span className="bestCommetUserId">wkddb1359</span>반려소반!
-          </li>
-          <li className="bestCommentUserContainer">
-            <span className="bestCommetUserId">wkddb1359</span>위코더!!
-          </li>
-        </ul>
+        <div className="bestCommentTitle">Best 구매자</div>
+        <div className="bestCommentUserContainer">
+          <ol className="bestCommentUserGroup">
+            <li className="bestCommetUserId">wkddb1359</li>
+            <li className="bestCommetUserId">rlatjdgns123</li>
+            <li className="bestCommetUserId">tjdgywh8051</li>
+          </ol>
+        </div>
       </div>
     </div>
   );

@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "goodsImg": [
+      "./images/smallGoods1.png",
+      "./images/smallGoods2.png",
+      "./images/smallGoods3.png",
+      "./images/smallGoods4.png",
+      "./images/smallGoods5.png",
+      "./images/smallGoods1.png",
+      "./images/smallGoods2.png"
+    ]
+  },
+  {
+    "id": 2,
+    "goodsImg": "./images/smallGoods2.png"
+  },
+  {
+    "id": 3,
+    "goodsImg": "./images/smallGoods3.png"
+  },
+  {
+    "id": 4,
+    "goodsImg": "./images/smallGoods4.png"
+  },
+  {
+    "id": 5,
+    "goodsImg": "./images/smallGoods5.png"
+  },
+  {
+    "id": 6,
+    "goodsImg": "./images/smallGoods1.png"
+  },
+  {
+    "id": 7,
+    "goodsImg": "./images/smallGoods2.png"
+  }
+]

@@ -1,3 +1,15 @@
+.goodsReviewTitle {
+  padding: 1.25rem 0;
+  font-weight: bold;
+
+  .goodsReviewCount {
+    background-color: #36363633;
+    font-size: 0.69rem;
+    border-radius: 0.63rem;
+    margin-left: 0.31rem;
+  }
+}
+
 .goodsReviewWrapper {
   color: blue;
   margin-bottom: 10%;
@@ -11,69 +23,46 @@
   .goodsReviewCommentWrapper {
     border-top: 1px solid black;
     padding-top: 0.94rem;
-
-    .goodsReviewFoam {
-      border-bottom: 1px solid gray;
-      display: flex;
-
-      .goodsReviewComment {
-        flex: 8;
-        padding-bottom: 1.25rem;
-        padding-top: 0.63rem;
-        color: black;
-        font-size: 0.88rem;
-        line-height: 1.5;
-
-        .goodsReviewStarContainer {
-          margin-bottom: 0.31rem;
-
-          .fa-star {
-            color: red;
-          }
-        }
-      }
-
-      .goodsReviewUserInfo {
-        background-color: white;
-        flex: 2;
-        color: #363636a6;
-        font-size: 0.88rem;
-        padding-top: 1.25rem;
-      }
-    }
   }
+
   .goodsReviewCommentInputWrapper {
     text-align: center;
 
     .goodsReviewCommentInputContainer {
       position: relative;
 
-      .goodsReviewCommentInputFoam {
-        margin: 1.88rem 0;
-        height: 3.75rem;
-        width: 50%;
-        font-size: 1.06rem;
-        border: 1px solid #36363640;
-        padding-left: 0.63rem;
-      }
+      .goodsReviewCommentInputForm {
+        .goodsReviewCommentInput {
+          margin: 1.88rem 0;
+          height: 3.75rem;
+          width: 50%;
+          font-size: 1.06rem;
+          border: 1px solid #36363640;
+          padding-left: 0.63rem;
+          border-radius: 10px;
+        }
 
-      .goodsReviewCommentInputStar {
-        position: absolute;
-        right: 27%;
-        top: 40%;
-        border: 1px solid #ddd;
-        font-size: 0.88rem;
-      }
+        .goodsReviewCommentInputStar {
+          position: absolute;
+          right: 25.5%;
+          top: 40%;
+          border: 1px solid #ddd;
+          font-size: 0.88rem;
+        }
 
-      .fa-envelope {
-        margin-left: 0.63rem;
-        border-radius: 1.88rem;
-        cursor: pointer;
-        position: relative;
-        top: 2%;
-        font-size: 1.88rem;
-        vertical-align: middle;
-        color: #363636;
+        .goodsReviewCommentSubmitButton {
+          margin-left: 0.63rem;
+          border-radius: 1.88rem;
+          cursor: pointer;
+          position: absolute;
+          top: 30%;
+          right: 21%;
+          font-size: 1.88rem;
+          vertical-align: middle;
+          color: #363636;
+          border: none;
+          background-color: transparent;
+        }
       }
     }
   }
