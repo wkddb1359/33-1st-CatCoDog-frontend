@@ -5,25 +5,32 @@ import Footer from '../../components/footer/Footer';
 import SignUpInput from './component/SignUpInput';
 import SignUpRadioInput from './component/SignUpRadioInput';
 import './SignUp.scss';
+import { BASIC_URL } from '../../config';
 
 const SignUp = () => {
-  const [checkBoxActive, setCheckBoxActive] = useState(false);
-
   const [inputValue, setInputValue] = useState({
     email: '',
     password: '',
     name: '',
     mobile_number: '',
     address: '',
+    pet_type: 0,
+    email_subscription: false,
   });
-  const [inputPetType, setInputPetType] = useState(); // 펫타입의 상태값 관리.
+  const changePetType = num => {
+    setInputValue(prev => ({ ...prev, pet_type: num }));
+  };
 
-  const { email, name, mobile_number, address } = inputValue;
+  console.log(inputValue);
+
+  const { email, password, name, mobile_number, address, email_subscription } =
+    inputValue;
 
   const handleInput = e => {
     const { name, value } = e.target;
     setInputValue({ ...inputValue, [name]: value });
   };
+
   const isValidEmail = email.includes('@') && email.includes('.');
 
   const isValidInput =
@@ -34,38 +41,34 @@ const SignUp = () => {
 
   const isValidPw = passwordCondition.test(inputValue.password);
 
-  const isCheckBoxClicked = () => {
-    checkBoxActive === true
-      ? setCheckBoxActive(false)
-      : setCheckBoxActive(true);
+  const isCheckBoxClicked = valid => {
+    setInputValue(prev => ({ ...prev, email_subscription: valid }));
   };
 
   const getIsActive =
-    isValidInput && isValidEmail && isValidPw && checkBoxActive === true;
+    isValidInput && isValidEmail && isValidPw && email_subscription === true;
 
   const navigate = useNavigate();
 
   const goToMain = e => {
-    e.preventDefault();
-    fetch('http://10.58.5.114:8000/users/signup', {
-      method: 'POST',
-      body: JSON.stringify({
-        email: inputValue.email,
-        password: inputValue.password,
-        name: inputValue.name,
-        mobile_number: inputValue.mobile_number,
-        address: inputValue.address,
-        pet_type: inputPetType,
-        email_subscription: checkBoxActive,
-      }),
-    })
-      .then(res => res.json())
-      .then(result => {
-        if (result.ACCESS_TOKEN) {
-          localStorage.setItem('ACCESS_TOKEN', result.ACCESS_TOKEN);
-        }
-      });
-    navigate('/');
+    if (!isValidInput && !isValidEmail && !isValidPw && !isCheckBoxClicked()) {
+      alert('Please fill in the blanks');
+    } else {
+      e.preventDefault();
+      fetch(`${BASIC_URL}/users/signup`, {
+        method: 'POST',
+        body: JSON.stringify({
+          inputValue,
+        }),
+      })
+        .then(res => res.json())
+        .then(result => {
+          if (result.ACCESS_TOKEN) {
+            localStorage.setItem('ACCESS_TOKEN', result.ACCESS_TOKEN);
+          }
+        });
+      navigate('/');
+    }
   };
 
   return (
@@ -103,7 +106,7 @@ const SignUp = () => {
                   name={name}
                   id={identity}
                   for={object}
-                  setPetTypeId={setInputPetType}
+                  setPetTypeId={changePetType}
                   petNumber={id}
                 />
               ))}

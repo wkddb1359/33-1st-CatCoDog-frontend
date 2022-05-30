@@ -7,7 +7,7 @@ const SignUpRadioInput = ({
   name,
   object,
   identity,
-  setPetTypeId,
+  changePetType,
   petNumber,
 }) => {
   return (
@@ -15,10 +15,8 @@ const SignUpRadioInput = ({
       <input
         type="radio"
         name={name}
-        id={identity}
-        onChange={() => {
-          setPetTypeId(petNumber);
-        }}
+        id={object}
+        onChange={() => changePetType(petNumber)}
       />
       <label for={object} className="radioText">
         {title}
