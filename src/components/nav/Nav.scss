@@ -1,123 +1,123 @@
-.navWrap {
-  .nav {
-    .navTop {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 62px;
-      left: 0;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      background-color: #f2ede7;
+@mixin align {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-      .navTopBox {
-        display: block;
-        max-width: 1777x;
-        margin: 0 auto;
-        padding-left: 16px;
-        padding-right: 16px;
+@mixin alignItems {
+  display: flex;
+  align-items: center;
+}
+
+.nav {
+  .navTop {
+    @include align;
+    height: 62px;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #f2ede7;
+
+    .navTopBox {
+      display: block;
+      max-width: 1777x;
+      margin: 0 auto;
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+
+    .navtopLink {
+      text-decoration: none;
+    }
+
+    .navText {
+      color: rgb(0, 26, 129);
+      font-weight: 700;
+      font-size: 17px;
+      cursor: pointer;
+    }
+  }
+
+  .navMiddle {
+    @include alignItems;
+    max-width: 1248px;
+    height: 186px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+
+    .navMiddleLeft {
+      @include align;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      height: 186px;
+
+      .userIcon {
+        padding-right: 10px;
+        text-decoration: none;
+        color: grey;
       }
 
-      .navtopLink {
+      .loginLink {
+        text-decoration: none;
+        color: grey;
+
+        .loginText {
+          font-size: 14px;
+        }
+      }
+
+      .signupLink {
+        padding-left: 10px;
+        text-decoration: none;
+        color: grey;
+
+        .signupText {
+          font-size: 14px;
+        }
+      }
+    }
+
+    .navMiddleCenter {
+      @include align;
+      flex: 1;
+      width: 283px;
+      height: 186px;
+
+      .logoImage {
+        width: 450px;
+      }
+    }
+
+    .navMiddleRight {
+      @include align;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      height: 186px;
+      text-align: right;
+
+      .searchLink {
+        color: grey;
         text-decoration: none;
       }
 
-      .navText {
-        color: rgb(0, 26, 129);
-        font-weight: 700;
-        font-size: 17px;
-        cursor: pointer;
-      }
-    }
+      .cartLink {
+        margin-left: 2rem;
+        color: grey;
+        text-decoration: none;
 
-    .navMiddle {
-      display: flex;
-      align-items: center;
-      max-width: 1248px;
-      height: 186px;
-      margin-left: auto;
-      margin-right: auto;
-      background-color: white;
-
-      .middleLeft {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding-top: 30px;
-        padding-bottom: 30px;
-        height: 186px;
-
-        .userIcon {
-          padding-right: 10px;
-          text-decoration: none;
-          color: grey;
-        }
-
-        .loginLink {
-          text-decoration: none;
-          color: grey;
-
-          .loginText {
-            font-size: 14px;
-          }
-        }
-
-        .signupLink {
+        .cartText {
           padding-left: 10px;
-          text-decoration: none;
-          color: grey;
-
-          .signupText {
-            font-size: 14px;
-          }
-        }
-      }
-
-      .middleCenter {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex: 1;
-        width: 283px;
-        height: 186px;
-
-        .logoImage {
-          width: 450px;
-        }
-      }
-
-      .middleRight {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding-top: 30px;
-        padding-bottom: 30px;
-        height: 186px;
-        text-align: right;
-
-        .searchLink {
           color: grey;
           text-decoration: none;
-        }
-
-        .cartLink {
-          margin-left: 2rem;
-          color: grey;
-          text-decoration: none;
-
-          .cartText {
-            padding-left: 10px;
-            color: grey;
-            text-decoration: none;
-            font-size: 14px;
-          }
+          font-size: 14px;
         }
       }
     }
+  }
 
-    .navBottom {
-      height: 60px;
-    }
+  .navBottom {
+    height: 60px;
   }
 }

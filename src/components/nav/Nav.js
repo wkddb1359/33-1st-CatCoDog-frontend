@@ -17,7 +17,7 @@ const Nav = () => {
           </div>
         </div>
         <div className="navMiddle">
-          <div className="middleLeft">
+          <div className="navMiddleLeft">
             <Link to="/" className="userIcon">
               <i className="fa-solid fa-user" />
             </Link>
@@ -28,7 +28,7 @@ const Nav = () => {
               <span className="signupText">회원가입</span>
             </Link>
           </div>
-          <div className="middleCenter">
+          <div className="navMiddleCenter">
             <Link to="/">
               <img
                 className="logoImage"
@@ -37,7 +37,7 @@ const Nav = () => {
               />
             </Link>
           </div>
-          <div className="middleRight">
+          <div className="navMiddleRight">
             <Link to="/" className="searchLink">
               <i className="fa-solid fa-magnifying-glass" />
             </Link>
