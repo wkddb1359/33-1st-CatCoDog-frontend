@@ -3,7 +3,7 @@ import './Product.scss';
 
 const Product = ({ name, img, price, discount, saletag, besttag, desc }) => {
   return (
-    <div className="productContainer">
+    <div className="product">
       <div className="productImgContainer">
         <img className="productImg" src={img} alt="" />
         <div className="productImgOverlay" />

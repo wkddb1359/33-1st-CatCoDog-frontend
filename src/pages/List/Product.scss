@@ -1,24 +1,28 @@
-.productContainer {
+.product {
   width: 100%;
   margin: 0 auto;
+
   .invisible {
     display: none !important;
   }
+
   .productImgContainer {
     position: relative;
     width: 100%;
     height: 70%;
+
     .productImg {
       width: 100%;
       height: 100%;
     }
+
     .productImgOverlay {
       position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       background-color: #363636;
-      top: 0;
-      left: 0;
       opacity: 0;
       transition: 0.5s;
     }
@@ -29,14 +33,17 @@
   }
   .productDetail {
     width: 100%;
+
     .productInfo {
       margin-top: 0.3rem;
       margin-bottom: 0.3rem;
     }
+
     .name {
       font-size: 0.9rem;
       color: rgba(54, 54, 54, 0.7);
     }
+
     .price {
       .productPrice {
         margin-bottom: 0.3rem;
@@ -44,12 +51,14 @@
         font-size: 0.8rem;
         opacity: 0.7;
       }
+
       .productDiscount {
         color: rgb(254, 83, 86);
         font-size: 1rem;
         font-weight: 500;
         margin-right: 0.3rem;
       }
+
       .productDiscountPrice {
         color: rgb(54, 54, 54);
         font-size: 1rem;
@@ -63,9 +72,11 @@
       opacity: 0.8;
       font-size: 0.8rem;
     }
+
     .icons {
       font-size: 0.9rem;
       color: rgb(117, 117, 117);
+
       .comment {
         margin-right: 0.3rem;
       }
@@ -74,10 +85,11 @@
       width: 150px;
       height: 60px;
       color: #fff;
-      border: solid 1px #4c6ef5;
-      background-color: #4c6ef5;
+      border: solid 1px rgb(76, 110, 245);
+      background-color: rgb(76, 110, 245);
       margin-right: 0.3rem;
     }
+
     .bestBar {
       width: 100px;
       height: 60px;

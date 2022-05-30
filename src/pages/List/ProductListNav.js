@@ -5,7 +5,7 @@ import './ProductListNav.scss';
 const ProductListNav = ({ NAV_NAME_DATA }) => {
   const [selected, setSelected] = useState('');
   return (
-    <div className="listNavContainer">
+    <div className="productListNav">
       <nav className="navBar">
         <ul className="navList">
           {NAV_NAME_DATA.map(({ id, name }) => (
