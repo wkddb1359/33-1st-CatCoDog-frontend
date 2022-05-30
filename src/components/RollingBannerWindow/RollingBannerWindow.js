@@ -29,12 +29,13 @@ const RollingBannerWindow = () => {
     <div className="rollingBannerWindow">
       <section className="rollingWindowContainer" ref={slideRef}>
         {windowData.map(img => {
+          const { id, src, content, sub } = img;
           return (
-            <div id="windowCard" key={img.id}>
-              <img src={img.src} alt="피드 이미지" className="imgScss" />
+            <div id="windowCard" key={id}>
+              <img src={src} alt="피드 이미지" className="imgScss" />
               <ul className="textSet">
-                <li className="content">{img.content}</li>
-                <li className="sub">{img.sub}</li>
+                <li className="content">{content}</li>
+                <li className="sub">{sub}</li>
               </ul>
             </div>
           );
