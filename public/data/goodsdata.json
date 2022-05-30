@@ -1,38 +1,19 @@
-[
-  {
+{
+  "result": {
     "id": 1,
-    "goodsImg": [
-      "./images/smallGoods1.png",
-      "./images/smallGoods2.png",
-      "./images/smallGoods3.png",
-      "./images/smallGoods4.png",
-      "./images/smallGoods5.png",
-      "./images/smallGoods1.png",
-      "./images/smallGoods2.png"
+    "name": "바른트릿 9종 골라담기",
+    "price": "7,900",
+    "discountRate": "13%",
+    "discountPrice": "6,900",
+    "description": "갈지 않은 원물 100%",
+    "goodsURL": [
+      "/images/smallGoods1.png",
+      "/images/smallGoods2.png",
+      "/images/smallGoods3.png",
+      "/images/smallGoods4.png",
+      "/images/smallGoods5.png",
+      "/images/smallGoods1.png",
+      "/images/smallGoods2.png"
     ]
-  },
-  {
-    "id": 2,
-    "goodsImg": "./images/smallGoods2.png"
-  },
-  {
-    "id": 3,
-    "goodsImg": "./images/smallGoods3.png"
-  },
-  {
-    "id": 4,
-    "goodsImg": "./images/smallGoods4.png"
-  },
-  {
-    "id": 5,
-    "goodsImg": "./images/smallGoods5.png"
-  },
-  {
-    "id": 6,
-    "goodsImg": "./images/smallGoods1.png"
-  },
-  {
-    "id": 7,
-    "goodsImg": "./images/smallGoods2.png"
   }
-]
+}
