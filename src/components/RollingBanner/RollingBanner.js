@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import './RollingBanner.scss';
 import slideBanner from '../../slideBanner.json';
+import './RollingBanner.scss';
 
 const RollingBanner = () => {
-  // const [bannerData] = useState(slideBanner);
   const [slideIndex, setSlideIndex] = useState(1);
 
   const bannerData = slideBanner;
