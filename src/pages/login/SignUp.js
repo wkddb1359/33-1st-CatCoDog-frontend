@@ -18,7 +18,7 @@ const SignUp = () => {
   });
   const [inputPetType, setInputPetType] = useState(); // 펫타입의 상태값 관리.
 
-  const { email, password, name, mobile_number, address } = inputValue;
+  const { email, name, mobile_number, address } = inputValue;
 
   const handleInput = e => {
     const { name, value } = e.target;
@@ -42,12 +42,6 @@ const SignUp = () => {
 
   const getIsActive =
     isValidInput && isValidEmail && isValidPw && checkBoxActive === true;
-
-  // const handleButtonValid = () => {
-  //   if (!isValidInput && !isValidEmail && !isValidPw && !isCheckBoxClicked()) {
-  //     alert('Please fill in the blanks');
-  //   }
-  // };
 
   const navigate = useNavigate();
 
