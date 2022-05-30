@@ -1,17 +1,21 @@
 import React from 'react';
 import './SignUpInput.scss';
 
-const SignUpInput = ({ id, title, type, name, placeholder }) => {
+const SignUpInput = ({ id, title, type, name, placeholder, handleInput }) => {
   return (
     <div>
       <div className="SignUpInput" key={id}>
-        <label className="inputTitle" for={name}>
-          {title}
-          <span className="redDot">•</span>
-        </label>
+        {title && (
+          <label className="signUpTitle" for={name}>
+            {title}
+            <span className="redDot">•</span>
+          </label>
+        )}
         <input
           type={type}
           id={name}
+          name={name}
+          onChange={handleInput}
           placeholder={placeholder}
           className="inputs"
         />
@@ -21,7 +25,3 @@ const SignUpInput = ({ id, title, type, name, placeholder }) => {
 };
 
 export default SignUpInput;
-
-// value={email}
-// name="email"
-// onChange={handleInput}
