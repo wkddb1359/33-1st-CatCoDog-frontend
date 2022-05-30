@@ -1,10 +1,20 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './List.scss';
 
-function List({ item, setTotalPrice }) {
+function List({ item, setTotalPrice, totalPrice }) {
+  let [count, setCount] = useState(item.qty);
+  let [EachTotalPrice, setEachTotalPrice] = useState(0);
+
   useEffect(() => {
     setTotalPrice(prev => prev + item.price);
-  }, []);
+    setEachTotalPrice(item.price * count);
+  }, [count]);
+  const addCount = () => {
+    setCount(count + 1);
+  };
+  const minusCount = () => {
+    setCount(count - 1);
+  };
 
   return (
     <table>
@@ -21,12 +31,16 @@ function List({ item, setTotalPrice }) {
           </div>
         </th>
         <th id="admitCss" className="listTh">
-          <button className="Minus"> -</button>
-          {item.qty}
-          <button className="Plus">+</button>
+          <button className="Minus" onClick={minusCount}>
+            -
+          </button>
+          {count}
+          <button className="Plus" onClick={addCount}>
+            +
+          </button>
         </th>
         <th className="listTh">
-          {item.price} 원<button className="buyNow">바로구매</button>
+          {EachTotalPrice} 원<button className="buyNow">바로구매</button>
         </th>
       </tr>
     </table>
