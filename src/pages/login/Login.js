@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
 import './Login.scss';
 
 const Login = () => {
@@ -18,8 +17,6 @@ const Login = () => {
 
   const passwordCondition =
     /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,16}$/;
-
-  // const valid = passwordCondition.test(inputValue.password);
 
   const isValidLogin =
     email.includes('@') &&
