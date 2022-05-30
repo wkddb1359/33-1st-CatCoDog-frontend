@@ -1,7 +1,7 @@
 const NAV_NAME_DATA = [
   {
     id: 1,
-    listId: 'cat',
+    listId: 'all-items',
     name: '고양이 전체상품',
   },
   {
