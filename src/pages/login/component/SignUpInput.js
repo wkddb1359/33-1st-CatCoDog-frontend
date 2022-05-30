@@ -4,7 +4,7 @@ import './SignUpInput.scss';
 const SignUpInput = ({ id, title, type, name, placeholder, handleInput }) => {
   return (
     <div>
-      <div className="SignUpInput" key={id}>
+      <div className="signUpInput" key={id}>
         {title && (
           <label className="inputTitle" for={name}>
             {title}

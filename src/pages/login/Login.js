@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import SignUpInput from './component/SignUpInput';
+
 import './Login.scss';
 
 const Login = () => {
@@ -19,8 +20,6 @@ const Login = () => {
   const passwordCondition =
     /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,16}$/;
 
-  // const valid = passwordCondition.test(inputValue.password);
-
   const isValidLogin =
     email.includes('@') &&
     email.includes('.') &&
@@ -35,10 +34,7 @@ const Login = () => {
     e.preventDefault();
     fetch('http://10.58.5.114:8000/users/signin', {
       method: 'POST',
-      body: JSON.stringify({
-        email: inputValue.email,
-        password: inputValue.password,
-      }),
+      body: JSON.stringify(JSON.stringify(inputValue)),
     })
       .then(res => res.json())
       .then(result => {
@@ -61,7 +57,7 @@ const Login = () => {
           <h1>
             <img
               className="headerLogo"
-              src="/images/logo.jpg"
+              src="/images/logo.png"
               alt="캣코독 로고"
             />
           </h1>
@@ -89,24 +85,16 @@ const Login = () => {
             <button className="memberLogin">일반 로그인</button>
           </div>
           <div className="normalLogin">
-            <div className="inputBox">
-              <input
-                className="emailInputBox"
-                type="text"
-                placeholder="이메일"
-                value={email}
-                name="email"
-                onChange={handleInput}
+            {LOGIN_DATA.map(({ id, title, type, name, placeholder }) => (
+              <SignUpInput
+                key={id}
+                title={title}
+                type={type}
+                name={name}
+                placeholder={placeholder}
+                handleInput={handleInput}
               />
-              <input
-                className="pwInputBox"
-                type="password"
-                placeholder="비밀번호"
-                value={password}
-                name="password"
-                onChange={handleInput}
-              />
-            </div>
+            ))}
             <div className="checkAndTitle">
               <input type="checkbox" className="checkbox" />
               <span className="checkboxTitle" checked>
@@ -132,5 +120,20 @@ const Login = () => {
     </div>
   );
 };
+
+const LOGIN_DATA = [
+  {
+    id: 1,
+    type: 'text',
+    name: 'email',
+    placeholder: '이메일',
+  },
+  {
+    id: 2,
+    type: 'password',
+    name: 'password',
+    placeholder: '비밀번호',
+  },
+];
 
 export default Login;
