@@ -7,6 +7,12 @@ function ReviewComment() {
   const [commentList, setCommentList] = useState([]);
   const nextId = useRef(5);
 
+  const [starCount, setStarCount] = useState(5);
+
+  const check = e => {
+    setStarCount(e.target.value);
+  };
+
   useEffect(() => {
     fetch('http://localhost:3000/data/commentdata.json')
       .then(res => res.json())
@@ -15,7 +21,7 @@ function ReviewComment() {
 
   const pushComment = e => {
     e.preventDefault();
-    if (e.target.comment.value !== '')
+    if (e.target.comment.value !== '') {
       setCommentList([
         {
           id: nextId.current,
@@ -25,7 +31,8 @@ function ReviewComment() {
         },
         ...commentList,
       ]);
-    else alert('댓글을 입력하세요!');
+    } else alert('댓글을 입력하세요!');
+
     e.target.comment.value = '';
     nextId.current += 1;
   };
@@ -45,7 +52,11 @@ function ReviewComment() {
         </p>
         <div className="goodsReviewCommentWrapper">
           {commentList.map(commentData => (
-            <Comment key={commentData.id} commentData={commentData} />
+            <Comment
+              key={commentData.id}
+              commentData={commentData}
+              starCount={starCount}
+            />
           ))}
         </div>
         <div className="goodsReviewCommentInputWrapper">
@@ -53,21 +64,21 @@ function ReviewComment() {
             <form
               className="goodsReviewCommentInputForm"
               onSubmit={pushComment}
-              onKeyUp={handleComment}
             >
               <input
                 className="goodsReviewCommentInput"
                 placeholder="댓글 입력"
                 type="text"
                 name="comment"
+                onKeyUp={handleComment}
               />
-              <select className="goodsReviewCommentInputStar">
-                <option />
-                <option>⭐</option>
-                <option>⭐⭐</option>
-                <option>⭐⭐⭐</option>
-                <option>⭐⭐⭐⭐</option>
-                <option>⭐⭐⭐⭐⭐</option>
+              <select className="goodsReviewCommentInputStar" onChange={check}>
+                <option value={0} />
+                <option value={1}>⭐</option>
+                <option value={2}>⭐⭐</option>
+                <option value={3}>⭐⭐⭐</option>
+                <option value={4}>⭐⭐⭐⭐</option>
+                <option value={5}>⭐⭐⭐⭐⭐</option>
               </select>
               <button className="goodsReviewCommentSubmitButton">💬</button>
             </form>

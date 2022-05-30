@@ -13,37 +13,16 @@ function ReviewSummary() {
       </div>
       <div className="ratingBarWrapper">
         <div className="ratingBarContainer">
-          {/* map 어떻게 돌려야 할지 모르겠스므니다... */}
-          <div className="ratingBar">
-            <p className="ratingBarPoint">5점</p>
-            <div className="progressBar">
-              <div id="progressFive" className="progress" />
-            </div>
-          </div>
-          <div className="ratingBar">
-            <p className="ratingBarPoint">4점</p>
-            <div className="progressBar">
-              <div id="progressFour" className="progress" />
-            </div>
-          </div>
-          <div className="ratingBar">
-            <p className="ratingBarPoint">3점</p>
-            <div className="progressBar">
-              <div id="progressThree" className="progress" />
-            </div>
-          </div>
-          <div className="ratingBar">
-            <p className="ratingBarPoint">2점</p>
-            <div className="progressBar">
-              <div id="progressTwo" className="progress" />
-            </div>
-          </div>
-          <div className="ratingBar">
-            <p className="ratingBarPoint">1점</p>
-            <div className="progressBar">
-              <div id="progressOne" className="progress" />
-            </div>
-          </div>
+          {RATE.map(rate => {
+            return (
+              <div className="ratingBar" key={rate.id}>
+                <p className="ratingBarPoint">{rate.rateName}</p>
+                <div className="progressBar">
+                  <div id={rate.idName} className="progress" />
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
       <div className="bestComment">
@@ -61,3 +40,11 @@ function ReviewSummary() {
 }
 
 export default ReviewSummary;
+
+const RATE = [
+  { id: 1, rateName: '5점', idName: 'progressFive' },
+  { id: 2, rateName: '4점', idName: 'progressFour' },
+  { id: 3, rateName: '3점', idName: 'progressThree' },
+  { id: 4, rateName: '2점', idName: 'progressTwo' },
+  { id: 5, rateName: '1점', idName: 'progressOne' },
+];

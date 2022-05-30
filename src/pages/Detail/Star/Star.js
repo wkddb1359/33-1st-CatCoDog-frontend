@@ -1,10 +1,13 @@
 import React from 'react';
 import './Star.scss';
 
-function Star() {
+function Star({ starCount }) {
+  console.log('스타수', starCount);
+  console.log(typeof starCount);
+
   return (
     <>
-      {[1, 2, 3, 4, 5].map((a, i) => {
+      {new Array(starCount).fill().map((_, i) => {
         return <i className="fa-solid fa-star" key={i} />;
       })}
     </>

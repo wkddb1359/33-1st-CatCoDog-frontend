@@ -19,7 +19,7 @@ function DetailGoods() {
   }, [goodsImg]);
 
   return (
-    <div>
+    <>
       {mainImgURL && (
         <div className="detailGoods">
           <div className="goodsImgContainer">
@@ -103,7 +103,7 @@ function DetailGoods() {
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 }
 
