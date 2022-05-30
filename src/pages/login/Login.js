@@ -96,10 +96,8 @@ const Login = () => {
               />
             ))}
             <div className="checkAndTitle">
-              <input type="checkbox" className="checkbox" />
-              <span className="checkboxTitle" checked>
-                자동로그인
-              </span>
+              <input type="checkbox" className="checkbox" checked />
+              <span className="checkboxTitle">자동로그인</span>
             </div>
             <button
               className="blackBtn"
