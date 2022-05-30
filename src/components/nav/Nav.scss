@@ -1,26 +1,28 @@
 .navWrap {
   .nav {
     .navTop {
-      background-color: #f2ede7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       height: 62px;
       left: 0;
       top: 0;
       right: 0;
       bottom: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      background-color: #f2ede7;
 
       .navTopBox {
+        display: block;
         max-width: 1777x;
         margin: 0 auto;
         padding-left: 16px;
         padding-right: 16px;
-        display: block;
       }
+
       .navtopLink {
         text-decoration: none;
       }
+
       .navText {
         color: rgb(0, 26, 129);
         font-weight: 700;
@@ -30,26 +32,26 @@
     }
 
     .navMiddle {
-      background-color: white;
+      display: flex;
+      align-items: center;
       max-width: 1248px;
       height: 186px;
       margin-left: auto;
       margin-right: auto;
-      display: flex;
-      align-items: center;
+      background-color: white;
 
       .middleLeft {
-        height: 186px;
-        padding-top: 30px;
-        padding-bottom: 30px;
         display: flex;
         align-items: center;
         justify-content: center;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        height: 186px;
 
         .userIcon {
+          padding-right: 10px;
           text-decoration: none;
           color: grey;
-          padding-right: 10px;
         }
 
         .loginLink {
@@ -62,9 +64,9 @@
         }
 
         .signupLink {
+          padding-left: 10px;
           text-decoration: none;
           color: grey;
-          padding-left: 10px;
 
           .signupText {
             font-size: 14px;
@@ -73,12 +75,12 @@
       }
 
       .middleCenter {
-        width: 283px;
-        height: 186px;
         display: flex;
         justify-content: center;
         align-items: center;
         flex: 1;
+        width: 283px;
+        height: 186px;
 
         .logoImage {
           width: 450px;
@@ -86,12 +88,12 @@
       }
 
       .middleRight {
-        height: 186px;
-        padding-top: 30px;
-        padding-bottom: 30px;
         display: flex;
         align-items: center;
         justify-content: center;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        height: 186px;
         text-align: right;
 
         .searchLink {
@@ -100,15 +102,15 @@
         }
 
         .cartLink {
+          margin-left: 2rem;
           color: grey;
           text-decoration: none;
-          margin-left: 2rem;
 
           .cartText {
+            padding-left: 10px;
             color: grey;
             text-decoration: none;
             font-size: 14px;
-            padding-left: 10px;
           }
         }
       }

@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import './NavBottom.scss';
 import GLOBAL_NAV from './globalNav';
+import './NavBottom.scss';
 
 const NavBottom = () => {
   const [currentId, setCurrentId] = useState();
