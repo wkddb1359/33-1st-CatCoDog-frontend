@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Login.scss';
+import SignUpInput from './component/SignUpInput';
 
 const Login = () => {
   const [inputValue, setInputValue] = useState({
@@ -87,29 +88,20 @@ const Login = () => {
             <button className="memberLogin">일반 로그인</button>
           </div>
           <div className="normalLogin">
-            <div className="inputBox">
-              <input
-                className="emailInputBox"
-                type="text"
-                placeholder="이메일"
-                value={email}
-                name="email"
-                onChange={handleInput}
+            {LOGIN_DATA.map(({ id, title, type, name, placeholder }) => (
+              <SignUpInput
+                key={id}
+                title={title}
+                type={type}
+                name={name}
+                placeholder={placeholder}
+                handleInput={handleInput}
               />
-              <input
-                className="pwInputBox"
-                type="password"
-                placeholder="비밀번호"
-                value={password}
-                name="password"
-                onChange={handleInput}
-              />
-            </div>
+            ))}
+
             <div className="checkAndTitle">
-              <input type="checkbox" className="checkbox" />
-              <span className="checkboxTitle" checked>
-                자동로그인
-              </span>
+              <input type="checkbox" className="checkbox" checked />
+              <span className="checkboxTitle">자동로그인</span>
             </div>
             <button
               className="blackBtn"
@@ -130,5 +122,20 @@ const Login = () => {
     </div>
   );
 };
+
+const LOGIN_DATA = [
+  {
+    id: 1,
+    type: 'text',
+    name: 'email',
+    placeholder: '이메일',
+  },
+  {
+    id: 2,
+    type: 'password',
+    name: 'password',
+    placeholder: '비밀번호',
+  },
+];
 
 export default Login;
