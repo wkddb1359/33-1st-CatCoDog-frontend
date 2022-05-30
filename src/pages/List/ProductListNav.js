@@ -1,9 +1,8 @@
 import React from 'react';
-import NAV_NAME_DATA from './navNameData';
 import { useState } from 'react';
 import './ProductListNav.scss';
 
-const ProductListNav = () => {
+const ProductListNav = ({ NAV_NAME_DATA }) => {
   const [selected, setSelected] = useState('');
   return (
     <div className="listNavContainer">

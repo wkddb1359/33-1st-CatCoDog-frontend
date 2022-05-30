@@ -1,7 +1,7 @@
 import React from 'react';
 import './Product.scss';
 
-const Product = ({ name, img, price }) => {
+const Product = ({ name, img, price, discount, saletag, besttag, desc }) => {
   return (
     <div className="productContainer">
       <div className="productImgContainer">
@@ -11,13 +11,23 @@ const Product = ({ name, img, price }) => {
       <div className="productDetail">
         <h2 className="productInfo name">{name}</h2>
         <div className="productInfo price">
-          <p className="productPrice">{price}</p>
-          <span className="productDiscount">13%</span>
+          <p className={`${discount !== '' ? 'productPrice' : 'invisible'}`}>
+            {price}
+          </p>
+          <span
+            className={`${discount !== '' ? 'productDiscount' : 'invisible'}`}
+          >
+            {discount}
+          </span>
           <span className="productDiscountPrice">{price}</span>
         </div>
-        <span className="saleBar">SALE</span>
-        <span className="bestBar">BEST</span>
-        <p className="productInfo desc">갈지 않은 원물 100%</p>
+        <span className={`${saletag !== '' ? 'saleBar' : 'invisible'}`}>
+          {saletag}
+        </span>
+        <span className={`${besttag !== '' ? 'bestBar' : 'invisible'}`}>
+          {besttag}
+        </span>
+        <p className="productInfo desc">{desc}</p>
         <div className="productInfo icons">
           <span className="comment">
             <i className="fa-solid fa-comment" />

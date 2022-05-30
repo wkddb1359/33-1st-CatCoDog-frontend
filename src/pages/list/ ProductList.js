@@ -1,19 +1,8 @@
 import React from 'react';
 import Product from './Product';
-import { useState, useEffect } from 'react';
 import './ProductList.scss';
 
-const ProductList = () => {
-  const [itemList, setItemList] = useState([]);
-
-  useEffect(() => {
-    fetch('/data/data.json')
-      .then(res => res.json())
-      .then(data => {
-        setItemList(data);
-      });
-  }, []);
-
+const ProductList = ({ itemList }) => {
   return (
     <>
       <div className="listMainName">고양이 전체상품</div>
@@ -25,16 +14,22 @@ const ProductList = () => {
         </select>
       </div>
       <div className="productListContainer">
-        {itemList.map(info => {
-          return (
-            <Product
-              key={info.id}
-              name={info.name}
-              img={info.img}
-              price={info.price}
-            />
-          );
-        })}
+        {itemList.map(
+          ({ id, name, img, price, discount, saletag, besttag, desc }) => {
+            return (
+              <Product
+                key={id}
+                name={name}
+                img={img}
+                price={price}
+                discount={discount}
+                saletag={saletag}
+                besttag={besttag}
+                desc={desc}
+              />
+            );
+          }
+        )}
       </div>
     </>
   );

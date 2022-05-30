@@ -1,6 +1,9 @@
 .productContainer {
   width: 100%;
   margin: 0 auto;
+  .invisible {
+    display: none !important;
+  }
   .productImgContainer {
     position: relative;
     width: 100%;

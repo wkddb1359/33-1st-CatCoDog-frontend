@@ -12,7 +12,7 @@ const Router = () => {
         <Route path="/" element={<Main />} />
         <Route path="/detail" element={<Detail />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/catlistmain" element={<CatProductMain />} />
+        <Route path="/cat" element={<CatProductMain />} />
       </Routes>
     </BrowserRouter>
   );
