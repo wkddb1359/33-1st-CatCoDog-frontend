@@ -1,10 +1,10 @@
 .footer {
   display: flex;
   flex-direction: column;
+  margin: 0 auto;
   height: 402px;
   max-width: 1471px;
   background-color: white;
-  margin: 0 auto;
 
   .footerTop {
     display: flex;
@@ -14,7 +14,6 @@
     width: 80%;
 
     .numberBox {
-      // width: 426px;
       height: 190px;
       margin-top: 20px;
       line-height: 20px;
@@ -31,9 +30,8 @@
     }
 
     .infoBox {
-      // width: 426px;
-      height: 179px;
       margin-top: 10px;
+      height: 179px;
       line-height: 20px;
 
       span {
@@ -43,7 +41,6 @@
     }
 
     .instaBox {
-      // width: 399px;
       height: 139px;
       line-height: 20px;
 
@@ -67,9 +64,9 @@
     bottom: 83px;
 
     .left {
-      text-align: left;
       width: 640px;
       height: 55px;
+      text-align: left;
 
       span {
         color: gray;
