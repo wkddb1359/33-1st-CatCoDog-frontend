@@ -4,6 +4,7 @@ import RollingBannerWindow from '../../components/RollingBannerWindow/RollingBan
 import RollingBanner from '../../components/RollingBanner/RollingBanner';
 import './Main.scss';
 import Footer from '../../components/Footer/Footer';
+import { Routes } from 'react-router-dom';
 
 const Main = () => {
   return (
@@ -19,6 +20,7 @@ const Main = () => {
             alt="eventBanner"
           />
         </div>
+        <Routes></Routes>
         <Footer />
       </div>
     </div>
