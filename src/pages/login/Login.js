@@ -13,6 +13,8 @@ const Login = () => {
 
   const { email, password } = inputValue;
 
+  const navigate = useNavigate();
+
   const handleInput = e => {
     const { name, value } = e.target;
     setInputValue({ ...inputValue, [name]: value });
@@ -24,12 +26,7 @@ const Login = () => {
   const isValidLogin =
     email.includes('@') &&
     email.includes('.') &&
-    passwordCondition.test(inputValue.password);
-
-  const goToSignUp = () => {
-    navigate('/signup');
-  };
-  const navigate = useNavigate();
+    passwordCondition.test(password);
 
   const goToMain = e => {
     e.preventDefault();
@@ -48,8 +45,12 @@ const Login = () => {
     navigate('/');
   };
 
+  const goToSignUp = () => {
+    navigate('/signup');
+  };
+
   return (
-    <div className="loginPage">
+    <div className="login">
       <div className="wrapLogin">
         <div className="loginHeader">
           <button className="backBtn">
@@ -96,6 +97,7 @@ const Login = () => {
                 handleInput={handleInput}
               />
             ))}
+
             <div className="checkAndTitle">
               <input type="checkbox" className="checkbox" checked />
               <span className="checkboxTitle">자동로그인</span>
