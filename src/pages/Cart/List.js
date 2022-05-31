@@ -1,26 +1,53 @@
 import React, { useEffect, useState } from 'react';
 import './List.scss';
 
-function List({ item, setTotalPrice, totalPrice }) {
+function List({
+  item,
+  setTotalPrice,
+  cartList,
+  setCartList,
+  checkedList,
+  setCheckedList,
+}) {
   let [count, setCount] = useState(item.qty);
-  let [EachTotalPrice, setEachTotalPrice] = useState(0);
 
   useEffect(() => {
     setTotalPrice(prev => prev + item.price);
-    setEachTotalPrice(item.price * count);
-  }, [count]);
+  }, []);
+
   const addCount = () => {
     setCount(count + 1);
+    setTotalPrice(prev => prev + item.price);
   };
   const minusCount = () => {
-    setCount(count - 1);
+    if (count > 0) {
+      setCount(count - 1);
+      setTotalPrice(prev => prev - item.price);
+    } else {
+      alert('수량을 더이상 내일수 없습니다');
+    }
   };
 
+  const [isChecked, setIsChecked] = useState();
+
+  useEffect(() => {
+    setIsChecked(checkedList && checkedList.includes(item));
+  }, [checkedList, item]);
+
+  const onCheck = e => {
+    if (e.target.checked) {
+      setIsChecked(true);
+      setCheckedList([...checkedList, item]);
+    } else {
+      setIsChecked(false);
+      setCheckedList(checkedList.filter(listItem => listItem.id !== item.id));
+    }
+  };
   return (
     <table>
       <tr className="listTr">
         <th className="checkBox">
-          <input type="checkbox" />
+          <input type="checkbox" onChange={onCheck} checked={isChecked} />
         </th>
         <th className="listInfo">
           <div className="infoImage">
@@ -40,7 +67,7 @@ function List({ item, setTotalPrice, totalPrice }) {
           </button>
         </th>
         <th className="listTh">
-          {EachTotalPrice} 원<button className="buyNow">바로구매</button>
+          {item.price * count} 원<button className="buyNow">바로구매</button>
         </th>
       </tr>
     </table>

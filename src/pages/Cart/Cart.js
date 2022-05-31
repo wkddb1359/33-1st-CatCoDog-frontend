@@ -3,12 +3,13 @@ import { useState, useEffect } from 'react';
 import ListOn from './ListOn';
 import EmptyUi from './EmptyUi';
 import './Cart.scss';
-// import EmptyUi from './EmptyUi';
 
 const Cart = () => {
   const [cartList, setCartList] = useState([]);
   const total = cartList.length;
   const Empty = cartList.length === 0;
+  const [checkedList, setCheckedList] = useState([]);
+  console.log(checkedList);
 
   useEffect(() => {
     fetch('/data/cartList.JSON')
@@ -26,23 +27,18 @@ const Cart = () => {
         </div>
         <div className="cart">
           <div className="tableWrapper">
-            <table>
-              <thead>
-                <th className="checkBox1">
-                  <input type="checkbox" />
-                </th>
-                <th className="InfoTh">상품정보</th>
-                <th className="thcartinfo">수량</th>
-                <th className="thcartinfo">주문금액</th>
-              </thead>
-            </table>
             <div>
               {!Empty ? (
-                <ListOn cartList={cartList} total={total} />
+                <ListOn
+                  cartList={cartList}
+                  setCartList={setCartList}
+                  total={total}
+                  checkedList={checkedList}
+                  setCheckedList={setCheckedList}
+                />
               ) : (
                 <EmptyUi Empty={Empty} />
               )}
-              {/* {!Empty ? <EmptyUi Empty={Empty} /> : null} */}
             </div>
           </div>
         </div>
