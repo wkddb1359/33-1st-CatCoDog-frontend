@@ -2,12 +2,12 @@ import React from 'react';
 import './Comment.scss';
 import Star from '../../Star/Star';
 
-function Comment({ commentData, starCount }) {
+function Comment({ commentData }) {
   return (
-    <div className="goodsReviewFoam">
+    <div className="comment">
       <div className="goodsReviewComment">
         <div className="goodsReviewStarContainer">
-          <Star starCount={starCount} />
+          <Star starCount={commentData.star} />
         </div>
         <div className="goodsReviewCommentText">{commentData.content}</div>
       </div>

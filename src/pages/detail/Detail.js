@@ -11,7 +11,7 @@ function Detail() {
   return (
     <>
       <Nav />
-      <main className="detailMain">
+      <main className="detail">
         <div className="inside">
           <DetailGoods />
           <DetailGoodsNav />

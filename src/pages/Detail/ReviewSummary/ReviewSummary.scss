@@ -1,7 +1,7 @@
-.reviewSummaryWrapper {
+.reviewSummary {
   display: flex;
-  justify-content: space-around;
   position: relative;
+  justify-content: space-around;
   padding: 2.88rem;
   background-color: #36363617;
 
@@ -42,9 +42,9 @@
 
           .progress {
             height: 0.44rem;
-            text-align: center;
             background-color: gray;
             border-radius: 1.88rem;
+            text-align: center;
           }
         }
       }
@@ -80,10 +80,10 @@
     .bestCommentTitle {
       padding-bottom: 1.03rem;
       margin-top: 0.31rem;
-      line-height: 1.6;
       text-align: center;
       font-weight: bold;
       font-size: 1.25rem;
+      line-height: 1.6;
     }
 
     .bestCommentUserContainer {
@@ -95,8 +95,8 @@
 
         .bestCommetUserId {
           padding-bottom: 0.31rem;
-          font-size: 1.06rem;
           padding-left: 1.63rem;
+          font-size: 1.06rem;
         }
       }
     }

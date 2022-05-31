@@ -28,12 +28,14 @@ function ReviewComment() {
           userid: 'dkst****',
           content: comment,
           time: '2022-05-26 23:47',
+          star: starCount,
         },
         ...commentList,
       ]);
     } else alert('댓글을 입력하세요!');
 
     e.target.comment.value = '';
+    e.target.star.value = '';
     nextId.current += 1;
   };
 
@@ -42,7 +44,7 @@ function ReviewComment() {
   };
 
   return (
-    <>
+    <div className="reviewComment">
       <div className="goodsReviewTitle">
         구매평<span className="goodsReviewCount">{commentList.length}</span>
       </div>
@@ -52,11 +54,7 @@ function ReviewComment() {
         </p>
         <div className="goodsReviewCommentWrapper">
           {commentList.map(commentData => (
-            <Comment
-              key={commentData.id}
-              commentData={commentData}
-              starCount={starCount}
-            />
+            <Comment key={commentData.id} commentData={commentData} />
           ))}
         </div>
         <div className="goodsReviewCommentInputWrapper">
@@ -72,20 +70,23 @@ function ReviewComment() {
                 name="comment"
                 onKeyUp={handleComment}
               />
-              <select className="goodsReviewCommentInputStar" onChange={check}>
-                <option value={0} />
-                <option value={1}>⭐</option>
-                <option value={2}>⭐⭐</option>
-                <option value={3}>⭐⭐⭐</option>
-                <option value={4}>⭐⭐⭐⭐</option>
+              <select
+                className="goodsReviewCommentInputStar"
+                onChange={check}
+                name="star"
+              >
                 <option value={5}>⭐⭐⭐⭐⭐</option>
+                <option value={4}>⭐⭐⭐⭐</option>
+                <option value={3}>⭐⭐⭐</option>
+                <option value={2}>⭐⭐</option>
+                <option value={1}>⭐</option>
               </select>
               <button className="goodsReviewCommentSubmitButton">💬</button>
             </form>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

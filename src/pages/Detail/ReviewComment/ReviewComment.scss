@@ -3,26 +3,26 @@
   font-weight: bold;
 
   .goodsReviewCount {
-    background-color: #36363633;
-    font-size: 0.69rem;
-    border-radius: 0.63rem;
     margin-left: 0.31rem;
+    background-color: #36363633;
+    border-radius: 0.63rem;
+    font-size: 0.69rem;
   }
 }
 
 .goodsReviewWrapper {
-  color: blue;
   margin-bottom: 10%;
+  color: blue;
 
   .goodsReviewInfoText {
-    color: #363636b3;
-    font-size: 0.88rem;
     margin-bottom: 0.75rem;
+    font-size: 0.88rem;
+    color: #363636b3;
   }
 
   .goodsReviewCommentWrapper {
-    border-top: 1px solid black;
     padding-top: 0.94rem;
+    border-top: 1px solid black;
   }
 
   .goodsReviewCommentInputWrapper {
@@ -36,10 +36,10 @@
           margin: 1.88rem 0;
           height: 3.75rem;
           width: 50%;
-          font-size: 1.06rem;
-          border: 1px solid #36363640;
           padding-left: 0.63rem;
+          border: 1px solid #36363640;
           border-radius: 10px;
+          font-size: 1.06rem;
         }
 
         .goodsReviewCommentInputStar {
@@ -51,10 +51,9 @@
         }
 
         .goodsReviewCommentSubmitButton {
+          position: absolute;
           margin-left: 0.63rem;
           border-radius: 1.88rem;
-          cursor: pointer;
-          position: absolute;
           top: 30%;
           right: 21%;
           font-size: 1.88rem;
@@ -62,6 +61,7 @@
           color: #363636;
           border: none;
           background-color: transparent;
+          cursor: pointer;
         }
       }
     }

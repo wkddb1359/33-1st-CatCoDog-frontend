@@ -1,14 +1,11 @@
 import React from 'react';
 import './ReviewSummary.scss';
-import Star from '../Star/Star';
 
 function ReviewSummary() {
   return (
-    <div className="reviewSummaryWrapper">
+    <div className="reviewSummary">
       <div className="ratingPointContainer">
-        <div className="ratingStar">
-          <Star />
-        </div>
+        <div className="ratingStar">⭐⭐⭐⭐⭐</div>
         <p className="ratingNumber">4.7</p>
       </div>
       <div className="ratingBarWrapper">
