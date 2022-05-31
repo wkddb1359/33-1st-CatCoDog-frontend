@@ -27,11 +27,9 @@ const Nav = () => {
       <div className="nav">
         <div className="navTop">
           <div className="navTopBox">
-            <Link to="/" className="navtopLink">
-              <strong>
-                <span className="navText">간식 1팩 100원부터!</span>
-              </strong>
-            </Link>
+            <strong>
+              <span className="navText">간식 1팩 100원부터!</span>
+            </strong>
           </div>
         </div>
         <div className="navMiddle">
@@ -47,18 +45,16 @@ const Nav = () => {
             </div>
           </div>
           <div className="navMiddleCenter">
-            <Link to="/">
-              <img
-                className="logoImage"
-                src="/images/logo.png"
-                alt="맛있다! 캣코독"
-              />
-            </Link>
+            <img
+              className="logoImage"
+              src="/images/logo.png"
+              alt="맛있다! 캣코독"
+            />
           </div>
           <div className="navMiddleRight">
-            <Link to="/" className="searchLink">
+            <div className="moveSearch">
               <i className="fa-solid fa-magnifying-glass" />
-            </Link>
+            </div>
             <div className="moveCart" onClick={moveCart}>
               <i className="fa-solid fa-cart-shopping" />
               <span className="cartText">장바구니</span>
