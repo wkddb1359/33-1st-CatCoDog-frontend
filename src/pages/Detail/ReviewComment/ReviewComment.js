@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
-import './ReviewComment.scss';
 import Comment from './Comment/Comment';
+import './ReviewComment.scss';
 
 function ReviewComment() {
   const [comment, setComment] = useState('');

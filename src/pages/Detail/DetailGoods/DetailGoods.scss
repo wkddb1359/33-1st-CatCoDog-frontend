@@ -1,3 +1,7 @@
+$black-color: #363636;
+$blue-color: #4c6ef5;
+$orange-color: #fd7e14;
+
 .detailGoods {
   display: flex;
   justify-content: space-between;
@@ -8,8 +12,8 @@
     width: 50%;
 
     .goodsSmallImg {
-      list-style: none;
       padding-top: 0.63rem;
+      list-style: none;
 
       .smallImgList {
         display: inline;
@@ -25,11 +29,11 @@
       margin-bottom: 0.3rem;
 
       .goodsFormHeader {
-        font-size: 1.38rem;
-        line-height: normal;
-        border-bottom: 1px solid #3636361a;
         padding-bottom: 1.5rem;
         margin: 0 0 1.5rem;
+        border-bottom: 1px solid #3636361a;
+        font-size: 1.38rem;
+        line-height: normal;
 
         .goodsFormHeaderTop {
           margin-bottom: 0.3rem;
@@ -40,35 +44,36 @@
           }
 
           .goodsFormHeaderSale {
-            background-color: #4c6ef5;
-            border: #4c6ef5;
-            font-size: 0.81rem;
             margin-right: 0.5rem;
             padding: 0.06rem 0.31rem;
-            font-weight: bold;
+            background-color: $blue-color;
+            border: $blue-color;
             color: white;
+            font-size: 0.81rem;
+            font-weight: bold;
           }
 
           .goodsFormHeaderBest {
-            border: 1px solid #fd7e14;
-            font-size: 0.81rem;
             padding: 0.06rem 0.31rem;
-            color: #fd7e14;
+            border: 1px solid $orange-color;
+            color: $orange-color;
+            font-size: 0.81rem;
             font-weight: bold;
           }
         }
 
         .goodsFormHeaderPrice {
           line-height: 1.5;
+
           .originalPrice {
-            opacity: 0.7;
             font-size: 0.94rem;
             text-decoration: line-through;
+            opacity: 0.7;
           }
 
           .saleRate {
             margin-right: 0.31rem;
-            color: #fe5356;
+            color: red;
             font-size: 1.5rem;
           }
 
@@ -83,20 +88,20 @@
       }
 
       .goodsSummaryText {
-        color: #363636b3;
-        line-height: 1.6;
         margin-bottom: 1.25rem;
+        color: #363636b3;
         font-size: 0.88rem;
+        line-height: 1.6;
       }
 
       .goodsFormItemDetail {
-        font-size: 0.94rem;
         color: #363636cc;
+        font-size: 0.94rem;
 
         .itemDetailInfo {
           margin-right: 0.31rem;
-          font-weight: bold;
           color: black;
+          font-weight: bold;
         }
 
         p {
@@ -116,8 +121,8 @@
         .goodsQuantitySelect {
           width: 40%;
           padding: 0.5rem 1.5rem 0.5rem 0.75rem;
-          font-size: 0.88rem;
           border: 1px solid #ddd;
+          font-size: 0.88rem;
           cursor: pointer;
         }
       }
@@ -131,14 +136,14 @@
           width: 30%;
           border-radius: 1.88rem;
           border: 1px solid #ddd;
+          background-color: white;
           cursor: pointer;
-          background-color: #ffffff;
         }
 
         #buyButton {
-          background-color: #363636;
+          background-color: $black-color;
+          border-color: $black-color;
           color: white;
-          border-color: #363636;
         }
       }
     }

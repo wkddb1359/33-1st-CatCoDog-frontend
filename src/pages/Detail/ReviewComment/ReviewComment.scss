@@ -16,8 +16,8 @@
 
   .goodsReviewInfoText {
     margin-bottom: 0.75rem;
-    font-size: 0.88rem;
     color: #363636b3;
+    font-size: 0.88rem;
   }
 
   .goodsReviewCommentWrapper {
@@ -33,9 +33,9 @@
 
       .goodsReviewCommentInputForm {
         .goodsReviewCommentInput {
-          margin: 1.88rem 0;
           height: 3.75rem;
           width: 50%;
+          margin: 1.88rem 0;
           padding-left: 0.63rem;
           border: 1px solid #36363640;
           border-radius: 10px;
@@ -52,15 +52,15 @@
 
         .goodsReviewCommentSubmitButton {
           position: absolute;
-          margin-left: 0.63rem;
-          border-radius: 1.88rem;
           top: 30%;
           right: 21%;
-          font-size: 1.88rem;
-          vertical-align: middle;
+          margin-left: 0.63rem;
+          border-radius: 1.88rem;
           color: #363636;
           border: none;
           background-color: transparent;
+          font-size: 1.88rem;
+          vertical-align: middle;
           cursor: pointer;
         }
       }

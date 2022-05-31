@@ -1,3 +1,5 @@
+$black-color: #363636;
+
 .detailGoodsNav {
   display: flex;
   justify-content: space-around;
@@ -8,11 +10,11 @@
   font-size: 1.06rem;
 
   .navBuy {
+    color: $black-color;
     cursor: pointer;
-    color: #363636;
   }
   .navComment {
+    color: $black-color;
     cursor: pointer;
-    color: #363636;
   }
 }

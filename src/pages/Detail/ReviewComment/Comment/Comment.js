@@ -1,6 +1,6 @@
 import React from 'react';
-import './Comment.scss';
 import Star from '../../Star/Star';
+import './Comment.scss';
 
 function Comment({ commentData }) {
   return (
