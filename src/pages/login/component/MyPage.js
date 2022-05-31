@@ -5,7 +5,6 @@ import Footer from '../../../components/footer/Footer';
 const MyPage = () => {
   return (
     <div>
-      <Nav />
       <div className="myPage">
         <div className="wrapMyPage">
           <div className="leftColum">
@@ -13,7 +12,6 @@ const MyPage = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

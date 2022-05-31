@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Nav from '../../components/nav/Nav';
-import Footer from '../../components/footer/Footer';
 import SignUpInput from './component/SignUpInput';
 import SignUpRadioInput from './component/SignUpRadioInput';
 import { BASIC_URL } from '../../config';
@@ -12,9 +10,9 @@ const SignUp = () => {
     email: '',
     password: '',
     name: '',
-    mobile_number: '',
+    mobile_number: '1',
     address: '',
-    pet_type: 0,
+    pet_type: '',
     email_subscription: false,
   });
   const navigate = useNavigate();
@@ -24,7 +22,11 @@ const SignUp = () => {
   };
 
   const isCheckBoxClicked = valid => {
-    setInputValue(prev => ({ ...prev, email_subscription: valid }));
+    setInputValue(prev => ({ ...prev, email_subscription: !valid }));
+  };
+
+  const isCheckBoxClicked2 = valid => {
+    setInputValue(prev => ({ ...prev, email_subscription: !!valid }));
   };
   console.log(inputValue);
 
@@ -47,17 +49,16 @@ const SignUp = () => {
   const isValidPw = passwordCondition.test(password);
 
   const getIsActive =
-    isValidInput && isValidEmail && isValidPw && email_subscription === true;
+    isValidInput && isValidEmail && isValidPw && email_subscription === false;
+
   const goToMain = e => {
+    e.preventDefault();
     if (!isValidInput && !isValidEmail && !isValidPw && !isCheckBoxClicked()) {
       alert('Please fill in the blanks');
     } else {
-      e.preventDefault();
       fetch(`${BASIC_URL}/users/signup`, {
         method: 'POST',
-        body: JSON.stringify({
-          inputValue,
-        }),
+        body: JSON.stringify(inputValue),
       })
         .then(res => res.json())
         .then(result => {
@@ -126,8 +127,8 @@ const SignUp = () => {
               <input
                 type="radio"
                 name="agree"
-                id="petType"
-                onChange={isCheckBoxClicked}
+                id="agreement"
+                onChange={isCheckBoxClicked2}
               />
               <label for="agreement" className="radioText">
                 아니오,동의하지 않습니다.
