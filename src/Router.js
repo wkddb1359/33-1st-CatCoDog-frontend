@@ -11,15 +11,18 @@ const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/" element={<Main />} />
-        <Route path="/list" element={<List />} />
-        <Route path="/detail" element={<Detail />} />
-        <Route path="/cart" element={<Cart />} />
+        <Route path="/*" element={<Main />} />
       </Routes>
     </BrowserRouter>
   );
 };
 
 export default Router;
+
+{
+  /* <Route path="/signup" element={<SignUp />} />
+<Route path="/list" element={<List />} />
+        <Route path="/detail" element={<Detail />} />
+        <Route path="/cart" element={<Cart />} /> */
+}

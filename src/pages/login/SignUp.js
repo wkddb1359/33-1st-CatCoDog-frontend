@@ -4,8 +4,8 @@ import Nav from '../../components/nav/Nav';
 import Footer from '../../components/footer/Footer';
 import SignUpInput from './component/SignUpInput';
 import SignUpRadioInput from './component/SignUpRadioInput';
-import './SignUp.scss';
 import { BASIC_URL } from '../../config';
+import './SignUp.scss';
 
 const SignUp = () => {
   const [inputValue, setInputValue] = useState({
@@ -17,10 +17,15 @@ const SignUp = () => {
     pet_type: 0,
     email_subscription: false,
   });
+  const navigate = useNavigate();
+
   const changePetType = num => {
     setInputValue(prev => ({ ...prev, pet_type: num }));
   };
 
+  const isCheckBoxClicked = valid => {
+    setInputValue(prev => ({ ...prev, email_subscription: valid }));
+  };
   console.log(inputValue);
 
   const { email, password, name, mobile_number, address, email_subscription } =
@@ -39,17 +44,10 @@ const SignUp = () => {
   const passwordCondition =
     /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,16}$/;
 
-  const isValidPw = passwordCondition.test(inputValue.password);
-
-  const isCheckBoxClicked = valid => {
-    setInputValue(prev => ({ ...prev, email_subscription: valid }));
-  };
+  const isValidPw = passwordCondition.test(password);
 
   const getIsActive =
     isValidInput && isValidEmail && isValidPw && email_subscription === true;
-
-  const navigate = useNavigate();
-
   const goToMain = e => {
     if (!isValidInput && !isValidEmail && !isValidPw && !isCheckBoxClicked()) {
       alert('Please fill in the blanks');
@@ -73,7 +71,6 @@ const SignUp = () => {
 
   return (
     <div>
-      <Nav />
       <div className="SignUp">
         <div className="wrapSignUp">
           <div className="boxOfProfileImg">
@@ -153,7 +150,6 @@ const SignUp = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };
