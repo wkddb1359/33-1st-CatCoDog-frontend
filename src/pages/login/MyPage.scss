@@ -1,20 +1,35 @@
 .myPage {
-  background-color: #fefbe7;
+  background-color: #f3f3f3;
   .wrapMyPage {
     width: 60rem;
     height: 46rem;
+    display: flex;
+    flex-direction: row;
     padding-left: 0.938rem;
     padding-right: 0.938rem;
     margin: 0 auto;
     .leftColum {
       padding-top: 5rem;
+      flex: 2;
     }
     .rightColum {
+      padding-top: 5rem;
+      flex: 8;
       .whiteBox {
+        display: flex;
+        flex-direction: row;
         border: 1px solid white;
         background-color: white;
+
         .greyPic {
           width: 6rem;
+          padding-left: 2rem;
+        }
+        .middleText {
+          border-right: 1px solid silver;
+          width: 60%;
+        }
+        .rightText {
         }
       }
     }

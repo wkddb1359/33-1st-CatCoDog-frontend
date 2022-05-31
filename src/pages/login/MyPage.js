@@ -14,13 +14,23 @@ const MyPage = () => {
             {LIST_NAME.map(({ id, title }) => (
               <ListName key={id} title={title} />
             ))}
-            <div className="rightColum">
-              <div className="whiteBox">
-                <img
-                  src="/images/profile.jpg"
-                  className="greyPic"
-                  alt="user-picture"
-                />
+          </div>
+          <div className="rightColum">
+            <div className="whiteBox">
+              <img
+                src="/images/profile.jpg"
+                className="greyPic"
+                alt="user-picture"
+              />
+              <div className="middleText">
+                <h3>기본등급 아무개님 안녕하세요.</h3>
+                <p>구매금액 100원 달성 시</p>
+                <p>'구매회원'으로 승급됩니다.</p>
+                <button className="middleTextBtn">등급혜택 보기</button>
+              </div>
+              <div className="rightText">
+                <span>포인트</span>
+                <span>1.000</span>
               </div>
             </div>
           </div>
