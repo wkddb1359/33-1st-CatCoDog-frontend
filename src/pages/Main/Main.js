@@ -3,6 +3,7 @@ import Nav from '../../components/Nav/Nav';
 import RollingBannerWindow from '../../components/RollingBannerWindow/RollingBannerWindow';
 import RollingBanner from '../../components/RollingBanner/RollingBanner';
 import './Main.scss';
+import Footer from '../../components/Footer/Footer';
 
 const Main = () => {
   return (
