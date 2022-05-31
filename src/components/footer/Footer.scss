@@ -1,4 +1,89 @@
-.footerWrap {
-  background-color: brown;
+.footer {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
   height: 402px;
+  max-width: 1471px;
+  background-color: white;
+
+  .footerTop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 250px;
+    width: 80%;
+
+    .numberBox {
+      height: 190px;
+      margin-top: 20px;
+      line-height: 20px;
+
+      .number {
+        font-weight: 500;
+        font-size: 17px;
+      }
+
+      span {
+        color: gray;
+        font-size: 14px;
+      }
+    }
+
+    .infoBox {
+      margin-top: 10px;
+      height: 179px;
+      line-height: 20px;
+
+      span {
+        font-size: 14px;
+        color: gray;
+      }
+    }
+
+    .instaBox {
+      height: 139px;
+      line-height: 20px;
+
+      i {
+        padding-top: -20px;
+        font-size: 30px;
+      }
+    }
+
+    strong {
+      font-weight: 700;
+      font-size: 17px;
+    }
+  }
+
+  .footerBottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1470px;
+    bottom: 83px;
+
+    .left {
+      width: 640px;
+      height: 55px;
+      text-align: left;
+
+      span {
+        color: gray;
+        font-size: 14px;
+      }
+    }
+
+    .right {
+      display: flex;
+      flex-direction: column;
+      margin-right: 30px;
+      line-height: 20px;
+
+      span {
+        color: gray;
+        font-size: 14px;
+      }
+    }
+  }
 }
