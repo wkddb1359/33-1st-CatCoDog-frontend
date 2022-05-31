@@ -1,9 +1,13 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import GLOBAL_NAV from './globalNav';
 import './NavBottom.scss';
 
 const NavBottom = () => {
   const [currentId, setCurrentId] = useState();
+  const navigate = useNavigate();
+
+  const handleCategory = () => {};
 
   return (
     <div className="navBottom">
