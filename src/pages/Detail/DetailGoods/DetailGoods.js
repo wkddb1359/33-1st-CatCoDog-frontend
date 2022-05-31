@@ -3,6 +3,11 @@ import './DetailGoods.scss';
 
 function DetailGoods() {
   const [gooodsData, setGoodsData] = useState([]);
+  const [heartLike, setHeartLike] = useState(false);
+
+  const toggleLike = () => {
+    setHeartLike(!heartLike);
+  };
 
   useEffect(() => {
     fetch('/data/goodsdata.json')
@@ -19,9 +24,9 @@ function DetailGoods() {
   }, [gooodsData]);
 
   return (
-    <>
+    <div className="detailGoods">
       {mainImgURL && (
-        <div className="detailGoods">
+        <div className="goodsImgWrapper">
           <div className="goodsImgContainer">
             <img
               src={mainImgURL}
@@ -95,15 +100,18 @@ function DetailGoods() {
               <div className="goodsFormButton">
                 <button id="buyButton">구매하기</button>
                 <button>장바구니</button>
-                <button>
-                  <i className="fa-regular fa-heart" />
+                <button onClick={toggleLike}>
+                  <i
+                    id={`${heartLike ? 'realHeart' : 'emptyHeart'}`}
+                    className="fa-solid fa-heart"
+                  />
                 </button>
               </div>
             </div>
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 }
 

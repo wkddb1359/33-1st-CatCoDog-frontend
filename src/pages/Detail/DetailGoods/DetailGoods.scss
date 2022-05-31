@@ -2,7 +2,7 @@ $black-color: #363636;
 $blue-color: #4c6ef5;
 $orange-color: #fd7e14;
 
-.detailGoods {
+.goodsImgWrapper {
   display: flex;
   justify-content: space-between;
   margin-top: 3rem;
@@ -138,6 +138,10 @@ $orange-color: #fd7e14;
           border: 1px solid #ddd;
           background-color: white;
           cursor: pointer;
+
+          #realHeart {
+            color: red;
+          }
         }
 
         #buyButton {
