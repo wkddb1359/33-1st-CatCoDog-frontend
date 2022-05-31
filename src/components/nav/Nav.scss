@@ -48,11 +48,13 @@
         padding-right: 10px;
         text-decoration: none;
         color: grey;
+        cursor: pointer;
       }
 
       .moveLogin {
         text-decoration: none;
         color: grey;
+        cursor: pointer;
 
         .loginText {
           font-size: 14px;
@@ -63,6 +65,7 @@
         padding-left: 10px;
         text-decoration: none;
         color: grey;
+        cursor: pointer;
 
         .signupText {
           font-size: 14px;
@@ -91,12 +94,14 @@
       .moveSearch {
         color: grey;
         text-decoration: none;
+        cursor: pointer;
       }
 
       .moveCart {
         margin-left: 2rem;
         color: grey;
         text-decoration: none;
+        cursor: pointer;
 
         .cartText {
           padding-left: 10px;
