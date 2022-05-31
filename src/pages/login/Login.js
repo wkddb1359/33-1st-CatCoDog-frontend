@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { BASIC_URL } from '../../config';
 import SignUpInput from './component/SignUpInput';
+import { BASIC_URL } from '../../config';
+
 import './Login.scss';
 
 const Login = () => {
@@ -31,7 +32,7 @@ const Login = () => {
     e.preventDefault();
     fetch(`${BASIC_URL}/users/signin`, {
       method: 'POST',
-      body: JSON.stringify(inputValue),
+      body: JSON.stringify(JSON.stringify(inputValue)),
     })
       .then(res => res.json())
       .then(result => {
@@ -58,7 +59,7 @@ const Login = () => {
           <h1>
             <img
               className="headerLogo"
-              src="/images/logo.jpg"
+              src="/images/logo.png"
               alt="캣코독 로고"
             />
           </h1>
