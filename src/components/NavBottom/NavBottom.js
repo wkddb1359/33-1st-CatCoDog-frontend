@@ -7,7 +7,9 @@ const NavBottom = () => {
   const [currentId, setCurrentId] = useState();
   const navigate = useNavigate();
 
-  const moveCategory = () => {}; //네비게이트 url 넘겨주는
+  const moveCategory = id => {
+    navigate(`http://localhost:3000/dog?category=${id}`);
+  }; //네비게이트 url 넘겨주는
 
   return (
     <div className="navBottom">
@@ -19,6 +21,7 @@ const NavBottom = () => {
               key={id}
               onMouseEnter={() => setCurrentId(id)} //내장함수
               onMouseLeave={() => setCurrentId()}
+              onClick={id => moveCategory()}
             >
               <p className="dropP">{name}</p>
 
@@ -26,7 +29,11 @@ const NavBottom = () => {
                 <div className={`dropDownBoxContainer${id}`}>
                   {list.map(({ id, listname }) => {
                     return (
-                      <div className="dropDownBox" key={id}>
+                      <div
+                        className="dropDownBox"
+                        key={id}
+                        onClick={id => moveCategory()}
+                      >
                         {listname}
                       </div>
                     );
