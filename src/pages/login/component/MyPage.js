@@ -1,7 +1,6 @@
 import React from 'react';
 import Nav from '../../../components/nav/Nav';
 import Footer from '../../../components/footer/Footer';
-import './MyPage.scss';
 
 const MyPage = () => {
   return (
@@ -10,7 +9,7 @@ const MyPage = () => {
       <div className="myPage">
         <div className="wrapMyPage">
           <div className="leftColum">
-            <ul></ul>
+            <ul />
           </div>
         </div>
       </div>
@@ -20,4 +19,3 @@ const MyPage = () => {
 };
 
 export default MyPage;
-[p[p[]]]
