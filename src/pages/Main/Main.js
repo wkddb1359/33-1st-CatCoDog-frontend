@@ -20,7 +20,6 @@ const Main = () => {
             alt="eventBanner"
           />
         </div>
-        <Routes></Routes>
         <Footer />
       </div>
     </div>
