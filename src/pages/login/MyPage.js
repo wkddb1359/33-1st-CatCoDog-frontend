@@ -15,7 +15,13 @@ const MyPage = () => {
               <ListName key={id} title={title} />
             ))}
             <div className="rightColum">
-              <div className="whiteBox"></div>
+              <div className="whiteBox">
+                <img
+                  src="/images/profile.jpg"
+                  className="greyPic"
+                  alt="user-picture"
+                />
+              </div>
             </div>
           </div>
         </div>

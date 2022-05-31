@@ -11,6 +11,11 @@
     }
     .rightColum {
       .whiteBox {
+        border: 1px solid white;
+        background-color: white;
+        .greyPic {
+          width: 6rem;
+        }
       }
     }
   }
