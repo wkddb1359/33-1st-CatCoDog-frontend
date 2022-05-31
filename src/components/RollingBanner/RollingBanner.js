@@ -1,9 +1,15 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import slideBanner from '../../slideBanner.json';
 import './RollingBanner.scss';
 
 const RollingBanner = () => {
   const [slideIndex, setSlideIndex] = useState(1);
+  const navigate = useNavigate();
+
+  const moveProducts = id => {
+    navigate(`/adress/adress/${id}`); //라우터 보고
+  };
 
   const bannerData = slideBanner;
 
@@ -26,14 +32,20 @@ const RollingBanner = () => {
     <div className="rollingBanner">
       <section className="rollingBannerContainer">
         {bannerData.map((img, index) => {
+          const { id, src } = img;
           return (
             <div
               className={
                 slideIndex === index + 1 ? 'slideImg active' : 'slideImg'
               }
-              key={img.id}
+              key={id}
             >
-              <img src={img.src} alt="피드 이미지" />
+              <img
+                src={src}
+                s
+                alt="피드 이미지"
+                onClick={() => moveProducts(id)}
+              />
             </div>
           );
         })}
