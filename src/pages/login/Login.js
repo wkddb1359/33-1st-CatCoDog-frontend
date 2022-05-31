@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Login.scss';
+import { BASIC_URL } from '../../config';
 import SignUpInput from './component/SignUpInput';
+import './Login.scss';
 
 const Login = () => {
   const [inputValue, setInputValue] = useState({
@@ -31,7 +32,7 @@ const Login = () => {
 
   const goToMain = e => {
     e.preventDefault();
-    fetch('http://10.58.2.1:8000/users/signin', {
+    fetch(`${BASIC_URL}/users/signin`, {
       method: 'POST',
       body: JSON.stringify({
         email: inputValue.email,
