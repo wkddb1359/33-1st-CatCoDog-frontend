@@ -28,7 +28,6 @@ const SignUp = () => {
   const isCheckBoxClicked2 = valid => {
     setInputValue(prev => ({ ...prev, email_subscription: !!valid }));
   };
-  console.log(inputValue);
 
   const { email, password, name, mobile_number, address, email_subscription } =
     inputValue;
@@ -54,7 +53,7 @@ const SignUp = () => {
   const goToMain = e => {
     e.preventDefault();
     if (!isValidInput && !isValidEmail && !isValidPw && !isCheckBoxClicked()) {
-      alert('Please fill in the blanks');
+      alert('빈 칸을 채워주세요!');
     } else {
       fetch(`${BASIC_URL}/users/signup`, {
         method: 'POST',
