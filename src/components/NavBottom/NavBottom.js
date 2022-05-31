@@ -7,7 +7,7 @@ const NavBottom = () => {
   const [currentId, setCurrentId] = useState();
   const navigate = useNavigate();
 
-  const handleCategory = () => {};
+  const moveCategory = () => {}; //네비게이트 url 넘겨주는
 
   return (
     <div className="navBottom">
