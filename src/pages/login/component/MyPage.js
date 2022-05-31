@@ -10,7 +10,9 @@ const MyPage = () => {
       <div className="myPage">
         <div className="wrapMyPage">
           <div className="leftColum">
-            <ul></ul>
+            <ul>
+              <li></li>
+            </ul>
           </div>
         </div>
       </div>
