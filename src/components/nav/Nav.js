@@ -1,9 +1,27 @@
 import React from 'react';
 import NavBottom from '../NavBottom/NavBottom';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Nav.scss';
 
 const Nav = () => {
+  const navigate = useNavigate();
+
+  const moveMyPage = () => {
+    navigate(`/mypage`);
+  };
+
+  const moveLogin = () => {
+    navigate(`/login`);
+  };
+
+  const moveSignUp = () => {
+    navigate(`/signup`);
+  };
+
+  const moveCart = () => {
+    navigate(``);
+  };
+
   return (
     <div className="navWrap">
       <div className="nav">
@@ -18,15 +36,15 @@ const Nav = () => {
         </div>
         <div className="navMiddle">
           <div className="navMiddleLeft">
-            <Link to="/" className="userIcon">
+            <div className="moveMyPage" onClick={moveMyPage}>
               <i className="fa-solid fa-user" />
-            </Link>
-            <Link to="/" className="loginLink">
+            </div>
+            <div className="moveLogin" onClick={moveLogin}>
               <span className="loginText">로그인</span>
-            </Link>
-            <Link to="/" className="signupLink">
+            </div>
+            <div className="moveSignUp" onClick={moveSignUp}>
               <span className="signupText">회원가입</span>
-            </Link>
+            </div>
           </div>
           <div className="navMiddleCenter">
             <Link to="/">
@@ -41,10 +59,10 @@ const Nav = () => {
             <Link to="/" className="searchLink">
               <i className="fa-solid fa-magnifying-glass" />
             </Link>
-            <Link to="/" className="cartLink">
+            <div className="moveCart" onClick={moveCart}>
               <i className="fa-solid fa-cart-shopping" />
               <span className="cartText">장바구니</span>
-            </Link>
+            </div>
           </div>
         </div>
         <div className="navBottom">
