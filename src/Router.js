@@ -6,11 +6,13 @@ import Detail from './pages/Detail/Detail';
 import List from './pages/List/List';
 import Main from './pages/Main/Main';
 import SignUp from './pages/login/SignUp';
+import MyPage from './pages/login/component/MyPage';
 
 const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/mypage" element={<MyPage />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<Main />} />
