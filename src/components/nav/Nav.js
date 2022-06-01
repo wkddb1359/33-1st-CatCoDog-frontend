@@ -48,7 +48,7 @@ const Nav = () => {
           </div>
         </div>
         <div className="navBottom">
-          <NavBottom />
+          <NavBottom className="sticky" />
         </div>
       </div>
     </div>
