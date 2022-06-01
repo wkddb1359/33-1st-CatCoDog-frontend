@@ -23,16 +23,20 @@ const MyPage = () => {
                 alt="user-picture"
               />
               <div className="middleText">
-                <h3>기본등급 아무개님 안녕하세요.</h3>
-                <p>구매금액 100원 달성 시</p>
-                <p>'구매회원'으로 승급됩니다.</p>
+                <h3 className="middleHeadText">
+                  기본등급 김성주님 안녕하세요.
+                </h3>
+                <p className="spanMiddleText">구매금액 100원 달성 시</p>
+                <p className="spanMiddleText">'구매회원'으로 승급됩니다.</p>
                 <button className="middleTextBtn">등급혜택 보기</button>
               </div>
               <div className="rightText">
-                <span>포인트</span>
-                <span>1.000</span>
+                <span className="point">포인트</span>
+                <span className="oneThousand">1.000</span>
               </div>
             </div>
+            <p className="order">주문조회</p>
+            <p className="cancel">취소 내역이 없습니다.</p>
           </div>
         </div>
       </div>
