@@ -21,20 +21,20 @@ const NavBottom = () => {
               key={id}
               onMouseEnter={() => setCurrentId(id)} //내장함수
               onMouseLeave={() => setCurrentId()}
-              onClick={id => moveCategory()}
+              onClick={() => moveCategory(id)}
             >
               <p className="dropP">{name}</p>
 
               {currentId === id && (
                 <div className={`dropDownBoxContainer${id}`}>
-                  {list.map(({ id, listname }) => {
+                  {list.map(lists => {
                     return (
                       <div
                         className="dropDownBox"
-                        key={id}
-                        onClick={id => moveCategory()}
+                        key={lists.id}
+                        onClick={() => moveCategory(id)}
                       >
-                        {listname}
+                        {lists.listname}
                       </div>
                     );
                   })}
