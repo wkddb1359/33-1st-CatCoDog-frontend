@@ -13,5 +13,3 @@ const TableList = ({ name, standard }) => {
 };
 
 export default TableList;
-
-const 
