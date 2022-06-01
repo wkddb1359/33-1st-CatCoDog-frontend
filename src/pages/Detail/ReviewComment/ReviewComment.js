@@ -5,11 +5,12 @@ import './ReviewComment.scss';
 function ReviewComment() {
   const [comment, setComment] = useState('');
   const [commentList, setCommentList] = useState([]);
+
   const nextId = useRef(5);
 
   const [starCount, setStarCount] = useState(5);
 
-  const check = e => {
+  const checkStar = e => {
     setStarCount(e.target.value);
   };
 
@@ -72,7 +73,7 @@ function ReviewComment() {
               />
               <select
                 className="goodsReviewCommentInputStar"
-                onChange={check}
+                onChange={checkStar}
                 name="star"
               >
                 <option value={5}>⭐⭐⭐⭐⭐</option>

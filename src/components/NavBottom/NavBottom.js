@@ -22,7 +22,7 @@ const NavBottom = () => {
                 <div className={`dropDownBoxContainer${id}`}>
                   {list.map(({ id, listname }) => {
                     return (
-                      <div className="dropDownBox" key={listname}>
+                      <div className="dropDownBox" key={id}>
                         {listname}
                       </div>
                     );

@@ -1,27 +1,29 @@
 import React, { useEffect, useState } from 'react';
 import './DetailGoods.scss';
 
-function DetailGoods() {
-  const [gooodsData, setGoodsData] = useState([]);
+function DetailGoods({ mainImgURL, setMainImgURL, goodsData }) {
   const [heartLike, setHeartLike] = useState(false);
+  const [goodsCount, setGoodsCount] = useState({
+    quantity: 0,
+  });
+
+  const checkGoodsCount = e => {
+    setGoodsCount(e.target.value);
+  };
 
   const toggleLike = () => {
     setHeartLike(!heartLike);
   };
 
+  // http://10.58.0.92:8000/products/1
   useEffect(() => {
-    fetch('/data/goodsdata.json')
+    fetch('', {
+      method: 'POST',
+      body: JSON.stringify({ quantity: 1 }),
+    })
       .then(res => res.json())
-      .then(data => setGoodsData(data));
-  }, []);
-
-  const [mainImgURL, setMainImgURL] = useState('');
-
-  useEffect(() => {
-    setMainImgURL(
-      Object.keys(gooodsData).length !== 0 ? gooodsData.result.goodsURL[0] : ''
-    );
-  }, [gooodsData]);
+      .then(data => console.log(data));
+  });
 
   return (
     <div className="detailGoods">
@@ -36,16 +38,21 @@ function DetailGoods() {
               alt="제품사진"
             />
             <div className="goodsSmallImg">
-              {gooodsData.result.goodsURL.map((a, i) => {
+              {goodsData.result.product_images.map((goodsImg, i) => {
                 return (
                   <div
                     className="smallImgList"
                     key={i}
                     onClick={() => {
-                      setMainImgURL(a);
+                      setMainImgURL(goodsImg);
                     }}
                   >
-                    <img src={a} width={60} height={60} alt="제품미니사진" />
+                    <img
+                      src={goodsImg}
+                      width={60}
+                      height={60}
+                      alt="제품미니사진"
+                    />
                   </div>
                 );
               })}
@@ -56,27 +63,25 @@ function DetailGoods() {
               <header className="goodsFormHeader">
                 <div className="goodsFormHeaderTop">
                   <span className="goodsFormHeaderTitle">
-                    {gooodsData.result.name}
+                    {goodsData.result.name}
                   </span>
                   <span className="goodsFormHeaderSale">SALE</span>
                   <span className="goodsFormHeaderBest">BEST</span>
                 </div>
                 <div className="goodsFormHeaderPrice">
                   <div className="originalPrice">
-                    {gooodsData.result.price}원
+                    {parseInt(goodsData.result.option_price)}원
                   </div>
                   <span className="saleRate">
-                    {gooodsData.result.discountRate}
+                    {goodsData.result.discount_rate}%
                   </span>
                   <span className="salePrice">
-                    {gooodsData.result.discountPrice}원
+                    {parseInt(goodsData.result.discounted_price)}원
                   </span>
                   <i className="fa-solid fa-share-nodes" />
                 </div>
               </header>
-              <p className="goodsSummaryText">
-                {gooodsData.result.description}
-              </p>
+              <p className="goodsSummaryText">{goodsData.result.description}</p>
               <div className="goodsFormItemDetail">
                 {PURCHASE_INFO.map((purchase, i) => {
                   return (
@@ -89,7 +94,10 @@ function DetailGoods() {
               </div>
               <div className="goodsFormItemQuantity">
                 <p className="goodsQuantity">수량 *</p>
-                <select className="goodsQuantitySelect">
+                <select
+                  className="goodsQuantitySelect"
+                  onChange={checkGoodsCount}
+                >
                   <option value={0}>1개</option>
                   <option value={1}>2개</option>
                   <option value={2}>3개</option>

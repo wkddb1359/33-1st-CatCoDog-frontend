@@ -1,6 +1,4 @@
-import React from 'react';
-import Nav from '../../components/nav/Nav';
-import Footer from '../../components/footer/Footer';
+import React, { useEffect, useState } from 'react';
 import DetailGoods from './DetailGoods/DetailGoods';
 import DetailGoodsNav from './DetailGoodsNav/DetailGoodsNav';
 import ReviewSummary from './ReviewSummary/ReviewSummary';
@@ -8,18 +6,41 @@ import ReviewComment from './ReviewComment/ReviewComment';
 import './Detail.scss';
 
 function Detail() {
+  const [goodsData, setGoodsData] = useState([]);
+
+  // /data/goodsdata.json
+  // http://10.58.0.92:8000/products/1
+
+  useEffect(() => {
+    fetch('')
+      .then(res => res.json())
+      .then(data => setGoodsData(data));
+  }, []);
+
+  const [mainImgURL, setMainImgURL] = useState('');
+
+  useEffect(() => {
+    setMainImgURL(
+      Object.keys(goodsData).length !== 0
+        ? goodsData.result.product_images[0]
+        : ''
+    );
+  }, [goodsData]);
+
   return (
     <>
-      <Nav />
       <main className="detail">
         <div className="inside">
-          <DetailGoods />
+          <DetailGoods
+            mainImgURL={mainImgURL}
+            setMainImgURL={setMainImgURL}
+            goodsData={goodsData}
+          />
           <DetailGoodsNav />
           <ReviewSummary />
           <ReviewComment />
         </div>
       </main>
-      <Footer />
     </>
   );
 }
