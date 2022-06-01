@@ -1,28 +1,23 @@
 const NAV_NAME_DATA = [
   {
     id: 1,
-    listId: 'all-items',
-    name: '고양이 전체상품',
+    name: 'dog',
   },
   {
     id: 2,
-    listId: 'meat',
-    name: '통살',
+    name: 'dog_meat',
   },
   {
     id: 3,
-    listId: 'dry',
-    name: '동결 건조',
+    name: 'dog_frozen',
   },
   {
     id: 4,
-    listId: 'probiotics',
-    name: '유산균/영양제',
+    name: 'dog_supplement',
   },
   {
     id: 5,
-    listId: 'pouch',
-    name: '습식/파우치',
+    name: 'dog_pouchmeal',
   },
 ];
 

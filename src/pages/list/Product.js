@@ -1,37 +1,56 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Product.scss';
 
-const Product = ({ name, img, price, discount, saletag, besttag, desc }) => {
+const Product = ({
+  id,
+  name,
+  thumbnail_url,
+  review_count,
+  price,
+  discount_rate,
+  discounted_price,
+  description,
+}) => {
+  const navigate = useNavigate();
+  const goToDetail = () => {
+    navigate(`/detail/${id}`);
+  };
+
   return (
     <div className="product">
       <div className="productImgContainer">
-        <img className="productImg" src={img} alt="" />
-        <div className="productImgOverlay" />
+        <img className="productImg" src={thumbnail_url} alt="" />
+        <div className="productImgOverlay" onClick={goToDetail} />
       </div>
       <div className="productDetail">
         <h2 className="productInfo name">{name}</h2>
         <div className="productInfo price">
-          <p className={`${discount !== '' ? 'productPrice' : 'invisible'}`}>
-            {price}
+          <p
+            className={`${discount_rate === 0 ? 'invisible' : 'productPrice'}`}
+          >
+            {price}원
           </p>
           <span
-            className={`${discount !== '' ? 'productDiscount' : 'invisible'}`}
+            className={`${
+              discount_rate === 0 ? 'invisible' : 'productDiscount'
+            }`}
           >
-            {discount}
+            {discount_rate}%
           </span>
-          <span className="productDiscountPrice">{price}</span>
+          <span className="productDiscountPrice">{discounted_price}원</span>
         </div>
-        <span className={`${saletag !== '' ? 'saleBar' : 'invisible'}`}>
-          {saletag}
+        <span className={`${discount_rate === 0 ? 'invisible' : 'saleBar'}`}>
+          SALE
         </span>
-        <span className={`${besttag !== '' ? 'bestBar' : 'invisible'}`}>
-          {besttag}
+        <span className={`${discount_rate === 0 ? 'invisible' : 'bestBar'}`}>
+          BEST
         </span>
-        <p className="productInfo desc">{desc}</p>
+        <p className="productInfo desc">{description}</p>
         <div className="productInfo icons">
           <span className="comment">
             <i className="fa-solid fa-comment" />
-            1734
+            {review_count}
           </span>
           <span className="cart">
             <i className="fa-solid fa-cart-arrow-down" />

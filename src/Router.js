@@ -1,19 +1,19 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import CatProductMain from './pages/list/CatProductMain';
-import Cart from './pages/cart/Cart';
+import Nav from './components/nav/Nav';
+import Footer from './components/footer/Footer';
 import Detail from './pages/detail/Detail';
-import Main from './pages/main/Main';
 
 const Router = () => {
   return (
     <BrowserRouter>
+      <Nav />
       <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/detail" element={<Detail />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/cat/:listId" element={<CatProductMain />} />
+        <Route path="/dog" element={<CatProductMain />} />
+        <Route path="/detail/:id" element={<Detail />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 };

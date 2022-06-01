@@ -1,37 +1,51 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import Nav from '../../components/nav/Nav';
+import { useLocation, useNavigate } from 'react-router-dom';
 import ProductListNav from './ProductListNav';
 import ProductList from './ ProductList';
-import Footer from '../../components/footer/Footer';
 import NAV_NAME_DATA from './navNameData';
 import '../../styles/common.scss';
 
 const CatProductMain = () => {
   const [itemList, setItemList] = useState([]);
-  const [selected, setSelected] = useState('');
-  const [listId, setListId] = useState('all-items');
-  console.log(listId);
+  const [selected, setSelected] = useState('dog');
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
-    fetch(`/data/${listId}.json`)
+    fetch(`http://10.58.0.101:8000/products${location.search}`)
       .then(res => res.json())
       .then(data => {
-        setItemList(data);
+        setItemList(data.data);
       });
-  }, [listId]);
+  }, [location.search]);
 
+  const pageMove = name => {
+    navigate(`?category=${name}`);
+  };
+
+  const [pageLimit, setPageLimit] = useState(12);
+  const morePage = () => {
+    setPageLimit(pageLimit => pageLimit + 6);
+    const limit = pageLimit;
+    const offset = 0;
+    const queryString = `?category=${selected}&offset=${offset}&limit=${limit}`;
+    navigate(queryString);
+  };
   return (
     <>
-      <Nav />
       <ProductListNav
         NAV_NAME_DATA={NAV_NAME_DATA}
         selected={selected}
         setSelected={setSelected}
-        setListId={setListId}
+        setPageLimit={setPageLimit}
+        pageMove={pageMove}
       />
-      <ProductList itemList={itemList} />
-      <Footer />
+      <ProductList
+        itemList={itemList}
+        NAV_NAME_DATA={NAV_NAME_DATA}
+        morePage={morePage}
+      />
     </>
   );
 };
