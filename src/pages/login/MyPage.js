@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react';
 import Nav from '../../components/nav/Nav';
 import Footer from '../../components/footer/Footer';
 import ListName from './component/ListName';
@@ -6,6 +7,7 @@ import BenefitDetails from './component/BenefitDetails';
 import './MyPage.scss';
 
 const MyPage = () => {
+  const [modal, setModal] = useState(false);
   return (
     <div>
       <Nav />
@@ -29,7 +31,14 @@ const MyPage = () => {
                 </h3>
                 <p className="spanMiddleText">구매금액 100원 달성 시</p>
                 <p className="spanMiddleText">'구매회원'으로 승급됩니다.</p>
-                <button className="middleTextBtn">등급혜택 보기</button>
+                <button
+                  className="middleTextBtn"
+                  onClick={() => {
+                    setModal(!modal);
+                  }}
+                >
+                  등급혜택 보기
+                </button>
               </div>
               <div className="rightText">
                 <span className="point">포인트</span>
@@ -38,7 +47,7 @@ const MyPage = () => {
             </div>
             <p className="order">주문조회</p>
             <p className="cancel">취소 내역이 없습니다.</p>
-            <BenefitDetails />
+            {modal === true ? <BenefitDetails /> : null}
           </div>
         </div>
       </div>
