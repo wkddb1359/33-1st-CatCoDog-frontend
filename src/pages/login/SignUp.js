@@ -119,7 +119,7 @@ const SignUp = () => {
                 id="agreement"
                 onChange={isCheckBoxClicked}
               />
-              <label for="agreement" className="radioText">
+              <label htmlFor="agreement" className="radioText">
                 예,동의합니다.
               </label>
               <br />

@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Main from './pages/Main/Main';
+import MainRouter from './pages/Main/MainRouter';
 import Login from './pages/login/Login';
 
 const Router = () => {
@@ -8,7 +8,7 @@ const Router = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/login" element={<Login />} />
-        <Route path="/*" element={<Main />} />
+        <Route path="/*" element={<MainRouter />} />
       </Routes>
     </BrowserRouter>
   );

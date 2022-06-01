@@ -15,11 +15,11 @@ const Nav = () => {
   };
 
   const moveSignUp = () => {
-    navigate(`/signup`);
+    navigate('/signup');
   };
 
   const moveCart = () => {
-    navigate(``);
+    navigate(`/cart`);
   };
 
   return (
