@@ -1,5 +1,6 @@
 .myPage {
   background-color: #f3f3f3;
+
   .wrapMyPage {
     width: 60rem;
     height: 46rem;
@@ -8,16 +9,23 @@
     padding-left: 0.938rem;
     padding-right: 0.938rem;
     margin: 0 auto;
+    position: relative;
+
     .benefitDetails {
       margin-top: 2rem;
       padding: 1.5rem 1rem;
       background-color: white;
+      position: absolute;
+      top: 33%;
+      left: 33%;
+
       .tableTitle {
         font-size: 0.7rem;
         font-weight: bold;
         padding-top: 1.5rem;
         padding-bottom: 0.8rem;
       }
+
       .bottomText {
         font-size: 0.7rem;
         line-height: 1.2;
