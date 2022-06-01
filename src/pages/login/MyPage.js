@@ -2,6 +2,7 @@ import React from 'react';
 import Nav from '../../components/nav/Nav';
 import Footer from '../../components/footer/Footer';
 import ListName from './component/ListName';
+import BenefitDetails from './component/BenefitDetails';
 import './MyPage.scss';
 
 const MyPage = () => {
@@ -24,7 +25,7 @@ const MyPage = () => {
               />
               <div className="middleText">
                 <h3 className="middleHeadText">
-                  기본등급 김성주님 안녕하세요.
+                  기본등급 안성주님 안녕하세요.
                 </h3>
                 <p className="spanMiddleText">구매금액 100원 달성 시</p>
                 <p className="spanMiddleText">'구매회원'으로 승급됩니다.</p>
@@ -37,6 +38,7 @@ const MyPage = () => {
             </div>
             <p className="order">주문조회</p>
             <p className="cancel">취소 내역이 없습니다.</p>
+            <BenefitDetails />
           </div>
         </div>
       </div>

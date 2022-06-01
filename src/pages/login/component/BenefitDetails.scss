@@ -1,0 +1,31 @@
+.myPage {
+  background-color: #f3f3f3;
+  .wrapMyPage {
+    width: 60rem;
+    height: 46rem;
+    display: flex;
+    flex-direction: row;
+    padding-left: 0.938rem;
+    padding-right: 0.938rem;
+    margin: 0 auto;
+    .benefitDetails {
+      margin-top: 2rem;
+      padding: 1.5rem 1rem;
+      background-color: white;
+      .tableTitle {
+        font-size: 0.7rem;
+        font-weight: bold;
+        padding-top: 1.5rem;
+        padding-bottom: 0.8rem;
+      }
+      .bottomText {
+        font-size: 0.7rem;
+        line-height: 1.2;
+      }
+    }
+    .detailTable {
+      margin-bottom: 1rem;
+      border-top: 1px solid black;
+    }
+  }
+}
