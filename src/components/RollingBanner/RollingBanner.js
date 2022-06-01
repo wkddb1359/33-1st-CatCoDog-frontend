@@ -42,7 +42,6 @@ const RollingBanner = () => {
             >
               <img
                 src={src}
-                s
                 alt="피드 이미지"
                 onClick={() => moveProducts(id)}
               />
