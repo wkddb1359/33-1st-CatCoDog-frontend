@@ -8,6 +8,7 @@ const Nav = () => {
 
   const movePage = e => {
     navigate(`/${e.target.id}`);
+    console.log(e);
   };
 
   return (
@@ -71,13 +72,13 @@ const NAV_LIST = [
     id: 2,
     path: 'login',
     name: 'moveLogin',
-    html: <span className="loginText">로그인</span>,
+    html: '로그인',
   },
   {
     id: 3,
     path: 'signup',
     name: 'moveSignUp',
-    html: <span className="signupText">회원가입</span>,
+    html: '회원가입',
   },
 ];
 

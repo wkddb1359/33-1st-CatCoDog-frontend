@@ -5,7 +5,6 @@ import ProductListNav from './ProductListNav';
 import ProductList from './ ProductList';
 import NAV_NAME_DATA from './navNameData';
 import FILTER_DATA from './filterData';
-import '../../styles/common.scss';
 
 const ProductListPage = () => {
   const [itemList, setItemList] = useState([]);
@@ -34,7 +33,7 @@ const ProductListPage = () => {
         ? `category=${filterValue.categoryId}`
         : `category=cat`
     }
-${filterValue.sortId ? `&sort=${filterValue.sortId}` : ''}${
+  ${filterValue.sortId ? `&sort=${filterValue.sortId}` : ''}${
       filterValue.offsetLimitId ? `${filterValue.offsetLimitId}` : ''
     }`;
     navigate(queryString);
