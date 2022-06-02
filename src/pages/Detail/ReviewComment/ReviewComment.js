@@ -30,14 +30,14 @@ function ReviewComment() {
           userid: 'dkst****',
           content: comment,
           time: '2022-05-26 23:47',
-          star: starCount,
+          rating: starCount,
         },
         ...commentList,
       ]);
     } else alert('댓글을 입력하세요!');
 
     e.target.comment.value = '';
-    e.target.star.value = '';
+    e.target.rating.value = '';
     nextId.current += 1;
   };
 
@@ -75,7 +75,7 @@ function ReviewComment() {
               <select
                 className="goodsReviewCommentInputStar"
                 onChange={checkStar}
-                name="star"
+                name="rating"
               >
                 <option value={5}>⭐⭐⭐⭐⭐</option>
                 <option value={4}>⭐⭐⭐⭐</option>
