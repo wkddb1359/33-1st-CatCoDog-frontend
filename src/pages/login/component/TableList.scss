@@ -1,0 +1,20 @@
+.table {
+  border-bottom: 1px solid silver;
+  border-collapse: collapse;
+
+  .firstRow {
+    display: flex;
+    flex-direction: row;
+    padding: 0.5rem;
+
+    .tableInnerText1 {
+      flex: 7;
+      font-size: 0.7rem;
+    }
+
+    .tableInnerText2 {
+      flex: 3;
+      font-size: 0.7rem;
+    }
+  }
+}
