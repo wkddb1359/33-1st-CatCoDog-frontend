@@ -9,18 +9,18 @@ const Cart = () => {
   const total = cartList.length;
   const Empty = cartList.length === 0;
   const [checkedList, setCheckedList] = useState([]);
-  console.log(checkedList);
+  const [totalBill, settotalBill] = useState(0);
 
   useEffect(() => {
-    fetch('/data/cartList.JSON')
+    fetch('http://10.58.2.22:8000/orders/cart')
       .then(res => res.json())
       .then(data => {
-        setCartList(data);
+        setCartList(data.data);
+        settotalBill(data.total_bill);
       });
   }, []);
-
   return (
-    <section className="thisisCart">
+    <section className="Cart">
       <div className="inside">
         <div className="basket">
           장바구니 <span className="blue">{total}</span>
@@ -35,6 +35,8 @@ const Cart = () => {
                   total={total}
                   checkedList={checkedList}
                   setCheckedList={setCheckedList}
+                  totalBill={totalBill}
+                  settotalBill={settotalBill}
                 />
               ) : (
                 <EmptyUi Empty={Empty} />

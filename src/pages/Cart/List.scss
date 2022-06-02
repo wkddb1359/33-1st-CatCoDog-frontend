@@ -23,6 +23,13 @@
         margin-left: 2rem;
         width: 100%;
       }
+      .xButton {
+        color: rgb(180, 176, 176);
+        background-color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 17px;
+      }
     }
   }
   .listTh {
@@ -30,17 +37,21 @@
     height: 100px;
     vertical-align: middle;
     position: relative;
-    .Minus {
-      background-color: white;
-      margin-right: 10px;
-      border: 1px solid #ddd;
-      cursor: pointer;
-    }
-    .Plus {
-      background-color: white;
-      margin-left: 10px;
-      border: 1px solid #ddd;
-      cursor: pointer;
+    padding-left: 10px;
+    .plusMinusBox {
+      padding-left: 50px;
+      .miNus {
+        background-color: white;
+        margin-right: 10px;
+        border: 1px solid #ddd;
+        cursor: pointer;
+      }
+      .pLus {
+        background-color: white;
+        margin-left: 10px;
+        border: 1px solid #ddd;
+        cursor: pointer;
+      }
     }
 
     .buyNow {
@@ -54,9 +65,5 @@
       font-size: 14px;
       border: 1px solid black;
     }
-  }
-
-  #admitCss {
-    padding-left: 62px;
   }
 }

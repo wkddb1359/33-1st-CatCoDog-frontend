@@ -48,7 +48,7 @@
         margin-top: 20px;
         font-size: 24px;
 
-        .pr {
+        .priceAll {
           font-weight: 700;
           font-size: 25px;
         }
@@ -70,6 +70,19 @@
           color: black;
           opacity: 0.5;
         }
+      }
+    }
+    .orderBtnbox {
+      margin-top: 20px;
+      .orderBtn {
+        width: 100px;
+        height: 40px;
+        background-color: #00498f;
+        border-radius: 10px;
+        color: white;
+        border: 1px solid black;
+        cursor: pointer;
+        font-size: 17px;
       }
     }
   }

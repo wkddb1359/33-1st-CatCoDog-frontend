@@ -2,20 +2,28 @@ import React, { useState, useEffect } from 'react';
 import List from './List';
 import './ListOn.scss';
 
-function ListOn({ cartList, setCartList, total, checkedList, setCheckedList }) {
-  const [totalPrice, setTotalPrice] = useState(0);
+function ListOn({
+  cartList,
+  setCartList,
+  total,
+  checkedList,
+  totalBill,
+  setCheckedList,
+  settotalBill,
+}) {
   const shipping = 3000;
-  const shippingPlusItem = totalPrice + shipping;
-
-  const [isAllChecked, setIsAllChecked] = useState(false);
+  const shippingPlusItem = totalBill + shipping;
   //전체 선택 여부
+  const [isAllChecked, setIsAllChecked] = useState(false);
+  const [deleteItem, setdelteItem] = useState();
+
   useEffect(() => {
     setIsAllChecked(cartList.every(cartItem => checkedList.includes(cartItem)));
   }, [cartList, checkedList]);
+
   ///.every 배열안의 모든 요소가 주어진 함수를통과하는지 테스트
 
   const onClicked = e => {
-    console.log('결과', e.target.checked);
     if (e.target.checked) {
       setCheckedList(cartList);
       setIsAllChecked(true);
@@ -25,7 +33,10 @@ function ListOn({ cartList, setCartList, total, checkedList, setCheckedList }) {
     }
   };
 
-  const onbtnClick = e => {};
+  const onbtnClick = checkedList => {
+    setCheckedList(deleteItem.id);
+    setCartList(cartList.filter(checkedList => checkedList == cartList));
+  };
 
   return (
     <>
@@ -43,24 +54,26 @@ function ListOn({ cartList, setCartList, total, checkedList, setCheckedList }) {
           <th className="thcartinfo">주문금액</th>
         </thead>
       </table>
-      {cartList.map(item => {
+      {cartList.map((item, i) => {
         return (
           <List
-            key={item.id}
+            key={item.cart_id}
             item={item}
-            setTotalPrice={setTotalPrice}
-            totalPrice={totalPrice}
             cartList={cartList}
             setCartList={setCartList}
             checkedList={checkedList}
             setCheckedList={setCheckedList}
+            setdelteItem={setdelteItem}
+            id={i}
+            totalBill={totalBill}
+            settotalBill={settotalBill}
           />
         );
       })}
       <div className="cartFooter">
         <div className="buttonBox">
-          <button className="selectBtn">
-            <span className="deleteBtn">선택상품삭제</span>
+          <button className="selectBtn" onClick={() => onbtnClick(checkedList)}>
+            <span className="deleteBtn">카트비우기</span>
           </button>
         </div>
 
@@ -70,10 +83,11 @@ function ListOn({ cartList, setCartList, total, checkedList, setCheckedList }) {
           </p>
           <div className="priceBox">
             <div className="priceprops">
-              <span className="pr">{totalPrice}</span>원 +
-              <span className="pr">{totalPrice <= 30000 ? 3000 : 0}</span>원 =
-              <span className="pr">
-                {totalPrice <= 30000 ? shippingPlusItem : totalPrice}
+              <span className="priceAll">{totalBill}</span>원 +
+              <span className="priceAll">{totalBill <= 30000 ? 3000 : 0}</span>
+              원 =
+              <span className="priceAll">
+                {totalBill <= 30000 ? shippingPlusItem : totalBill}
               </span>
               원
             </div>
@@ -83,6 +97,9 @@ function ListOn({ cartList, setCartList, total, checkedList, setCheckedList }) {
               <span className="text">총 주문고객</span>
               <p className="five">30,000원 이상 구매시 배송비 무료</p>
             </div>
+          </div>
+          <div className="orderBtnbox">
+            <button className="orderBtn">구매하기</button>
           </div>
         </div>
       </div>

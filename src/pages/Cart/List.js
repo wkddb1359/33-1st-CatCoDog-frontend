@@ -3,29 +3,36 @@ import './List.scss';
 
 function List({
   item,
-  setTotalPrice,
-  cartList,
-  setCartList,
   checkedList,
   setCheckedList,
+  setdelteItem,
+  setCartList,
+  cartList,
+  totalBill,
+  settotalBill,
+  id,
 }) {
-  let [count, setCount] = useState(item.qty);
-
-  useEffect(() => {
-    setTotalPrice(prev => prev + item.price);
-  }, []);
+  console.log(totalBill);
+  let [count, setCount] = useState(item.quantity);
 
   const addCount = () => {
     setCount(count + 1);
-    setTotalPrice(prev => prev + item.price);
+    settotalBill(prev => prev + item.price);
   };
   const minusCount = () => {
     if (count > 0) {
       setCount(count - 1);
-      setTotalPrice(prev => prev - item.price);
+      settotalBill(prev => prev - item.price);
     } else {
-      alert('수량을 더이상 내일수 없습니다');
+      alert('수량을 더이상 내릴 수 없습니다');
     }
+  };
+
+  const deleteItem = () => {
+    let copy = [...cartList];
+    copy.splice(id, 1);
+    setCartList(copy);
+    settotalBill(totalBill - item.item_total);
   };
 
   const [isChecked, setIsChecked] = useState();
@@ -33,6 +40,9 @@ function List({
   useEffect(() => {
     setIsChecked(checkedList && checkedList.includes(item));
   }, [checkedList, item]);
+  useEffect(() => {
+    setdelteItem(item);
+  }, []);
 
   const onCheck = e => {
     if (e.target.checked) {
@@ -40,9 +50,12 @@ function List({
       setCheckedList([...checkedList, item]);
     } else {
       setIsChecked(false);
-      setCheckedList(checkedList.filter(listItem => listItem.id !== item.id));
+      setCheckedList(
+        checkedList.filter(listItem => listItem.id !== item.cart_id)
+      );
     }
   };
+
   return (
     <table>
       <tr className="listTr">
@@ -52,19 +65,33 @@ function List({
         <th className="listInfo">
           <div className="infoImage">
             <div className="admitDiv">
-              <img className="productImage" src={item.img} alt="개밥사진" />
+              <img
+                className="productImage"
+                src={item.thumbnail_url}
+                alt="개밥사진"
+              />
             </div>
-            <span className="itemInfo">{item.info}</span>
+            <span className="itemInfo">{item.product_name}</span>
+            <button
+              onClick={() => {
+                deleteItem();
+              }}
+              className="xButton"
+            >
+              ✖️
+            </button>
           </div>
         </th>
-        <th id="admitCss" className="listTh">
-          <button className="Minus" onClick={minusCount}>
-            -
-          </button>
-          {count}
-          <button className="Plus" onClick={addCount}>
-            +
-          </button>
+        <th className="listTh">
+          <div className="plusMinusBox">
+            <button className="miNus" onClick={minusCount}>
+              -
+            </button>
+            {count}
+            <button className="pLus" onClick={addCount}>
+              +
+            </button>
+          </div>
         </th>
         <th className="listTh">
           {item.price * count} 원<button className="buyNow">바로구매</button>

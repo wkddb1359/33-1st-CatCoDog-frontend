@@ -1,23 +1,23 @@
 [
   {
-    "id": 1,
-    "img": "https://velog.velcdn.com/images/cadyky95/post/ea84a283-10fd-4a4f-b5c6-22b7ddff8884/image.png",
-    "info": "맛있는 냠냠쩝쩝 개밥",
+    "cart_id": 1,
+    "thumbnail_url": "https://velog.velcdn.com/images/cadyky95/post/ea84a283-10fd-4a4f-b5c6-22b7ddff8884/image.png",
+    "product_name": "개쩌는 냠냠쩝쩝 개밥",
     "price": 20000,
-    "qty": 1
+    "quantity": 1
   },
   {
-    "id": 2,
-    "img": "https://velog.velcdn.com/images/cadyky95/post/ea84a283-10fd-4a4f-b5c6-22b7ddff8884/image.png",
-    "info": "달콤한 새콤달콤 개밥",
+    "cart_id": 2,
+    "thumbnail_url": "https://velog.velcdn.com/images/cadyky95/post/ea84a283-10fd-4a4f-b5c6-22b7ddff8884/image.png",
+    "product_name": "개맛있는 새콤달콤 개밥",
     "price": 11000,
-    "qty": 1
+    "quantity": 1
   },
   {
-    "id": 3,
-    "img": "https://velog.velcdn.com/images/cadyky95/post/ea84a283-10fd-4a4f-b5c6-22b7ddff8884/image.png",
-    "info": "달콤한 달짝지근 고양이밥",
+    "cart_id": 3,
+    "thumbnail_url": "https://velog.velcdn.com/images/cadyky95/post/ea84a283-10fd-4a4f-b5c6-22b7ddff8884/image.png",
+    "product_name": "쌉맛있는 달짝지근 고양이밥",
     "price": 51000,
-    "qty": 1
+    "quantity": 1
   }
 ]

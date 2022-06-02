@@ -12,7 +12,7 @@ function EmptyUi() {
             <span className="emptyText">장바구니가 비었습니다.</span>
           </div>
         </div>
-        <Link to="/main">
+        <Link to="/list">
           <button>계속 쇼핑하기</button>
         </Link>
       </div>
