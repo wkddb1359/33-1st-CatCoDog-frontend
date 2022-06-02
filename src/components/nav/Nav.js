@@ -6,16 +6,8 @@ import './Nav.scss';
 const Nav = () => {
   const navigate = useNavigate();
 
-  const moveMyPage = () => {
-    navigate(`/mypage`);
-  };
-
-  const moveLogin = () => {
-    navigate(`/login`);
-  };
-
-  const moveSignUp = () => {
-    navigate('/signup');
+  const movePage = e => {
+    navigate(`/${e.target.id}`);
   };
 
   const moveCart = () => {
@@ -34,15 +26,18 @@ const Nav = () => {
         </div>
         <div className="navMiddle">
           <div className="navMiddleLeft">
-            <div className="moveMyPage" onClick={moveMyPage}>
-              <i className="fa-solid fa-user" />
-            </div>
-            <div className="moveLogin" onClick={moveLogin}>
-              <span className="loginText">로그인</span>
-            </div>
-            <div className="moveSignUp" onClick={moveSignUp}>
-              <span className="signupText">회원가입</span>
-            </div>
+            {NAV_LIST.map(list => {
+              return (
+                <div
+                  key={list.id}
+                  id={list.path}
+                  className={list.name}
+                  onClick={movePage}
+                >
+                  {list.html}
+                </div>
+              );
+            })}
           </div>
           <div className="navMiddleCenter">
             <img
@@ -68,5 +63,26 @@ const Nav = () => {
     </div>
   );
 };
+
+const NAV_LIST = [
+  {
+    id: 1,
+    path: 'mypage',
+    name: 'moveMyPage',
+    html: <i className="fa-solid fa-user" />,
+  },
+  {
+    id: 2,
+    path: 'login',
+    name: 'moveLogin',
+    html: <span className="loginText">로그인</span>,
+  },
+  {
+    id: 3,
+    path: 'signup',
+    name: 'moveSignUp',
+    html: <span className="signupText">회원가입</span>,
+  },
+];
 
 export default Nav;
