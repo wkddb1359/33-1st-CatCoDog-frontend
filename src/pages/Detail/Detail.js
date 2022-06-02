@@ -28,20 +28,18 @@ function Detail() {
   }, [goodsData]);
 
   return (
-    <>
-      <main className="detail">
-        <div className="inside">
-          <DetailGoods
-            mainImgURL={mainImgURL}
-            setMainImgURL={setMainImgURL}
-            goodsData={goodsData}
-          />
-          <DetailGoodsNav />
-          <ReviewSummary />
-          <ReviewComment />
-        </div>
-      </main>
-    </>
+    <main className="detail">
+      <div className="inside">
+        <DetailGoods
+          mainImgURL={mainImgURL}
+          setMainImgURL={setMainImgURL}
+          goodsData={goodsData}
+        />
+        <DetailGoodsNav />
+        <ReviewSummary />
+        <ReviewComment />
+      </div>
+    </main>
   );
 }
 
