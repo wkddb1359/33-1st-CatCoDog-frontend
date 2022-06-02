@@ -1,0 +1,20 @@
+{
+  "result": {
+    "id": 1,
+    "name": "바른트릿 9종 골라담기",
+    "price": "7,900",
+    "discount_rate": "13",
+    "option_price": "1000",
+    "discounted_price": "8000",
+    "description": "갈지 않은 원물 100%",
+    "product_images": [
+      "/images/smallGoods1.png",
+      "/images/smallGoods2.png",
+      "/images/smallGoods3.png",
+      "/images/smallGoods4.png",
+      "/images/smallGoods5.png",
+      "/images/smallGoods1.png",
+      "/images/smallGoods2.png"
+    ]
+  }
+}
