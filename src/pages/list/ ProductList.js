@@ -2,10 +2,17 @@ import React from 'react';
 import Product from './Product';
 import './ProductList.scss';
 
-const ProductList = ({ itemList, morePage, sortHandler, FILTER_DATA }) => {
+const ProductList = ({
+  itemList,
+  morePage,
+  sortHandler,
+  FILTER_DATA,
+  listMainName,
+}) => {
+  console.log(listMainName);
   return (
     <>
-      <div className="listMainName">Dog</div>
+      <div className="listMainName">{listMainName}</div>
       <div className="filterContainer">
         <select
           className="filterOption"

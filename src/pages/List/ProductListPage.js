@@ -9,8 +9,9 @@ import '../../styles/common.scss';
 
 const ProductListPage = () => {
   const [itemList, setItemList] = useState([]);
-  const [selected, setSelected] = useState('dog');
+  const [selected, setSelected] = useState('고양이 전체상품');
   const [pageLimit, setPageLimit] = useState(12);
+  const [listMainName, setListMainName] = useState('고양이 전체상품');
   const [filterValue, setFilterValue] = useState({
     categoryId: 'dog',
     sortId: '',
@@ -39,13 +40,14 @@ ${filterValue.sortId ? `&sort=${filterValue.sortId}` : ''}${
     navigate(queryString);
   }, [filterValue]);
 
-  const pageMove = name => {
+  const pageMove = (value, name) => {
     setFilterValue(prev => {
-      return { ...prev, categoryId: name };
+      return { ...prev, categoryId: value };
     });
     setFilterValue(prev => {
       return { ...prev, offsetLimitId: `&offset=0&limit=6` };
     });
+    setListMainName(name);
   };
 
   const morePage = () => {
@@ -80,6 +82,7 @@ ${filterValue.sortId ? `&sort=${filterValue.sortId}` : ''}${
         morePage={morePage}
         sortHandler={sortHandler}
         setFilterValue={setFilterValue}
+        listMainName={listMainName}
       />
     </>
   );

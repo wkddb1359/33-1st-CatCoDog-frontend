@@ -12,12 +12,12 @@ const ProductListNav = ({
     <div className="productListNav">
       <nav className="navBar">
         <ul className="navList">
-          {NAV_NAME_DATA.map(({ id, name }) => (
+          {NAV_NAME_DATA.map(({ id, name, value }) => (
             <li
               key={id}
               onClick={() => {
                 setSelected(name);
-                pageMove(name);
+                pageMove(value, name);
                 setPageLimit(12);
               }}
               className={`listName ${selected === name ? 'activate' : ''}`}
