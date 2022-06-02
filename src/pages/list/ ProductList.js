@@ -9,7 +9,6 @@ const ProductList = ({
   FILTER_DATA,
   listMainName,
 }) => {
-  console.log(listMainName);
   return (
     <>
       <div className="listMainName">{listMainName}</div>

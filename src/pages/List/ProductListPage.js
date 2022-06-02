@@ -13,7 +13,7 @@ const ProductListPage = () => {
   const [pageLimit, setPageLimit] = useState(12);
   const [listMainName, setListMainName] = useState('고양이 전체상품');
   const [filterValue, setFilterValue] = useState({
-    categoryId: 'dog',
+    categoryId: 'cat',
     sortId: '',
     offsetLimitId: '',
   });
@@ -30,9 +30,9 @@ const ProductListPage = () => {
 
   useEffect(() => {
     const queryString = `?${
-      filterValue.categoryId !== 'dog'
+      filterValue.categoryId !== 'cat'
         ? `category=${filterValue.categoryId}`
-        : `category=dog`
+        : `category=cat`
     }
 ${filterValue.sortId ? `&sort=${filterValue.sortId}` : ''}${
       filterValue.offsetLimitId ? `${filterValue.offsetLimitId}` : ''
