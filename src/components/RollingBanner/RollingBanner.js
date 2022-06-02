@@ -8,7 +8,7 @@ const RollingBanner = () => {
   const navigate = useNavigate();
 
   const moveProducts = id => {
-    navigate(`/adress/adress/${id}`); //라우터 보고
+    navigate(`/address/address/${id}`); //라우터 보고
   };
 
   const bannerData = slideBanner;
