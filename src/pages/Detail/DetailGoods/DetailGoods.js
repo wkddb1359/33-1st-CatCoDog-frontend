@@ -3,13 +3,11 @@ import './DetailGoods.scss';
 
 function DetailGoods({ mainImgURL, setMainImgURL, goodsData }) {
   const [heartLike, setHeartLike] = useState(false);
-  // const [goodsCount, setGoodsCount] = useState({
-  //   quantity: 0,
-  // });
+  const [goodsCount, setGoodsCount] = useState([]);
 
-  // const checkGoodsCount = e => {
-  //   setGoodsCount(e.target.value);
-  // };
+  const checkGoodsCount = e => {
+    setGoodsCount(e.target.value);
+  };
 
   const toggleLike = () => {
     setHeartLike(!heartLike);
@@ -23,11 +21,11 @@ function DetailGoods({ mainImgURL, setMainImgURL, goodsData }) {
       method: 'POST',
       body: JSON.stringify({
         product_option_id: goodsData.result.id,
-        quantity: 1,
+        quantity: goodsCount,
       }),
     })
       .then(res => res.json())
-      .then(result => console.log(result));
+      .then(result => console.log('result=', result));
   };
 
   return (
@@ -127,12 +125,15 @@ function DetailGoods({ mainImgURL, setMainImgURL, goodsData }) {
               </div>
               <div className="goodsFormItemQuantity">
                 <p className="goodsQuantity">수량 *</p>
-                <select className="goodsQuantitySelect">
-                  <option value={0}>1개</option>
-                  <option value={1}>2개</option>
-                  <option value={2}>3개</option>
-                  <option value={3}>4개</option>
-                  <option value={4}>5개</option>
+                <select
+                  className="goodsQuantitySelect"
+                  onChange={checkGoodsCount}
+                >
+                  <option value={1}>1개</option>
+                  <option value={2}>2개</option>
+                  <option value={3}>3개</option>
+                  <option value={4}>4개</option>
+                  <option value={5}>5개</option>
                 </select>
               </div>
               <div className="goodsFormButton">

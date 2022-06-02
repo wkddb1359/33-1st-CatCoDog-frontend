@@ -3,12 +3,12 @@ import Star from '../../Star/Star';
 import './Comment.scss';
 
 function Comment({ commentData }) {
-  const { star, content } = commentData;
+  const { rating, content } = commentData;
   return (
     <div className="comment">
       <div className="goodsReviewComment">
         <div className="goodsReviewStarContainer">
-          <Star starCount={star} />
+          <Star starCount={rating} />
         </div>
         <div className="goodsReviewCommentText">{content}</div>
       </div>
