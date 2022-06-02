@@ -8,7 +8,7 @@ const RollingBanner = () => {
   const navigate = useNavigate();
 
   const moveProducts = id => {
-    navigate(`/address/address/${id}`); //라우터 보고
+    navigate(`/detail/${id}`);
   };
 
   const bannerData = slideBanner;
@@ -27,11 +27,10 @@ const RollingBanner = () => {
     }, 2000);
     return () => clearInterval(timer);
   }, [slideIndex]);
-
   return (
     <div className="rollingBanner">
       <section className="rollingBannerContainer">
-        {bannerData.map((img, index) => {
+        {bannerData.map((img, index, arr) => {
           const { id, src } = img;
           return (
             <div
@@ -43,7 +42,9 @@ const RollingBanner = () => {
               <img
                 src={src}
                 alt="피드 이미지"
-                onClick={() => moveProducts(id)}
+                onClick={() => {
+                  moveProducts(id);
+                }}
               />
             </div>
           );
