@@ -25,7 +25,7 @@ function DetailGoods({ mainImgURL, setMainImgURL, goodsData }) {
       }),
     })
       .then(res => res.json())
-      .then(result => console.log('result=', result));
+      .then(result => console.log(result));
   };
 
   return (
