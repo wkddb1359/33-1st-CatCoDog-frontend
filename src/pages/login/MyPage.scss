@@ -1,20 +1,22 @@
 .myPage {
   background-color: #f3f3f3;
   .wrapMyPage {
-    width: 60rem;
-    height: 46rem;
     display: flex;
     flex-direction: row;
+    width: 60rem;
+    height: 46rem;
     padding-left: 0.938rem;
     padding-right: 0.938rem;
     margin: 0 auto;
+
     .leftColum {
-      padding-top: 5rem;
       flex: 2;
+      padding-top: 5rem;
     }
     .rightColum {
-      padding-top: 5rem;
       flex: 8;
+      padding-top: 5rem;
+
       .whiteBox {
         display: flex;
         flex-direction: row;
@@ -26,8 +28,8 @@
           width: 6rem;
         }
         .middleText {
-          border-right: 1px solid silver;
           width: 60%;
+          border-right: 1px solid silver;
           padding-left: 1rem;
 
           .middleHeadText {
@@ -40,12 +42,12 @@
           }
 
           .middleTextBtn {
-            font-size: 0.7rem;
             border-radius: 30px;
             border: 1px solid silver;
             background-color: white;
             margin-top: 0.5rem;
             padding: 0.3rem;
+            font-size: 0.7rem;
           }
         }
         .rightText {
@@ -54,27 +56,29 @@
           justify-content: center;
 
           .point {
-            font-size: 0.7rem;
             padding-bottom: 0.4rem;
             margin-left: 4rem;
+            font-size: 0.7rem;
           }
+
           .oneThousand {
-            font-size: 1.6rem;
-            font-weight: bolder;
             margin-left: 3.2rem;
+            font-weight: bolder;
+            font-size: 1.6rem;
           }
         }
       }
       .order {
+        padding-top: 3.5rem;
         font-size: 0.9rem;
         font-weight: bolder;
-        padding-top: 3.5rem;
       }
+
       .cancel {
-        font-size: 0.7rem;
-        color: silver;
         margin-top: 4rem;
         margin-left: 20rem;
+        font-size: 0.7rem;
+        color: silver;
       }
     }
   }
