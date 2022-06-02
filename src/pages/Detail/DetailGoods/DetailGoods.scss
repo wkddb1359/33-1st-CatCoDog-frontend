@@ -53,6 +53,9 @@ $orange-color: #fd7e14;
             font-size: 0.81rem;
             font-weight: bold;
           }
+          .invisible {
+            display: none;
+          }
 
           .goodsFormHeaderBest {
             padding: 0.06rem 0.31rem;
@@ -76,6 +79,10 @@ $orange-color: #fd7e14;
             margin-right: 0.31rem;
             color: red;
             font-size: 1.5rem;
+          }
+
+          .invisible {
+            display: none;
           }
 
           .salePrice {

@@ -1,27 +1,22 @@
 [
   {
     "id": 1,
-    "src": "images/set5.png",
-    "url": "https://petsoban.com/shop_view/?idx=93"
+    "src": "/images/set5.png"
   },
   {
     "id": 2,
-    "src": "images/set2.png",
-    "url": "https://petsoban.com/shop_view/?idx=93"
+    "src": "/images/set2.png"
   },
   {
     "id": 3,
-    "src": "images/set3.png",
-    "url": "https://petsoban.com/shop_view/?idx=93"
+    "src": "images/set3.png"
   },
   {
     "id": 4,
-    "src": "images/set4.png",
-    "url": "https://petsoban.com/shop_view/?idx=93"
+    "src": "/images/set4.png"
   },
   {
     "id": 5,
-    "src": "images/set7.png",
-    "url": "https://petsoban.com/shop_view/?idx=93"
+    "src": "/images/set7.png"
   }
 ]

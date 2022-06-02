@@ -70,14 +70,42 @@ function DetailGoods({ mainImgURL, setMainImgURL, goodsData }) {
                   <span className="goodsFormHeaderTitle">
                     {goodsData.result.name}
                   </span>
-                  <span className="goodsFormHeaderSale">SALE</span>
-                  <span className="goodsFormHeaderBest">BEST</span>
+                  <span
+                    className={`${
+                      goodsData.result.discount_rate === 0
+                        ? 'invisible'
+                        : 'goodsFormHeaderSale'
+                    }`}
+                  >
+                    SALE
+                  </span>
+                  <span
+                    className={`${
+                      goodsData.result.discount_rate === 0
+                        ? 'invisible'
+                        : 'goodsFormHeaderBest'
+                    }`}
+                  >
+                    BEST
+                  </span>
                 </div>
                 <div className="goodsFormHeaderPrice">
-                  <div className="originalPrice">
+                  <div
+                    className={`${
+                      goodsData.result.discount_rate === 0
+                        ? 'invisible'
+                        : 'originalPrice'
+                    }`}
+                  >
                     {parseInt(goodsData.result.option_price)}원
                   </div>
-                  <span className="saleRate">
+                  <span
+                    className={`${
+                      goodsData.result.discount_rate === 0
+                        ? 'invisible'
+                        : 'saleRate'
+                    }`}
+                  >
                     {goodsData.result.discount_rate}%
                   </span>
                   <span className="salePrice">
