@@ -10,10 +10,6 @@ const Nav = () => {
     navigate(`/${e.target.id}`);
   };
 
-  const moveCart = () => {
-    navigate(`/cart`);
-  };
-
   return (
     <div className="navWrap">
       <div className="nav">
@@ -50,7 +46,7 @@ const Nav = () => {
             <div className="moveSearch">
               <i className="fa-solid fa-magnifying-glass" />
             </div>
-            <div className="moveCart" onClick={moveCart}>
+            <div id="cart" className="moveCart" onClick={movePage}>
               <i className="fa-solid fa-cart-shopping" />
               <span className="cartText">장바구니</span>
             </div>
