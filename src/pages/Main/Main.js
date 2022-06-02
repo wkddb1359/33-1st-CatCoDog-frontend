@@ -2,7 +2,7 @@ import React from 'react';
 import Nav from '../../components/nav/Nav';
 import RollingBannerWindow from '../../components/RollingBannerWindow/RollingBannerWindow';
 import RollingBanner from '../../components/RollingBanner/RollingBanner';
-import Footer from '../../components/Footer/Footer';
+import Footer from '../../components/footer/Footer';
 import './Main.scss';
 
 const Main = () => {
