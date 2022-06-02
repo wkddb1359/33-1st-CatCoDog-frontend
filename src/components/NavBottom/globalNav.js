@@ -3,17 +3,19 @@ const GLOBAL_NAV = [
   {
     id: 2,
     name: '고양이',
+    value: 'cat',
     list: [
-      { id: 1, listname: '고양이 전체상품' },
-      { id: 2, listname: '통살' },
-      { id: 3, listname: '동결건조' },
-      { id: 4, listname: '유산균/영양제' },
-      { id: 5, listname: '습식/파우치' },
+      { id: 1, listname: '고양이 전체상품', value: 'cat' },
+      { id: 2, listname: '통살', value: 'cat_meat' },
+      { id: 3, listname: '동결건조', value: 'cat_frozen' },
+      { id: 4, listname: '유산균/영양제', value: 'cat_supplment' },
+      { id: 5, listname: '습식/파우치', value: 'cat_pouchmeal' },
     ],
   },
   {
     id: 3,
     name: '강아지',
+    value: 'dog',
     list: [
       { id: 1, listname: '강아지 전체상품' },
       { id: 2, listname: '통살' },

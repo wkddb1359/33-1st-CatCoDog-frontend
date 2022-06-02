@@ -7,21 +7,27 @@ const NavBottom = () => {
   const [currentId, setCurrentId] = useState();
   const navigate = useNavigate();
 
-  const moveCategory = id => {
-    navigate(`?category=${id}`);
-  }; //네비게이트 url 넘겨주는
+  const moveCategory = (e, value) => {
+    if (e.target.className !== 'dropP') return;
+    navigate(`list?category=${value}`);
+  };
+
+  const moveSubCategory = id => {
+    navigate(`list?category=${id}`);
+  };
+  // 이벤트 버블링, 이벤트 위임
 
   return (
     <div className="navBottom">
       <ul className="navContainer">
-        {GLOBAL_NAV.map(({ id, name, list }) => {
+        {GLOBAL_NAV.map(({ id, name, list, value }) => {
           return (
             <li
               className="dropList"
               key={id}
               onMouseEnter={() => setCurrentId(id)}
               onMouseLeave={() => setCurrentId()}
-              onClick={() => moveCategory(id)}
+              onClick={e => moveCategory(e, value)}
             >
               <p className="dropP">{name}</p>
 
@@ -32,7 +38,9 @@ const NavBottom = () => {
                       <div
                         className="dropDownBox"
                         key={lists.id}
-                        onClick={() => moveCategory(id)}
+                        onClick={() => {
+                          moveSubCategory(lists.value);
+                        }}
                       >
                         {lists.listname}
                       </div>
