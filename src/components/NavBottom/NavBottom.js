@@ -19,7 +19,7 @@ const NavBottom = () => {
             <li
               className="dropList"
               key={id}
-              onMouseEnter={() => setCurrentId(id)} //내장함수
+              onMouseEnter={() => setCurrentId(id)}
               onMouseLeave={() => setCurrentId()}
               onClick={() => moveCategory(id)}
             >

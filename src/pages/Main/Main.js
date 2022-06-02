@@ -1,7 +1,6 @@
 import React from 'react';
 import RollingBannerWindow from '../../components/RollingBannerWindow/RollingBannerWindow';
 import RollingBanner from '../../components/RollingBanner/RollingBanner';
-import Footer from '../../components/footer/Footer';
 import './Main.scss';
 
 const Main = () => {
