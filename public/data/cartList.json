@@ -1,0 +1,23 @@
+[
+  {
+    "cart_id": 1,
+    "thumbnail_url": "https://velog.velcdn.com/images/cadyky95/post/ea84a283-10fd-4a4f-b5c6-22b7ddff8884/image.png",
+    "product_name": "개쩌는 냠냠쩝쩝 개밥",
+    "price": 20000,
+    "quantity": 1
+  },
+  {
+    "cart_id": 2,
+    "thumbnail_url": "https://velog.velcdn.com/images/cadyky95/post/ea84a283-10fd-4a4f-b5c6-22b7ddff8884/image.png",
+    "product_name": "개맛있는 새콤달콤 개밥",
+    "price": 11000,
+    "quantity": 1
+  },
+  {
+    "cart_id": 3,
+    "thumbnail_url": "https://velog.velcdn.com/images/cadyky95/post/ea84a283-10fd-4a4f-b5c6-22b7ddff8884/image.png",
+    "product_name": "쌉맛있는 달짝지근 고양이밥",
+    "price": 51000,
+    "quantity": 1
+  }
+]

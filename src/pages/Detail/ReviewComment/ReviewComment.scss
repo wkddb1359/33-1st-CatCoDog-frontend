@@ -1,0 +1,69 @@
+.goodsReviewTitle {
+  padding: 1.25rem 0;
+  font-weight: bold;
+
+  .goodsReviewCount {
+    margin-left: 0.31rem;
+    background-color: #36363633;
+    border-radius: 0.63rem;
+    font-size: 0.69rem;
+  }
+}
+
+.goodsReviewWrapper {
+  margin-bottom: 10%;
+  color: blue;
+
+  .goodsReviewInfoText {
+    margin-bottom: 0.75rem;
+    color: #363636b3;
+    font-size: 0.88rem;
+  }
+
+  .goodsReviewCommentWrapper {
+    padding-top: 0.94rem;
+    border-top: 1px solid black;
+  }
+
+  .goodsReviewCommentInputWrapper {
+    text-align: center;
+
+    .goodsReviewCommentInputContainer {
+      position: relative;
+
+      .goodsReviewCommentInputForm {
+        .goodsReviewCommentInput {
+          height: 3.75rem;
+          width: 50%;
+          margin: 1.88rem 0;
+          padding-left: 0.63rem;
+          border: 1px solid #36363640;
+          border-radius: 10px;
+          font-size: 1.06rem;
+        }
+
+        .goodsReviewCommentInputStar {
+          position: absolute;
+          right: 25.5%;
+          top: 40%;
+          border: 1px solid #ddd;
+          font-size: 0.88rem;
+        }
+
+        .goodsReviewCommentSubmitButton {
+          position: absolute;
+          top: 30%;
+          right: 21%;
+          margin-left: 0.63rem;
+          border-radius: 1.88rem;
+          color: #363636;
+          border: none;
+          background-color: transparent;
+          font-size: 1.88rem;
+          vertical-align: middle;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
