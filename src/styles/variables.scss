@@ -8,3 +8,16 @@
   display: flex;
   align-items: center;
 }
+
+@mixin fontLightBlack {
+  color: #363636b3;
+}
+
+@mixin whiteBorder {
+  border: 1px solid #ddd;
+}
+
+@mixin blackButton {
+  background-color: #363636;
+  border-color: #363636;
+}

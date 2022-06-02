@@ -1,29 +1,30 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './DetailGoods.scss';
 
 function DetailGoods({ mainImgURL, setMainImgURL, goodsData }) {
   const [heartLike, setHeartLike] = useState(false);
-  const [goodsCount, setGoodsCount] = useState({
-    quantity: 0,
-  });
+  // const [goodsCount, setGoodsCount] = useState({
+  //   quantity: 0,
+  // });
 
-  const checkGoodsCount = e => {
-    setGoodsCount(e.target.value);
-  };
+  // const checkGoodsCount = e => {
+  //   setGoodsCount(e.target.value);
+  // };
 
   const toggleLike = () => {
     setHeartLike(!heartLike);
   };
 
+  // 빽앤드로 수량 데이터 보내기
   // http://10.58.0.92:8000/products/1
-  useEffect(() => {
-    fetch('', {
-      method: 'POST',
-      body: JSON.stringify({ quantity: 1 }),
-    })
-      .then(res => res.json())
-      .then(data => console.log(data));
-  });
+  // useEffect(() => {
+  //   fetch('', {
+  //     method: 'POST',
+  //     body: JSON.stringify({ quantity: 1 }),
+  //   })
+  //     .then(res => res.json())
+  //     .then(data => console.log(data));
+  // });
 
   return (
     <div className="detailGoods">
@@ -94,10 +95,7 @@ function DetailGoods({ mainImgURL, setMainImgURL, goodsData }) {
               </div>
               <div className="goodsFormItemQuantity">
                 <p className="goodsQuantity">수량 *</p>
-                <select
-                  className="goodsQuantitySelect"
-                  onChange={checkGoodsCount}
-                >
+                <select className="goodsQuantitySelect">
                   <option value={0}>1개</option>
                   <option value={1}>2개</option>
                   <option value={2}>3개</option>

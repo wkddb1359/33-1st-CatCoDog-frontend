@@ -12,7 +12,7 @@ function Detail() {
   // http://10.58.0.92:8000/products/1
 
   useEffect(() => {
-    fetch('')
+    fetch('/data/goodsdata.json')
       .then(res => res.json())
       .then(data => setGoodsData(data));
   }, []);
