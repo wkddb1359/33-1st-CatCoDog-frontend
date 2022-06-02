@@ -1,5 +1,5 @@
-/* import React from 'react';
-import Nav from '../../components/Nav/Nav';
+import React from 'react';
+import Nav from '../../components/nav/Nav';
 import RollingBannerWindow from '../../components/RollingBannerWindow/RollingBannerWindow';
 import RollingBanner from '../../components/RollingBanner/RollingBanner';
 import Footer from '../../components/Footer/Footer';
