@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Login.scss';
 import SignUpInput from './component/SignUpInput';
+import { BASIC_URL } from '../../config';
+
+import './Login.scss';
 
 const Login = () => {
   const [inputValue, setInputValue] = useState({
@@ -10,6 +12,8 @@ const Login = () => {
   });
 
   const { email, password } = inputValue;
+
+  const navigate = useNavigate();
 
   const handleInput = e => {
     const { name, value } = e.target;
@@ -22,26 +26,17 @@ const Login = () => {
   const isValidLogin =
     email.includes('@') &&
     email.includes('.') &&
-    passwordCondition.test(inputValue.password);
-
-  const goToSignUp = () => {
-    navigate('/signup');
-  };
-  const navigate = useNavigate();
+    passwordCondition.test(password);
 
   const goToMain = e => {
     e.preventDefault();
-    fetch('http://10.58.2.1:8000/users/signin', {
+    fetch(`${BASIC_URL}/users/signin`, {
       method: 'POST',
-      body: JSON.stringify({
-        email: inputValue.email,
-        password: inputValue.password,
-      }),
+      body: JSON.stringify(JSON.stringify(inputValue)),
     })
       .then(res => res.json())
       .then(result => {
         if (result.ACCESS_TOKEN) {
-          // console.log(result.ACCESS_TOKEN);
           localStorage.setItem('ACCESS_TOKEN', result.ACCESS_TOKEN);
         } else {
           alert('잘못된 아이디 또는 비밀번호 입니다.');
@@ -50,8 +45,12 @@ const Login = () => {
     navigate('/');
   };
 
+  const goToSignUp = () => {
+    navigate('/signup');
+  };
+
   return (
-    <div className="loginPage">
+    <div className="login">
       <div className="wrapLogin">
         <div className="loginHeader">
           <button className="backBtn">
@@ -60,7 +59,7 @@ const Login = () => {
           <h1>
             <img
               className="headerLogo"
-              src="/images/logo.jpg"
+              src="/images/logo.png"
               alt="캣코독 로고"
             />
           </h1>
