@@ -8,7 +8,7 @@ const NavBottom = () => {
   const navigate = useNavigate();
 
   const moveCategory = id => {
-    navigate(`http://localhost:3000/dog?category=${id}`);
+    navigate(`?category=${id}`);
   }; //네비게이트 url 넘겨주는
 
   return (
