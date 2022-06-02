@@ -32,7 +32,7 @@ const Login = () => {
     e.preventDefault();
     fetch(`${BASIC_URL}/users/signin`, {
       method: 'POST',
-      body: JSON.stringify(JSON.stringify(inputValue)),
+      body: JSON.stringify(inputValue),
     })
       .then(res => res.json())
       .then(result => {
@@ -49,11 +49,15 @@ const Login = () => {
     navigate('/signup');
   };
 
+  const goToMain2 = () => {
+    navigate('/');
+  };
+
   return (
     <div className="login">
       <div className="wrapLogin">
         <div className="loginHeader">
-          <button className="backBtn">
+          <button className="backBtn" onClick={goToMain2}>
             <span>&#60;</span>뒤로가기
           </button>
           <h1>

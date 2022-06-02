@@ -11,11 +11,18 @@ const Cart = () => {
   const [checkedList, setCheckedList] = useState([]);
   const [totalBill, settotalBill] = useState(0);
 
+  const ACCESS_TOKEN = localStorage.getItem('ACCESS_TOKEN');
+
   useEffect(() => {
-    fetch('http://10.58.2.22:8000/orders/cart')
+    fetch('http://10.58.2.22:8000/orders/cart', {
+      headers: {
+        Authorization: ACCESS_TOKEN,
+      },
+    })
       .then(res => res.json())
       .then(data => {
         setCartList(data.data);
+        console.log(data.data);
         settotalBill(data.total_bill);
       });
   }, []);

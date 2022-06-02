@@ -48,7 +48,7 @@ const Product = ({
         </span>
         <p className="productInfo desc">{description}</p>
         <div className="productInfo icons">
-          <span className="comment">
+          <span className="listComment">
             <i className="fa-solid fa-comment" />
             {review_count}
           </span>
