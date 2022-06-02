@@ -1,7 +1,5 @@
 import React from 'react';
 import { useState } from 'react';
-import Nav from '../../components/nav/Nav';
-import Footer from '../../components/footer/Footer';
 import ListName from './component/ListName';
 import BenefitDetails from './component/BenefitDetails';
 import './MyPage.scss';
@@ -10,7 +8,6 @@ const MyPage = () => {
   const [modal, setModal] = useState(false);
   return (
     <div>
-      <Nav />
       <div className="myPage">
         <div className="wrapMyPage">
           <div className="leftColum">
@@ -51,7 +48,6 @@ const MyPage = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };
