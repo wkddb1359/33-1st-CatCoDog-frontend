@@ -12,7 +12,6 @@ function List({
   settotalBill,
   id,
 }) {
-  console.log(totalBill);
   let [count, setCount] = useState(item.quantity);
 
   const addCount = () => {
@@ -42,7 +41,7 @@ function List({
   }, [checkedList, item]);
   useEffect(() => {
     setdelteItem(item);
-  }, []);
+  });
 
   const onCheck = e => {
     if (e.target.checked) {
