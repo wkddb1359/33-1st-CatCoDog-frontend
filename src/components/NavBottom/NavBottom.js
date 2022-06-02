@@ -1,9 +1,15 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import GLOBAL_NAV from './globalNav';
 import './NavBottom.scss';
 
 const NavBottom = () => {
   const [currentId, setCurrentId] = useState();
+  const navigate = useNavigate();
+
+  const moveCategory = id => {
+    navigate(`?category=${id}`);
+  }; //네비게이트 url 넘겨주는
 
   return (
     <div className="navBottom">
@@ -15,15 +21,20 @@ const NavBottom = () => {
               key={id}
               onMouseEnter={() => setCurrentId(id)} //내장함수
               onMouseLeave={() => setCurrentId()}
+              onClick={() => moveCategory(id)}
             >
               <p className="dropP">{name}</p>
 
               {currentId === id && (
                 <div className={`dropDownBoxContainer${id}`}>
-                  {list.map(({ id, listname }) => {
+                  {list.map(lists => {
                     return (
-                      <div className="dropDownBox" key={id}>
-                        {listname}
+                      <div
+                        className="dropDownBox"
+                        key={lists.id}
+                        onClick={() => moveCategory(id)}
+                      >
+                        {lists.listname}
                       </div>
                     );
                   })}
