@@ -1,0 +1,85 @@
+.myPage {
+  background-color: #f3f3f3;
+  .wrapMyPage {
+    display: flex;
+    flex-direction: row;
+    width: 60rem;
+    height: 46rem;
+    padding-left: 0.938rem;
+    padding-right: 0.938rem;
+    margin: 0 auto;
+
+    .leftColum {
+      flex: 2;
+      padding-top: 5rem;
+    }
+    .rightColum {
+      flex: 8;
+      padding-top: 5rem;
+
+      .whiteBox {
+        display: flex;
+        flex-direction: row;
+        padding: 3.12rem 0 2.5rem 1.5rem;
+        border: 1px solid white;
+        background-color: white;
+
+        .greyPic {
+          width: 6rem;
+        }
+        .middleText {
+          width: 60%;
+          border-right: 1px solid silver;
+          padding-left: 1rem;
+
+          .middleHeadText {
+            padding-bottom: 0.5rem;
+          }
+
+          .spanMiddleText {
+            font-size: 0.7rem;
+            line-height: 1.7;
+          }
+
+          .middleTextBtn {
+            border-radius: 30px;
+            border: 1px solid silver;
+            background-color: white;
+            margin-top: 0.5rem;
+            padding: 0.3rem;
+            font-size: 0.7rem;
+          }
+        }
+        .rightText {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+
+          .point {
+            padding-bottom: 0.4rem;
+            margin-left: 4rem;
+            font-size: 0.7rem;
+          }
+
+          .oneThousand {
+            margin-left: 3.2rem;
+            font-weight: bolder;
+            font-size: 1.6rem;
+          }
+        }
+      }
+      .order {
+        padding-top: 3.5rem;
+        font-size: 0.9rem;
+        font-weight: bolder;
+      }
+
+      .cancel {
+        margin-top: 4rem;
+        margin-left: 20rem;
+        font-size: 0.7rem;
+        color: silver;
+      }
+    }
+  }
+}
