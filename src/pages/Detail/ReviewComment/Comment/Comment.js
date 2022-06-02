@@ -3,8 +3,7 @@ import Star from '../../Star/Star';
 import './Comment.scss';
 
 function Comment({ commentData }) {
-  const { star, content, userid, time } = commentData;
-
+  const { star, content } = commentData;
   return (
     <div className="comment">
       <div className="goodsReviewComment">
@@ -14,8 +13,8 @@ function Comment({ commentData }) {
         <div className="goodsReviewCommentText">{content}</div>
       </div>
       <div className="goodsReviewUserInfo">
-        <div className="goodsReviewUserID">{userid}</div>
-        <div className="goodsReviewUserTime">{time}</div>
+        <div className="goodsReviewUserID">{commentData.userid}</div>
+        <div className="goodsReviewUserTime">{commentData.time}</div>
       </div>
     </div>
   );

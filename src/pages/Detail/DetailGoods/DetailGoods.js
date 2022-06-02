@@ -16,16 +16,19 @@ function DetailGoods({ mainImgURL, setMainImgURL, goodsData }) {
   };
 
   // 빽앤드로 수량 데이터 보내기
-  // http://10.58.0.92:8000/products/1
-  // useEffect(() => {
-  //   fetch('', {
-  //     method: 'POST',
-  //     body: JSON.stringify({ quantity: 1 }),
-  //   })
-  //     .then(res => res.json())
-  //     .then(data => console.log(data));
+  // http://10.58.2.22:8000/orders/cart
 
-  // });
+  const postQuantity = () => {
+    fetch('', {
+      method: 'POST',
+      body: JSON.stringify({
+        product_option_id: goodsData.result.id,
+        quantity: 1,
+      }),
+    })
+      .then(res => res.json())
+      .then(result => console.log(result));
+  };
 
   return (
     <div className="detailGoods">
@@ -106,7 +109,7 @@ function DetailGoods({ mainImgURL, setMainImgURL, goodsData }) {
               </div>
               <div className="goodsFormButton">
                 <button id="buyButton">구매하기</button>
-                <button>장바구니</button>
+                <button onClick={postQuantity}>장바구니</button>
                 <button onClick={toggleLike}>
                   <i
                     id={`${heartLike ? 'realHeart' : 'emptyHeart'}`}

@@ -14,8 +14,9 @@ function ReviewComment() {
     setStarCount(e.target.value);
   };
 
+  //http://10.58.2.22:8000/products/4/reviews
   useEffect(() => {
-    fetch('http://localhost:3000/data/commentdata.json')
+    fetch('/data/commentdata.json')
       .then(res => res.json())
       .then(data => setCommentList(data));
   }, []);
