@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import CatProductMain from './pages/list/CatProductMain';
+import ProductListPage from './pages/list/ProductListPage';
 import Nav from './components/nav/Nav';
 import Footer from './components/footer/Footer';
 import Detail from './pages/detail/Detail';
@@ -10,7 +10,7 @@ const Router = () => {
     <BrowserRouter>
       <Nav />
       <Routes>
-        <Route path="/dog" element={<CatProductMain />} />
+        <Route path="/dog" element={<ProductListPage />} />
         <Route path="/detail/:id" element={<Detail />} />
       </Routes>
       <Footer />

@@ -2,15 +2,23 @@ import React from 'react';
 import Product from './Product';
 import './ProductList.scss';
 
-const ProductList = ({ itemList, morePage }) => {
+const ProductList = ({ itemList, morePage, sortHandler, FILTER_DATA }) => {
   return (
     <>
       <div className="listMainName">Dog</div>
       <div className="filterContainer">
-        <select className="filterOption" name="filterBox">
-          <option value="new">등록순</option>
-          <option value="price">낮은가격순</option>
-          <option value="-price">높은가격순</option>
+        <select
+          className="filterOption"
+          name="filterBox"
+          onChange={sortHandler}
+        >
+          {FILTER_DATA.map(({ id, filterId, name }) => {
+            return (
+              <option value={filterId} key={id}>
+                {name}
+              </option>
+            );
+          })}
         </select>
       </div>
       <div className="productListContainer">
