@@ -29,7 +29,6 @@
       cursor: pointer;
     }
   }
-
   .navMiddle {
     @include alignItems;
     max-width: 1248px;
@@ -44,25 +43,28 @@
       padding-bottom: 30px;
       height: 186px;
 
-      .userIcon {
+      .moveMyPage {
         padding-right: 10px;
         text-decoration: none;
         color: grey;
+        cursor: pointer;
       }
 
-      .loginLink {
+      .moveLogin {
         text-decoration: none;
         color: grey;
+        cursor: pointer;
 
         .loginText {
           font-size: 14px;
         }
       }
 
-      .signupLink {
+      .moveSignUp {
         padding-left: 10px;
         text-decoration: none;
         color: grey;
+        cursor: pointer;
 
         .signupText {
           font-size: 14px;
@@ -88,15 +90,17 @@
       height: 186px;
       text-align: right;
 
-      .searchLink {
+      .moveSearch {
         color: grey;
         text-decoration: none;
+        cursor: pointer;
       }
 
-      .cartLink {
+      .moveCart {
         margin-left: 2rem;
         color: grey;
         text-decoration: none;
+        cursor: pointer;
 
         .cartText {
           padding-left: 10px;
