@@ -2,13 +2,14 @@ import { Routes, Route } from 'react-router-dom';
 import Nav from '../../components/nav/Nav';
 import Footer from '../../components/footer/Footer';
 import SignUp from '../login/SignUp';
-import Cart from '../Cart/Cart';
+import Cart from '../cart/Cart';
 import MyPage from '../login/MyPage';
 import Detail from '../Detail/Detail';
-import Main from '../Main/Main';
+import Main from '../main/Main';
 import ProductListPage from '../List/ProductListPage';
 
 const MainRouter = () => {
+  s;
   return (
     <>
       <Nav />

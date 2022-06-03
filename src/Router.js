@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import MainRouter from './pages/Main/MainRouter';
+import MainRouter from './pages/main/MainRouter';
 import Login from './pages/login/Login';
 
 const Router = () => {
