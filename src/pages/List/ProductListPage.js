@@ -20,7 +20,7 @@ const ProductListPage = () => {
   const location = useLocation();
 
   useEffect(() => {
-    fetch(`http://10.58.2.197:8000/products${location.search}`)
+    fetch(`http://10.58.2.22:8000/products${location.search}`)
       .then(res => res.json())
       .then(data => {
         setItemList(data.data);
@@ -33,7 +33,7 @@ const ProductListPage = () => {
         ? `category=${filterValue.categoryId}`
         : `category=cat`
     }
-  ${filterValue.sortId ? `&sort=${filterValue.sortId}` : ''}${
+${filterValue.sortId ? `&sort=${filterValue.sortId}` : ''}${
       filterValue.offsetLimitId ? `${filterValue.offsetLimitId}` : ''
     }`;
     navigate(queryString);

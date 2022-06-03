@@ -1,9 +1,15 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './DetailGoods.scss';
 
 function DetailGoods({ mainImgURL, setMainImgURL, goodsData }) {
   const [heartLike, setHeartLike] = useState(false);
   const [goodsCount, setGoodsCount] = useState([]);
+  const navigate = useNavigate();
+
+  const goToCart = () => {
+    navigate('/cart');
+  };
 
   const checkGoodsCount = e => {
     setGoodsCount(e.target.value);
@@ -15,10 +21,14 @@ function DetailGoods({ mainImgURL, setMainImgURL, goodsData }) {
 
   // 빽앤드로 수량 데이터 보내기
   // http://10.58.2.22:8000/orders/cart
+  const ACCESS_TOKEN = localStorage.getItem('ACCESS_TOKEN');
 
   const postQuantity = () => {
-    fetch('', {
+    fetch('http://10.58.2.22:8000/orders/cart', {
       method: 'POST',
+      headers: {
+        Authorization: ACCESS_TOKEN,
+      },
       body: JSON.stringify({
         product_option_id: goodsData.result.id,
         quantity: goodsCount,
@@ -26,6 +36,7 @@ function DetailGoods({ mainImgURL, setMainImgURL, goodsData }) {
     })
       .then(res => res.json())
       .then(result => console.log(result));
+    alert('장바구니에 담겼습니다.');
   };
 
   return (
@@ -137,7 +148,9 @@ function DetailGoods({ mainImgURL, setMainImgURL, goodsData }) {
                 </select>
               </div>
               <div className="goodsFormButton">
-                <button id="buyButton">구매하기</button>
+                <button id="buyButton" onClick={goToCart}>
+                  구매하기
+                </button>
                 <button onClick={postQuantity}>장바구니</button>
                 <button onClick={toggleLike}>
                   <i

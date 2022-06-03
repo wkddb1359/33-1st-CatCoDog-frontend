@@ -1,16 +1,21 @@
 import React from 'react';
-import Nav from '../../components/nav/Nav';
-import Footer from '../../components/Footer/Footer';
+import RollingBannerWindow from '../../components/RollingBannerWindow/RollingBannerWindow';
+import RollingBanner from '../../components/RollingBanner/RollingBanner';
 import './Main.scss';
-import Cart from '../cart/Cart';
 
 const Main = () => {
   return (
     <div className="main">
       <div className="mainContainer">
-        <Nav />
-        <Cart />
-        <Footer />
+        <RollingBanner />
+        <RollingBannerWindow />
+        <div className="eventBannerDiv">
+          <img
+            src="/images/eventBanner.png"
+            className="eventBanner"
+            alt="eventBanner"
+          />
+        </div>
       </div>
     </div>
   );

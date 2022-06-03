@@ -8,7 +8,10 @@ const Nav = () => {
 
   const movePage = e => {
     navigate(`/${e.target.id}`);
-    console.log(e);
+  };
+
+  const goToCart = () => {
+    navigate('/cart');
   };
 
   return (
@@ -47,7 +50,7 @@ const Nav = () => {
             <div className="moveSearch">
               <i className="fa-solid fa-magnifying-glass" />
             </div>
-            <div id="cart" className="moveCart" onClick={movePage}>
+            <div id="cart" className="moveCart" onClick={goToCart}>
               <i className="fa-solid fa-cart-shopping" />
               <span className="cartText">장바구니</span>
             </div>
