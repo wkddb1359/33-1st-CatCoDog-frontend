@@ -17,7 +17,7 @@
 • 개발기간 : 2022/05/24~2022/06/04
 
 ### 2. 사용기술 스택
-• Front-end: HTML, SCSS, React, Javascript   
+• Front-end: HTML, SCSS, Javascript, React, React-Router   
 • Back-end: Phython, Django, MySQL
 
 ## FrontedEnd 필수구현 기능
