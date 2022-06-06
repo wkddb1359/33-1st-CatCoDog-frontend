@@ -113,6 +113,8 @@
 ```
 ### 3. Notion
 ![](https://velog.velcdn.com/images/cadyky95/post/c81173e4-05fe-444b-98e4-c987bb414754/image.png)
+
+![](https://velog.velcdn.com/images/drbrain98/post/9293e60a-2b03-4c15-bba2-d05edad57556/image.png)
 ```
 필수 구현 기능 및 추가 기능 사항(역활 및 분담 포함)에 대하여 상세한 정리
 ```
