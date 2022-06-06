@@ -25,7 +25,7 @@
 ![React_App_-_Chrome_2022-06-06_18-03-03_AdobeCreativeCloudExpress](https://user-images.githubusercontent.com/97432901/172131288-8a0f14f9-f911-4696-88b6-067cee6b8382.gif)
 
 ```
-• 사용자가 입력한 값, 입력한 값을 담아둔 2개의 useState를 리뷰 작성 기능 구현
+• 사용자가 입력한 값, 입력한 값을 담아둔 2개의 useState를 리뷰 작성 기능 구현 ㅁㄴㅇㄹ
 • Select/Option 태그를 이용해서 사용자가 입력하고자 하는 별점의 value를 추출한 뒤 props로 별점 컴포넌트로 전달 후 map함수 사용
 ```
 ### 2. 제품사진리스트 클릭 시 메인이미지로 변경
