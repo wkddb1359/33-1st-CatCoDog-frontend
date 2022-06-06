@@ -20,24 +20,28 @@
 • Front-end: HTML, SCSS, Javascript, React, React-Router   
 • Back-end: Phython, Django, MySQL
 
-## 🐭DeatilGoods Page 구현사항
+## 🐭DeatilGoods Page 구현사항🐭
 ### 1. 리뷰 작성 및 별점 기능
 ![React_App_-_Chrome_2022-06-06_18-03-03_AdobeCreativeCloudExpress](https://user-images.githubusercontent.com/97432901/172131288-8a0f14f9-f911-4696-88b6-067cee6b8382.gif)
 
-```
-• 사용자가 입력한 값, 입력한 값을 담아둔 2개의 useState를 리뷰 작성 기능 구현 ㅁㄴㅇㄹ
-• Select/Option 태그를 이용해서 사용자가 입력하고자 하는 별점의 value를 추출한 뒤 props로 별점 컴포넌트로 전달 후 map함수 사용
-```
-### 2. 제품사진리스트 클릭 시 메인이미지로 변경
-```
-• 유효성 검사
-• ID에 조건 걸기
-• PW에 조건 걸기
-```
+• 사용자가 입력한 값, 입력한 값을 담아둔 2개의 `useState`를 리뷰 작성 기능 구현   
+• `Select/Option` 태그를 이용해서 사용자가 입력하고자 하는 별점의 `value`를 추출한 뒤 `props`로 별점 컴포넌트로 전달 후 `map함수` 사용
+   
+      
+### 2. 제품 사진 리스트 클릭 시 메인이미지로 변경
+![React_App_-_Chrome_2022-06-06_18-14-26_AdobeCreativeCloudExpress](https://user-images.githubusercontent.com/97432901/172133296-55fc452c-e435-44d0-820d-8ad8c388582e.gif)
+
+• 제품 상세 목데이터 `fetch`로 받아와서 `useState` 저장 후 작업 진행 (백앤드에서 데이터 받아올때에는 주소만 변경해주면 된다.)   
+• 제품 미니 사진 리스트의 첫 번째 사진이 메인 사진에 먼저 `useState`에 담긴다.   
+• `onClick` 이벤트를 활용해 클릭한 사진이 메인 사진으로 변경되게 설정 (`useState` 사용)   
+
 ### 3. 제품 수량 선택 후 장바구니로 데이터 송신
-```
-• 회원 정보 보여주기
-```
+![React_App_-_Chrome_2022-06-06_18-21-51_AdobeCreativeCloudExpress](https://user-images.githubusercontent.com/97432901/172134106-cbe00050-c45f-4cf5-b86b-3c88a7f31b32.gif)
+
+
+• `Select/Option` 태그를 사용해서 사용자가 선택한 수량의 `value`를 추출한 뒤 `fetch`를 통해서 백앤드로 부터 수량 데이터를 전송하였다.   
+• 구매하기 버튼을 누르면 장바구니창으로 이동이 가능하다.
+
 
 ## 프로젝트 협업 도구
 ### 1. Trello
@@ -58,6 +62,6 @@
 ### 4. ERD
 ![](https://velog.velcdn.com/images/stresszero/post/54321f3f-a31d-415d-a046-3ac7b461bd19/image.PNG)
 ```
-웹 사이트 DB 구성 방식을 즉각적으로 공유 -> 해당 자료를 참고해서 프론트에서 KEY값의 이름을 맞춰서 즉각적인 소통을 가능하게 
+웹 사이트 DB 구성 방식을 즉각적으로 공유 -> 해당 자료를 참고해서 프론트에서 KEY값의 이름을 맞춰서 즉각적인 소통이 가능하였다.
 ```
  
