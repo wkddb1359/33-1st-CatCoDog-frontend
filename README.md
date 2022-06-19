@@ -20,7 +20,7 @@
 • Front-end: HTML, SCSS, Javascript, React, React-Router   
 • Back-end: Phython, Django, MySQL
 
-## 🐭DeatilGoods Page 구현사항🐭
+## 🐭안성주-DeatilGoods Page 구현사항🐭
 ### 1. 리뷰 작성 및 별점 기능
 ![React_App_-_Chrome_2022-06-06_18-03-03_AdobeCreativeCloudExpress](https://user-images.githubusercontent.com/97432901/172131288-8a0f14f9-f911-4696-88b6-067cee6b8382.gif)
 
